@@ -1,0 +1,918 @@
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.dll.config
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.pdb
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.exe
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.exe.config
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.rsp
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.exe
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.exe.config
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.rsp
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Managed.Core.targets
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Win32.Primitives.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.AppContext.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Console.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Globalization.Calendars.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.Compression.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.Compression.ZipFile.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Net.Http.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Net.Sockets.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Encoding.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Primitives.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Text.Encoding.CodePages.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Threading.Tasks.Extensions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.ValueTuple.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.ReaderWriter.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XmlDocument.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XPath.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XPath.XDocument.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.exe
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.exe.config
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.rsp
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\VBCSCompiler.exe
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Antlr3.Runtime.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Net.Http.Formatting.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Helpers.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.WebHost.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Mvc.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Optimization.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Razor.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Deployment.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Razor.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\WebGrease.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Helpers.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Mvc.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Optimization.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Razor.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Deployment.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Razor.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Antlr3.Runtime.pdb
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Net.Http.Formatting.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.WebHost.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.CopyComplete
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.pdb
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.SqlServer.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.Mvc.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.SqlServer.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.Mvc.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Antiforgery.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Core.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Extensions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Features.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Core.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Language.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Runtime.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.WebUtilities.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.Razor.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DotNet.PlatformAbstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyModel.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Composite.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.ObjectPool.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Options.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Primitives.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.WebEncoders.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Net.Http.Headers.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Win32.Registry.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.Bson.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Buffers.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Collections.Immutable.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.ComponentModel.Annotations.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Diagnostics.DiagnosticSource.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Memory.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Numerics.Vectors.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Reflection.Metadata.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.AccessControl.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Cryptography.Xml.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Permissions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Principal.Windows.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encoding.CodePages.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encodings.Web.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Threading.Tasks.Extensions.dll
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Antiforgery.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Core.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Extensions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Features.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.JsonPatch.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Core.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Language.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Runtime.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.WebUtilities.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.pdb
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.pdb
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.Razor.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Memory.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Composite.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileSystemGlobbing.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Logging.Abstractions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.ObjectPool.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Options.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Primitives.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.WebEncoders.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.Bson.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Buffers.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Collections.Immutable.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Diagnostics.DiagnosticSource.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Memory.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Numerics.Vectors.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Reflection.Metadata.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encodings.Web.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Threading.Tasks.Extensions.xml
+C:\Users\admin\source\repos\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.AssemblyReference.cache
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DiaSymReader.Native.x86.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.dll.config
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.pdb
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.exe
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.exe.config
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.rsp
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.exe
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.exe.config
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.rsp
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.AppContext.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Collections.Immutable.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Console.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Globalization.Calendars.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.Compression.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.FileSystem.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Net.Http.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Net.Sockets.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Reflection.Metadata.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.ValueTuple.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XPath.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.exe
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.exe.config
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.rsp
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\VBCSCompiler.exe
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\VBCSCompiler.exe.config
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Antlr3.Runtime.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.SqlServer.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Antiforgery.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Core.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Extensions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Features.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.JsonPatch.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Core.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Language.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Runtime.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.WebUtilities.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.Razor.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Memory.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyModel.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Composite.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.ObjectPool.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Options.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Primitives.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.WebEncoders.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Net.Http.Headers.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Win32.Registry.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.Bson.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.Mvc.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Buffers.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Collections.Immutable.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.ComponentModel.Annotations.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Memory.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Net.Http.Formatting.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Numerics.Vectors.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Reflection.Metadata.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.AccessControl.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Cryptography.Xml.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Permissions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Principal.Windows.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encoding.CodePages.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encodings.Web.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Threading.Tasks.Extensions.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Helpers.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.WebHost.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Mvc.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Optimization.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Razor.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Deployment.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Razor.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\WebGrease.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.SqlServer.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Antiforgery.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Core.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Extensions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Features.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.JsonPatch.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Core.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Language.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Runtime.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.WebUtilities.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.pdb
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.pdb
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.Razor.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Memory.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Composite.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileSystemGlobbing.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.ObjectPool.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Options.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Primitives.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.WebEncoders.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Net.Http.Headers.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.Bson.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.Mvc.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Buffers.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Collections.Immutable.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Memory.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Numerics.Vectors.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Reflection.Metadata.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encodings.Web.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Threading.Tasks.Extensions.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Helpers.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Mvc.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Optimization.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Razor.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Deployment.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Razor.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Antlr3.Runtime.pdb
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Net.Http.Formatting.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.WebHost.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.AssemblyReference.cache
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.CoreCompileInputs.cache
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.CopyComplete
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.dll
+D:\Learn\CNTT1_NHOM7\TTCM\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.pdb
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DiaSymReader.Native.x86.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.dll.config
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.pdb
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.exe
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.exe.config
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.rsp
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.exe
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.exe.config
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.rsp
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.AppContext.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Collections.Immutable.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Console.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Globalization.Calendars.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.Compression.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.FileSystem.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Net.Http.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Net.Sockets.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Reflection.Metadata.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.ValueTuple.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XPath.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.exe
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.exe.config
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.rsp
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\VBCSCompiler.exe
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\VBCSCompiler.exe.config
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Antlr3.Runtime.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.SqlServer.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Antiforgery.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Core.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Extensions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Features.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.JsonPatch.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Core.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Language.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Runtime.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.WebUtilities.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.Razor.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Memory.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyModel.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Composite.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.ObjectPool.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Options.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Primitives.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.WebEncoders.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Net.Http.Headers.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Win32.Registry.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.Bson.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.Mvc.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Buffers.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Collections.Immutable.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.ComponentModel.Annotations.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Memory.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Net.Http.Formatting.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Numerics.Vectors.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Reflection.Metadata.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.AccessControl.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Cryptography.Xml.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Permissions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Principal.Windows.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encoding.CodePages.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encodings.Web.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Threading.Tasks.Extensions.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Helpers.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.WebHost.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Mvc.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Optimization.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Razor.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Deployment.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Razor.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\WebGrease.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.SqlServer.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Antiforgery.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Core.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Extensions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Features.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.JsonPatch.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Core.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Language.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Runtime.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.WebUtilities.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.pdb
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.pdb
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.Razor.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Memory.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Composite.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileSystemGlobbing.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.ObjectPool.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Options.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Primitives.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.WebEncoders.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Net.Http.Headers.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.Bson.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.Mvc.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Buffers.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Collections.Immutable.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Memory.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Numerics.Vectors.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Reflection.Metadata.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encodings.Web.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Threading.Tasks.Extensions.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Helpers.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Mvc.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Optimization.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Razor.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Deployment.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Razor.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Antlr3.Runtime.pdb
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Net.Http.Formatting.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.WebHost.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.AssemblyReference.cache
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.CoreCompileInputs.cache
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.CopyComplete
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.dll
+D:\Web\Dự án\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.pdb
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DiaSymReader.Native.x86.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.dll.config
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\BTL_TTCMWeb.pdb
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.exe
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.exe.config
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csc.rsp
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.exe
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.exe.config
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\csi.rsp
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Managed.Core.targets
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\Microsoft.Win32.Primitives.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.AppContext.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Collections.Immutable.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Console.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.DiagnosticSource.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.FileVersionInfo.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Globalization.Calendars.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.Compression.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.Compression.ZipFile.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.FileSystem.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Net.Http.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Net.Sockets.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Reflection.Metadata.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Runtime.InteropServices.RuntimeInformation.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Algorithms.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Encoding.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.Primitives.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Security.Cryptography.X509Certificates.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Text.Encoding.CodePages.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Threading.Tasks.Extensions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.ValueTuple.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.ReaderWriter.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XmlDocument.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XPath.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\System.Xml.XPath.XDocument.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.exe
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.exe.config
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\vbc.rsp
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\VBCSCompiler.exe
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\roslyn\VBCSCompiler.exe.config
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Antlr3.Runtime.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.SqlServer.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Antiforgery.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Core.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.Policy.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Cryptography.Internal.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Html.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Extensions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Features.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.JsonPatch.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Core.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Language.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Runtime.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.WebUtilities.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Bcl.AsyncInterfaces.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.Razor.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.DotNet.PlatformAbstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Memory.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Configuration.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyModel.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Composite.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileSystemGlobbing.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Hosting.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.ObjectPool.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Options.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Primitives.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.WebEncoders.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Net.Http.Headers.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Web.Infrastructure.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Win32.Registry.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.Bson.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.Mvc.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Buffers.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Collections.Immutable.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.ComponentModel.Annotations.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Memory.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Net.Http.Formatting.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Numerics.Vectors.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Reflection.Metadata.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.AccessControl.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Cryptography.Xml.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Permissions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Security.Principal.Windows.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encoding.CodePages.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encodings.Web.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Json.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Threading.Tasks.Extensions.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.ValueTuple.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Helpers.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.WebHost.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Mvc.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Optimization.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Razor.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Deployment.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Razor.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\WebGrease.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\EntityFramework.SqlServer.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Antiforgery.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authentication.Core.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Authorization.Policy.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Cryptography.Internal.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.DataProtection.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Diagnostics.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Hosting.Server.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Html.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Extensions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Http.Features.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.JsonPatch.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Core.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.DataAnnotations.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Formatters.Json.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.Razor.Extensions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Mvc.ViewFeatures.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Language.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Razor.Runtime.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.ResponseCaching.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.Routing.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.AspNetCore.WebUtilities.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Bcl.AsyncInterfaces.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.pdb
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.pdb
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.CSharp.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeAnalysis.Razor.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Caching.Memory.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Configuration.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileProviders.Composite.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.FileSystemGlobbing.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Hosting.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Localization.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.ObjectPool.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Options.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.Primitives.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Extensions.WebEncoders.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.Net.Http.Headers.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.Bson.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\PagedList.Mvc.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Buffers.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Collections.Immutable.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Memory.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Numerics.Vectors.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Reflection.Metadata.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Encodings.Web.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Text.Json.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Threading.Tasks.Extensions.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.ValueTuple.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Helpers.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Mvc.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Optimization.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Razor.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Deployment.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.WebPages.Razor.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Newtonsoft.Json.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Antlr3.Runtime.pdb
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Net.Http.Formatting.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\System.Web.Http.WebHost.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.AssemblyReference.cache
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.CoreCompileInputs.cache
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.csproj.CopyComplete
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.dll
+D:\Bài tập lớn\Web bán tranh\BTL_TTCMWeb\BTL_TTCMWeb\obj\Debug\BTL_TTCMWeb.pdb
