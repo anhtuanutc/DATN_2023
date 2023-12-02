@@ -12,7 +12,7 @@
         });
         function LaytheomaTB(state_id) {
             $.ajax({
-                url: ' https://localhost:44386/Laytrangthai/' + state_id,
+                url: '/Laytrangthai/' + state_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -37,7 +37,7 @@
         }
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/Laytrangthai/',
+                url: '/Laytrangthai/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -63,7 +63,7 @@
             })
         }
         function ThemTrangThai() {
-            var url = 'https://localhost:44386/api/Default/?state_id=' +
+            var url = '/api/Default/?state_id=' +
                 $("input[name='MaThietBi1']").val() + '&state_name=' + $("input[name='Ten1']").val();
             $.ajax({
                 url: url,
@@ -80,7 +80,7 @@
             });
         }
         function SuaTrangThai() {
-            var url = 'https://localhost:44386/api/Default/?state_id=' +
+            var url = '/api/Default/?state_id=' +
                 $("input[name='MaThietBi']").val() + '&state_name=' + $("input[name='Ten']").val();
             $.ajax({
                 url: url,

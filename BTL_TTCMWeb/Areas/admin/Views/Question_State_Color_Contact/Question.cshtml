@@ -11,7 +11,7 @@
         });
         function LaytheomaTB(question_id) {
             $.ajax({
-                url: ' https://localhost:44386/getquestion/' + question_id,
+                url: '/getquestion/' + question_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -36,7 +36,7 @@
         }
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/LayCauHoi/',
+                url: '/LayCauHoi/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -62,7 +62,7 @@
             })
         }
         function AddQuestion() {
-            var url = 'https://localhost:44386/api/Default/?question_id=' +
+            var url = '/api/Default/?question_id=' +
                 $("input[name='MaThietBi1']").val() + '&question=' + $("input[name='Ten1']").val();
             $.ajax({
                 url: url,
@@ -79,7 +79,7 @@
             });
         }
         function SuaQuestion() {
-            var url = 'https://localhost:44386/api/Default/?question_id=' +
+            var url = '/api/Default/?question_id=' +
                 $("input[name='MaThietBi']").val() + '&question=' + $("input[name='Ten']").val();
             $.ajax({
                 url: url,

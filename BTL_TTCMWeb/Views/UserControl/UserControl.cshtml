@@ -169,6 +169,7 @@
             display: none;
             border-radius: 4px;
         }
+
         .choose-button {
             padding: 10px 20px;
             background-color: #3498db;
@@ -183,25 +184,53 @@
             .choose-button:hover {
                 background-color: #2980b9;
             }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        th.center {
+            text-align: center
+        }
     </style>
     <script>
         //Tham số mặc định
         const rowsPerPage = 5;
         let currentPage = 1;
         var total = 0;
-        var check = true;
-        
+
         //Khởi tạo ban đầu
         $(document).ready(function () {
+            reload(currentPage);
+            openTab(event, 'EditInfo');
+
+        });
+
+        //Load lại trang
+        function reload(currentPage) {
             var myCookieValue = getCookieValue('hawuser_id');
             displayData(currentPage, myCookieValue);
-            openTab(event, 'EditInfo');
+            GetByID(myCookieValue);
             document.getElementById("prev-btn").style.display = 'none';
             document.getElementById("btn_cancel").style.display = 'none';
             document.getElementById("btn_save").style.display = 'none';
-        });
-
-        //Lấy thông tin đăng nhập
+        }
+        //Lấy user đăng nhập
         function getCookieValue(cookieName) {
             const name = cookieName + '=';
             const decodedCookie = decodeURIComponent(document.cookie);
@@ -220,22 +249,8 @@
         }
 
         //API của trang web
-        function saveImageToAPI(formData) {
-            $.ajax({
-                type: 'POST',
-                url: '/api/upload/avatar',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (response) {
-                    console.log('Upload ảnh thành công');
-                    //Load lại trang web
-                },
-                error: function (error) {
-                    console.error('Upload ảnh không thành công');
-                }
-            })
-        }
+        ////GET
+        //Lấy danh sách đơn hàng của user
         function GetAll(myCookieValue, startIndex, endIndex) {
             $.ajax({
                 url: '/GetDS/' + myCookieValue,
@@ -249,7 +264,6 @@
                     total = reponse.length;;
                     let table = '';
                     for (var i = startIndex; i < endIndex; ++i) {
-
                         let STT = i + 1;
                         table = table + '<tr>'
                         table = table + '<td style = "text-align: center">' + STT + '</td>';
@@ -257,6 +271,7 @@
                         table = table + '<td style="max-width : 200px;text-align: right;">' + reponse[i].order_total_price + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].Date + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].state_name + '</td>';
+                        //Thêm nút hủy đơn nếu đơn đang chuẩn bị
                         table = table + '<tr>'
 
                         document.getElementById('data').innerHTML = table;
@@ -266,25 +281,86 @@
                 fail: function (response) { }
             })
         }
-        function saveProflie() {
-            var formData = new FormData();
+        //Lấy thông tin profile
+        function GetByID(myCookieValue) {
+            $.ajax({
+                url: '/ProfileById/' + myCookieValue,
+                method: 'GET',
+                contentType: 'json',
+                dataType: 'json',
+                error: function (reponse) {
+                    alert("Lỗi");
+                },
+                success: function (reponse) {
+                    var _res = reponse;
+                    $("#name").val(_res.user_name);
+                    $("#email").val(_res.user_email);
+                    $("#phone").val(_res.user_phone);
+                    $("#address").val(_res.user_address);
+                    $("#avatar-preview").attr("src", _res.avatar_img);
 
+                },
+                fail: function (response) { }
+            })
+        }
+        ////POST
+        //Lưu ảnh
+        function saveImageToAPI(formData) {
             $.ajax({
                 type: 'POST',
-                url: '/api/upload/image',
+                url: '/api/upload/avatar',
                 data: formData,
                 contentType: false,
                 processData: false,
                 success: function (response) {
-                    console.log('Upload ảnh thành công');
+                    alert('Upload ảnh thành công');
                     //Load lại trang web
+                    location.reload();
+                    window.location.reload(true);
+                    reload(currentPage);
                 },
                 error: function (error) {
-                    console.error('Upload ảnh không thành công');
+                    alert('Upload ảnh không thành công');
                 }
             })
         }
-       
+        //Lưu thông tin khi sửa proflie
+        function saveProflie() {
+            var formData = new FormData();
+            var myCookieValue = getCookieValue('hawuser_id');
+            formData.append('user_id', Number(myCookieValue));
+            formData.append('user_name', $("#name").val());
+            formData.append('user_email', $("#email").val());
+            formData.append('user_phone', $("#phone").val());
+            formData.append('user_address', $("#address").val());
+            $.ajax({
+                type: 'POST',
+                url: '/api/upload/profile',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    alert('Cập nhật thông tin thành công');
+                    $('input').prop('readonly', true);
+                    document.getElementById("btn_cancel").style.display = 'none';
+                    document.getElementById("btn_save").style.display = 'none';
+                    document.getElementById("btn_edit").style.display = 'inline';
+                    $("#btn_image").css("display", "none");
+                    window.location.reload(true);
+                    location.reload();
+                    reload(currentPage);
+
+                },
+                error: function (error) {
+                    alert('Cập nhật thông tin không thành công');
+                }
+            })
+        }
+        //Đổi mật khẩu
+        function changePassWord() {
+
+        }
+
         //Giao diện web
         function prevBtn() {
             var myCookieValue = getCookieValue('hawuser_id');
@@ -293,7 +369,7 @@
                 displayData(currentPage, myCookieValue);
                 document.getElementById("next-btn").style.display = 'inline';
                 document.getElementById("prev-btn").style.display = 'inline';
-            }if (currentPage - 1 <= 0){
+            } if (currentPage - 1 <= 0) {
                 //Trang đầu ẩn nút prev
                 document.getElementById("prev-btn").style.display = 'none';
             }
@@ -330,19 +406,27 @@
             if (endIndex > total && total != 0) endIndex = total;
             GetAll(myCookieValue, startIndex, endIndex);
             pageInfo.textContent = `Page ${currentPage}`;
-        } 
+        }
         function btn_edit() {
             $('input').prop('readonly', false);
+            $('textarea').prop('readonly', false);
             document.getElementById("btn_cancel").style.display = 'inline';
             document.getElementById("btn_save").style.display = 'inline';
             document.getElementById("btn_edit").style.display = 'none';
+            $("#btn_image").css("display", "inline");
         }
         function btn_cancel() {
             $('input').prop('readonly', true);
+            $('textarea').prop('readonly', true);
             document.getElementById("btn_cancel").style.display = 'none';
             document.getElementById("btn_save").style.display = 'none';
-            document.getElementById("btn_edit()").style.display = 'inline';
+            document.getElementById("btn_edit").style.display = 'inline';
+            $("#btn_image").css("display", "none");
             //Lấy lại dữ liệu cũ
+            reload(currentPage);
+        }
+        function btn_save() {
+            saveProflie();
         }
         function Getimage() {
             document.getElementById('avatar').addEventListener('change', function (e) {
@@ -365,12 +449,16 @@
                 }
             });
         }
-        
+        function btn_change() {
+
+        }
+
     </script>
     <h1>Quản lý tài khoản</h1>
     <div class="tab">
         <button class="tablinks" onclick="openTab(event, 'EditInfo')"><i class="fas fa-user-edit"></i> Thông tin khách hàng </button>
         <button class="tablinks" onclick="openTab(event, 'OrderHistory')"><i class="fas fa-clipboard-list"></i> Theo dõi đơn hàng </button>
+        <button class="tablinks" onclick="openTab(event, 'ChangPass')"><i class="fas fa-clipboard-list"></i> Đổi mật khẩu </button>
     </div>
     <!-- Tab thông tin đặt hàng -->
     <div id="EditInfo" class="tabcontent">
@@ -380,19 +468,19 @@
                 <form>
                     <div class="form-group">
                         <label for="name">Tên khách hàng:</label>
-                        <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" readonly ="check">
+                        <input type="text" id="name" name="name" placeholder="Nhập tên của bạn" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" readonly ="check">
+                        <input type="email" id="email" name="email" placeholder="Nhập email của bạn" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="phone">Số điện thoại:</label>
-                        <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của bạn" readonly ="check">
+                        <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại của bạn" readonly="">
                     </div>
                     <div class="form-group">
                         <label for="address">Địa chỉ giao hàng:</label>
-                        <textarea id="address" name="address" placeholder="Nhập địa chỉ giao hàng của bạn" readonly ="check"></textarea>
+                        <textarea id="address" name="address" placeholder="Nhập địa chỉ giao hàng của bạn" readonly=""></textarea>
                     </div>
                 </form>
             </div>
@@ -400,10 +488,10 @@
                 <!-- Khung hiển thị ảnh -->
                 <h2>Avatar</h2>
                 <div class="avatar">
-                    <img id="avatar-preview" src="placeholder.png" alt="Avatar">
+                    <img id="avatar-preview" src="" alt="Avatar">
                 </div>
                 <div class="form-group" style="text-align:center; margin-top: 5%">
-                    <button class="choose-button" onclick="document.getElementById('avatar').click()" ; id="btn_image">Chọn ảnh</button>
+                    <button class="choose-button" onclick="document.getElementById('avatar').click()" id="btn_image" style="display:none">Chọn ảnh</button>
 
                     <input type="file" id="avatar" accept="image/*" onclick="Getimage()">
                 </div>
@@ -414,37 +502,13 @@
             <button class="choose-button" onclick="btn_save()" id="btn_save" style="margin-right: 5%">Lưu thông tin</button>
             <button class="choose-button" onclick="btn_cancel()" id="btn_cancel" style="margin-left: 5%">Hủy</button>
         </div>
-       
+
     </div>
     <!-- Tab theo dõi đơn hàng -->
     <div id="OrderHistory" class="tabcontent">
         <h2>Lịch sử đặt hàng</h2>
         <br />
         <h4 id="totalItem" style="float:right"></h4>
-        <style>
-            table {
-                width: 100%;
-                border-collapse: collapse;
-            }
-
-            th, td {
-                border: 1px solid #ddd;
-                padding: 8px;
-                text-align: left;
-            }
-
-            th {
-                background-color: #f2f2f2;
-            }
-
-            tr:nth-child(even) {
-                background-color: #f9f9f9;
-            }
-
-            th.center {
-                text-align: center
-            }
-        </style>
         <br />
         <table>
             <thead>
@@ -466,5 +530,29 @@
             <button id="next-btn" onclick="nextBtn()">Next</button>
         </div>
 
+    </div>
+
+    <!-- Tab đổi mật khẩu -->
+    <div id="ChangPass" class="tabcontent">
+        <div class="form-container">
+            <h2>Đổi mật khẩu</h2>
+            <form>
+                <div class="form-group">
+                    <label for="name">Mật khẩu cũ:</label>
+                    <input type="text" id="old_pass" name="old_pass" placeholder="Nhập mật khẩu cũ của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="email">Mật khẩu mới:</label>
+                    <input type="email" id="new_pass" name="new_pass" placeholder="Nhập mật khẩu mới của bạn">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Xác nhận mật khẩu mới:</label>
+                    <input type="tel" id="confim_pass" name="confim_pass" placeholder="Xác nhận mật khẩu mới">
+                </div>
+            </form>
+        </div>
+        <div style="text-align: center;">
+            <button class="choose-button" onclick="btn_change()" id="btn_change" style="margin-left: 5%">Xác nhận</button>
+        </div>
     </div>
 </div>

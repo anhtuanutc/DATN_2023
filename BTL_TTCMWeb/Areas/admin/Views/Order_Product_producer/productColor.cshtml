@@ -38,7 +38,7 @@
         }
         function Laycolor() {
             $.ajax({
-                url: 'https://localhost:44386/laycolor' ,
+                url: '/laycolor' ,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -60,7 +60,7 @@
         }
         function Layproduct() {
             $.ajax({
-                url: 'https://localhost:44386/Layproduct',
+                url: '/Layproduct',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -82,7 +82,7 @@
         }
         function LaytheomaTB(id) {
             $.ajax({
-                url: ' https://localhost:44386/xyzz/' + id,
+                url: '/xyzz/' + id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -103,7 +103,7 @@
         }
         function GetAll() {
                 $.ajax({
-                    url: ' https://localhost:44386/Layproductcolor/',
+                    url: '/Layproductcolor/',
                     method: 'GET',
                     contentType: 'json',
                     dataType: 'json',
@@ -141,7 +141,7 @@
                 });
             }
               function addproductcolor() {
-                  var url = 'https://localhost:44386/api/Order_product_producer_API/?id=' +
+                  var url = '/api/Order_product_producer_API/?id=' +
                       $("input[name='id']").val() + '&color_id=' + $("select[name='color_id']").val() + '&product_id=' + $("select[name='product_id']").val() + '&size=' + $("input[name='size']").val() + '&amount=' + $("input[name='amount']").val() + '&product_price=' + $("input[name='product_price']").val() + '&product_sale=' + $("input[name='product_sale']").val() + '&product_discount=' + $("input[name='product_discount']").val();
                 $.ajax({
                     url: url,
@@ -158,7 +158,7 @@
                 });
             }
             function editproductcolor() {
-            var url = 'https://localhost:44386/api/Order_product_producer_API/?id=' +
+            var url = '/api/Order_product_producer_API/?id=' +
                     $("input[name='id11']").val() + '&color_id=' + $("select[name='color_id11']").val() + '&product_id=' + $("select[name='product_id11']").val() + '&size=' + $("input[name='size11']").val() + '&amount=' + $("input[name='amount11']").val() + '&product_price=' + $("input[name='product_price11']").val() + '&product_sale=' + $("input[name='product_sale11']").val() + '&product_discount=' + $("input[name='product_discount11']").val();
 
             $.ajax({

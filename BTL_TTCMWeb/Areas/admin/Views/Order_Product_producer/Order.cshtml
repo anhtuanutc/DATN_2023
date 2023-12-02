@@ -13,7 +13,7 @@
         });
         function LayUser(user_id) {
             $.ajax({
-                url: 'https://localhost:44386/asd/' + user_id,
+                url: '/asd/' + user_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -31,7 +31,7 @@
         }
         function Laystate() {
             $.ajax({
-                url: 'https://localhost:44386/laystate',
+                url: '/laystate',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -52,7 +52,7 @@
         }
         function LaytheomaTB(order_id) {
             $.ajax({
-                url: ' https://localhost:44386/Layorder/' + order_id,
+                url: '/Layorder/' + order_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -70,7 +70,7 @@
         }
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/Layorder/',
+                url: '/Layorder/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -111,7 +111,7 @@
             })
         }
         function SuaOrder() {
-            var url = 'https://localhost:44386/api/Order_product_producer_API/?order_id=' +
+            var url = '/api/Order_product_producer_API/?order_id=' +
                 $("input[name='a']").val() + '&user_id=' + $("select[name='User']").val() +
                 '&order_receiver_note=' + $("input[name='c']").val() + '&order_total_price=' + $("input[name='d']").val() + '&order_state=' + $("select[name='stateEdit1']").val() ;
             $.ajax({
@@ -139,7 +139,7 @@
             });
         }
         function abc(order_detail_id) {
-           var url = 'https://localhost:44386/XoaCTHoaDon/' + order_detail_id
+           var url = '/XoaCTHoaDon/' + order_detail_id
            $.ajax({
                 url: url,
                 method: 'DELETE',
@@ -156,7 +156,7 @@
         }
         function Laytheoarder(order_id) {
             $.ajax({
-                url: ' https://localhost:44386/ctOrder/' + order_id,
+                url: '/ctOrder/' + order_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -185,7 +185,7 @@
             })
         }
         function XoaCTHD(order_id) {
-            var url = 'https://localhost:44386/XoaHoaDon/' + order_id
+            var url = '/XoaHoaDon/' + order_id
             $.ajax({
                 url: url,
                 method: 'DELETE',
@@ -208,7 +208,7 @@
             });
         }
         function Capnhatlaisoluong(order_id) {
-            var url = 'https://localhost:44386/ctOrder/' + order_id
+            var url = '/ctOrder/' + order_id
             $.ajax({
                 url: url,
                 method: 'GET',
@@ -226,7 +226,7 @@
             });
         }
         function TraHang(id, soluong) {
-            var url = 'https://localhost:44386/api/Order_product_producer_API/?id=' + id + '&soluong=' + soluong
+            var url = '/api/Order_product_producer_API/?id=' + id + '&soluong=' + soluong
             $.ajax({
                 url: url,
                 method: 'PUT',

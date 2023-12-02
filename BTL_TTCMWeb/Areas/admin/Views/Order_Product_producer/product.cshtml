@@ -26,7 +26,7 @@
         }
         function Laystate() {
             $.ajax({
-                url: 'https://localhost:44386/laystate',
+                url: '/laystate',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -48,7 +48,7 @@
         }
         function Layproducer() {
             $.ajax({
-                url: 'https://localhost:44386/layproducerr',
+                url: '/layproducerr',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -70,7 +70,7 @@
         }
         function Laycategory() {
             $.ajax({
-                url: 'https://localhost:44386/laycategory',
+                url: '/laycategory',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -92,7 +92,7 @@
         }
         function LaytheomaTB(product_id) {
             $.ajax({
-                url: ' https://localhost:44386/Layproduct/' + product_id,
+                url: '/Layproduct/' + product_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -116,7 +116,7 @@
         }
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/Layproduct/',
+                url: '/Layproduct/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -150,7 +150,7 @@
             })
         }
         function addProduct() {
-            var url = 'https://localhost:44386/api/Order_product_producer_API/?product_id=' +
+            var url = '/api/Order_product_producer_API/?product_id=' +
                 $("input[name='product_id2']").val()
                 + '&product_name=' + $("input[name='product_name2']").val()
                 + '&product_alias=' + $("input[name='product_alias2']").val()
@@ -176,7 +176,7 @@
             });
         }
         function editProduct() {
-            var url = 'https://localhost:44386/api/Order_product_producer_API/?product_id=' +
+            var url = '/api/Order_product_producer_API/?product_id=' +
                 $("input[name='product_id1']").val()
                 + '&product_name=' + $("input[name='product_name1']").val()
                 + '&product_alias=' + $("input[name='product_alias1']").val()

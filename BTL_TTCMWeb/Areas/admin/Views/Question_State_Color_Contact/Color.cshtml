@@ -12,7 +12,7 @@
         });
         function LaytheomaTB(color_id) {
             $.ajax({
-                url: ' https://localhost:44386/LayMau/' + color_id,
+                url: '/LayMau/' + color_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -40,7 +40,7 @@
         }
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/LayMau/',
+                url: '/LayMau/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -67,7 +67,7 @@
             })
         }
         function AddColor() {
-            var url = 'https://localhost:44386/api/Default/?color_id=' +
+            var url = '/api/Default/?color_id=' +
                 $("input[name='MaThietBi1']").val() + '&color_name=' + $("input[name='Ten1']").val() +
                 '&color_img=' + $("input[name='Email1']").val();
             $.ajax({
@@ -85,7 +85,7 @@
             });
         }
         function SuaColor() {
-            var url = 'https://localhost:44386/api/Default/?color_id=' +
+            var url = '/api/Default/?color_id=' +
                 $("input[name='MaThietBi']").val() + '&color_name=' + $("input[name='Ten']").val() +
                 '&color_img=' + $("input[name='Email']").val();
             $.ajax({

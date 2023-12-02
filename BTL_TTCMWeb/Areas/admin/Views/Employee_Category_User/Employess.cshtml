@@ -12,7 +12,7 @@
         });
         function LaytheomaTB(admin_id) {
             $.ajax({
-                url: ' https://localhost:44386/getadmin/' + admin_id,
+                url: '/getadmin/' + admin_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -52,7 +52,7 @@
         }
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/LayTaiKhoan/',
+                url: '/LayTaiKhoan/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -82,7 +82,7 @@
             })
         }
         function AddAdmin() {
-            var url = 'https://localhost:44386/api/Demo/?admin_id=' +
+            var url = '/api/Demo/?admin_id=' +
                 $("input[name='MaThietBi1']").val() + '&admin_name=' + $("input[name='Ten1']").val() +
                 '&admin_email=' + $("input[name='Email1']").val() + '&admin_phone=' + $("input[name='Phone1']").val() + '&admin_password=' + $("input[name='DiaChi1']").val()
                 + '&admin_isEmployee=' + $("select[name='Check']").val();
@@ -101,7 +101,7 @@
             });
         }
         function SuaAdmin() {
-            var url = 'https://localhost:44386/api/Demo/?admin_id=' +
+            var url = '/api/Demo/?admin_id=' +
                 $("input[name='MaThietBi']").val() + '&admin_name=' + $("input[name='Ten']").val() +
                 '&admin_email=' + $("input[name='Email']").val() + '&admin_phone=' + $("input[name='DienThoai']").val() + '&admin_password=' + $("input[name='DiaChi']").val()
                 + '&admin_isEmployee=' + $("select[name='MaLoai']").val();
@@ -135,7 +135,7 @@
             document.getElementById("Add").style.display = 'none';
         }
         function XoaContact(admin_id) {
-            var url = 'https://localhost:44386/deleteemployee/' + admin_id
+            var url = '/deleteemployee/' + admin_id
             $.ajax({
                 url: url,
                 method: 'DELETE',

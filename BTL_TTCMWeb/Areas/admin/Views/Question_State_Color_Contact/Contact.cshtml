@@ -11,7 +11,7 @@
         });
         function LaytheomaTB(id) {
             $.ajax({
-                url: ' https://localhost:44386/LayLienHe/' + id,
+                url: '/LayLienHe/' + id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -51,7 +51,7 @@
         }
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/LayLienHe/',
+                url: '/LayLienHe/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -81,7 +81,7 @@
             })
         }
         function AddContact() {
-            var url = 'https://localhost:44386/api/Default/?id=' +
+            var url = '/api/Default/?id=' +
                 $("input[name='MaThietBi1']").val() + '&name=' + $("input[name='Ten1']").val() +
                 '&email=' + $("input[name='Email1']").val() + '&phone=' + $("input[name='Phone1']").val() + '&address=' + $("input[name='DiaChi1']").val()
                 + '&comment=' + $("input[name='Cmt1']").val();
@@ -100,7 +100,7 @@
             });
         }
         function SuaContact() {
-            var url = 'https://localhost:44386/api/Default/?id=' +
+            var url = '/api/Default/?id=' +
                 $("input[name='MaThietBi']").val() + '&name=' + $("input[name='Ten']").val() +
                 '&email=' + $("input[name='Email']").val() + '&phone=' + $("input[name='DienThoai']").val() + '&address=' + $("input[name='DiaChi']").val()
                 + '&comment=' + $("input[name='Cmt']").val();
@@ -134,7 +134,7 @@
             document.getElementById("Add").style.display = 'none';
         }
         function XoaContact(id) {
-            var url = 'https://localhost:44386/XoaLienHe/' + id
+            var url = '/XoaLienHe/' + id
             $.ajax({
                 url: url,
                 method: 'DELETE',

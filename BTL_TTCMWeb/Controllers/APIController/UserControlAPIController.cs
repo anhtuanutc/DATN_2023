@@ -5,6 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 using System.Data.SqlClient;
 using System.IO;
 using System.Linq;
+using System.Web;
 using System.Web.Http;
 
 namespace BTL_TTCMWeb.Controllers.APIController
@@ -17,18 +18,19 @@ namespace BTL_TTCMWeb.Controllers.APIController
         {
             public string ProductList { get; set; }
             public double order_total_price { get; set; }
-            public DateTime Date { get; set; } 
+            public DateTime Date { get; set; }
             public string state_name { get; set; }
         }
         public class Itemprofile
         {
-            public string user_name { get; set; }   
+            public string user_name { get; set; }
             public string user_email { get; set; }
-            public string user_phone { get; set; }   
+            public string user_phone { get; set; }
             public string user_address { get; set; }
+            [NotMapped]
             public string avatar_img { get; set; }
             [NotMapped]
-            public bool isActive { get; set; } 
+            public bool isActive { get; set; }
             [NotMapped]
             public string user_status { get; set; }
         }
@@ -52,7 +54,7 @@ namespace BTL_TTCMWeb.Controllers.APIController
         //Lấy ra thông tin cho user đang đăng nhập
         [HttpGet]
         [Route("ProfileById/{userid}")]
-        public  Itemprofile ProfileById(int userid)
+        public Itemprofile ProfileById(int userid)
         {
             var item = db.Database.SqlQuery<Itemprofile>(@"select user_name, user_email, user_phone, user_address, isActive, '' as user_status, avatar_img  from tbl_user
                                                         where user_id = @user_id", new SqlParameter("@user_id", userid)).SingleOrDefault();
@@ -72,14 +74,17 @@ namespace BTL_TTCMWeb.Controllers.APIController
         {
             try
             {
+                
                 var httpRequest = System.Web.HttpContext.Current.Request;
+                string currentDirectory = httpRequest.PhysicalApplicationPath;
                 var file = httpRequest.Files[0];
                 var user_id = httpRequest.Form["user_id"];
+                currentDirectory = currentDirectory.Replace('\\', '/');
                 // Lưu ảnh vào thư mục
-                string imagePath = "D:/Bài tập lớn/Web bán tranh/BTL_TTCMWeb/BTL_TTCMWeb/" + "/images/avatar_img_" + user_id.ToString() + ".jpg"; 
+                string imagePath = currentDirectory  + "images/avatar_img_" + user_id.ToString() + ".jpg";
 
-                using(var stream = new FileStream(imagePath, FileMode.Create))
-        {
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
                     file.InputStream.CopyTo(stream);
                 }
                 string avatar_img = "/images/avatar_img_" + user_id.ToString() + ".jpg";
@@ -96,10 +101,30 @@ namespace BTL_TTCMWeb.Controllers.APIController
         //Cập nhật thông tin
         [HttpPost]
         [Route("api/upload/profile")]
-        public int Updateprofile([FromBody] string data)
+        public IHttpActionResult Updateprofile()
         {
-            db.Database.ExecuteSqlCommand("Update tbl_user SET user");
-            return 1;
+            try
+            {
+                var httpRequest = System.Web.HttpContext.Current.Request;
+                if (httpRequest.Form.Count > 0)
+                {
+                    var user_id = httpRequest.Form["user_id"];
+                    var user_name = httpRequest.Form["user_name"];
+                    var user_email = httpRequest.Form["user_email"];
+                    var user_phone = httpRequest.Form["user_phone"];
+                    var user_address = httpRequest.Form["user_address"];
+                    db.Database.ExecuteSqlCommand("Update tbl_user SET user_name = @user_name, user_email = @user_email, user_phone = @user_phone, user_address = @user_address where user_id = @user_id",
+                                new SqlParameter("@user_id", user_id), new SqlParameter("@user_name", user_name), new SqlParameter("@user_email", user_email),
+                                new SqlParameter("@user_phone", user_phone), new SqlParameter("@user_address", user_address));
+                    return Ok();
+                }
+                else return BadRequest("Không thể xử lý dữ liệu");
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+
         }
         //Cập nhật mật khẩu
         [HttpGet]
@@ -108,30 +133,16 @@ namespace BTL_TTCMWeb.Controllers.APIController
         {
             int check = 0;
             dynamic item = db.Database.SqlQuery<dynamic>(@"select 1  from tbl_user where user_id = @user_id and user_password = @pass_old", new SqlParameter("@user_id", user_id), new SqlParameter("@pass_old", pass_old)).SingleOrDefault();
-            if(item != null)
+            if (item != null)
             {
                 db.Database.ExecuteSqlCommand("UPDATE tbl_user SET user_password = @user_password WHERE user_id = @user_id", new SqlParameter("@user_id", user_id),
                             new SqlParameter("@user_password", pass_new));
                 //DeleteAllCookies();
                 //DeleteSession();
                 return 1;
-            }else return 0;
+            }
+            else return 0;
         }
-        //[HttpGet]
-        //[Route("api/DeleteAllCookies")]
-        //public IHttpActionResult DeleteAllCookies()
-        //{
-        //    HttpCookieCollection cookies = HttpContext.Current.Request.Cookies;
-
-        //    foreach (string cookieName in cookies.AllKeys)
-        //    {
-        //        HttpCookie cookie = new HttpCookie(cookieName);
-        //        cookie.Expires = DateTime.Now.AddDays(-1);
-        //        HttpContext.Current.Response.Cookies.Add(cookie);
-        //    }
-
-        //    return Ok("Tất cả các Cookie đã được xóa");
-        //}
         #endregion
     }
 }

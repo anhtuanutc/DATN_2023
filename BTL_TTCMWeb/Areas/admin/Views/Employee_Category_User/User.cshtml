@@ -12,7 +12,7 @@
 
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/tttt/',
+                url: '/tttt/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -65,7 +65,7 @@
         }
         function LayChiTietKhachHang(user_id) {
             $.ajax({
-                url: 'https://localhost:44386/Thongke/' + user_id,
+                url: '/Thongke/' + user_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -98,7 +98,7 @@
         }
         function LayChiTietHoaDon(order_id) {
             $.ajax({
-                url: ' https://localhost:44386/LayCTHD/' + order_id,
+                url: '/LayCTHD/' + order_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -128,7 +128,7 @@
         }
         function LayDHTheoMaKH(quser_id) {
             $.ajax({
-                url: 'https://localhost:44386/tttt/' + quser_id,
+                url: '/tttt/' + quser_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',

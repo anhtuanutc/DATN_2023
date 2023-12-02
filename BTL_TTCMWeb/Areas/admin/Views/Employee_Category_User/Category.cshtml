@@ -11,7 +11,7 @@
         });
         function LaytheomaTB(category_id) {
             $.ajax({
-                url: ' https://localhost:44386/LayDanhMuc/' + category_id,
+                url: '/LayDanhMuc/' + category_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -37,7 +37,7 @@
         }
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/LayDanhMuc/',
+                url: '/LayDanhMuc/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -64,7 +64,7 @@
             })
         }
         function AddCategory() {
-            var url = 'https://localhost:44386/api/Demo/?category_id=' +
+            var url = '/api/Demo/?category_id=' +
                 $("input[name='MaThietBi1']").val() + '&category_name=' + $("input[name='Ten1']").val() + '&category_parent=' + $("input[name='Abc1']").val();
             $.ajax({
                 url: url,
@@ -81,7 +81,7 @@
             });
         }
         function SuaCategory() {
-            var url = 'https://localhost:44386/api/Demo/?category_id=' +
+            var url = '/api/Demo/?category_id=' +
                 $("input[name='MaThietBi']").val() + '&category_name=' + $("input[name='Ten']").val() + '&category_parent=' + $("input[name='Abc']").val();
             $.ajax({
                 url: url,

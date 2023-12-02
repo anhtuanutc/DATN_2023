@@ -11,7 +11,7 @@
         });
         function LaytheomaTB() {
             $.ajax({
-                url: ' https://localhost:44386/LayCauHoi/',
+                url: '/LayCauHoi/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -32,7 +32,7 @@
         }
         function checkTK() {
             $.ajax({
-                url: ' https://localhost:44386/Ha/' + $("input[name='TaiKhoan']").val(),
+                url: '/Ha/' + $("input[name='TaiKhoan']").val(),
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -52,7 +52,7 @@
         }
         function UpdateMK() {
             $.ajax({
-                url: ' https://localhost:44386/api/LayMatKhau/?user_name=' + $("input[name='TaiKhoan']").val() + + '&user_password=' + $("input[name='password_new']").val(),
+                url: '/api/LayMatKhau/?user_name=' + $("input[name='TaiKhoan']").val() + + '&user_password=' + $("input[name='password_new']").val(),
                 method: 'PUT',
                 contentType: 'json',
                 dataType: 'json',

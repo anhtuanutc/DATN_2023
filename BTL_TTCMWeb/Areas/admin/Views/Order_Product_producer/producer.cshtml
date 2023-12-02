@@ -24,7 +24,7 @@
         }
         function Laystate() {
             $.ajax({
-                url: 'https://localhost:44386/laystate',
+                url: '/laystate',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -46,7 +46,7 @@
         }
         function LaytheomaTB(producer_id) {
             $.ajax({
-                url: ' https://localhost:44386/Layproducer/' + producer_id,
+                url: '/Layproducer/' + producer_id,
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -65,7 +65,7 @@
         }
         function GetAll() {
             $.ajax({
-                url: ' https://localhost:44386/Layproducer/',
+                url: '/Layproducer/',
                 method: 'GET',
                 contentType: 'json',
                 dataType: 'json',
@@ -94,7 +94,7 @@
         }
        
         function addproducer() {
-            var url = 'https://localhost:44386/api/Order_product_producer_API/?producer_id=' +
+            var url = '/api/Order_product_producer_API/?producer_id=' +
                 $("input[name='producer_id1']").val() + '&producer_name=' + $("input[name='producer_name1']").val() + '&producer_address=' + $("input[name='producer_address1']").val() + '&state=' + $("select[name='stateAdd']").val();
             $.ajax({
                 url: url,
@@ -111,7 +111,7 @@
             });
         }
         function editproducer() {
-            var url = 'https://localhost:44386/api/Order_product_producer_API/?producer_id=' +
+            var url = '/api/Order_product_producer_API/?producer_id=' +
                 $("input[name='producer_id']").val() + '&producer_name=' + $("input[name='producer_name']").val() + '&producer_address=' + $("input[name='producer_address']").val() + '&state=' + $("select[name='stateEdit']").val();
             $.ajax({
                 url: url,
