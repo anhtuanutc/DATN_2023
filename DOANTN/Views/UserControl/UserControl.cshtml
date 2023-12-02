@@ -268,9 +268,10 @@
                         table = table + '<tr>'
                         table = table + '<td style = "text-align: center">' + STT + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].ProductList + '</td>';
-                        table = table + '<td style="max-width : 200px;text-align: right;">' + reponse[i].order_total_price + '</td>';
+                        table = table + '<td style="max-width : 80px;text-align: right;">' + reponse[i].order_total_price + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].Date + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].state_name + '</td>';
+                        table = table + '<td style="max-width : 200px">' + '</td>';
                         //Thêm nút hủy đơn nếu đơn đang chuẩn bị
                         table = table + '<tr>'
 
@@ -358,7 +359,27 @@
         }
         //Đổi mật khẩu
         function changePassWord() {
+            var formData = new FormData();
+            var myCookieValue = getCookieValue('hawuser_id');
+            formData.append('user_id', Number(myCookieValue));
+            formData.append('new_pass', $("#new_pass").val());
+            $.ajax({
+                type: 'POST',
+                url: '/api/upload/password',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    alert('Thay đổi mật khẩu thành công, vui lòng đăng nhập lại để cập nhật sự thay đổi');
+                    $("#new_pass").val('');
+                    $("#confim_pass").val('');
+                    $("#old_pass").val('');
 
+                },
+                error: function (error) {
+                    alert('Thay đổi mật khẩu không thành công');
+                }
+            })
         }
 
         //Giao diện web
@@ -450,10 +471,16 @@
             });
         }
         function btn_change() {
-            var confirmation = confirm("Bạn có chắc chắn muốn đổi mật khẩu không?");
-            if (confirmation) {
-                changePassWord();
-            } 
+            if ($("#new_pass").val() == $("#confim_pass").val()) {
+                if ($("#new_pass").val() != $("#old_pass").val()) {
+                    var confirmation = confirm("Bạn có chắc chắn muốn đổi mật khẩu không?");
+                    if (confirmation) {
+                        changePassWord();
+                    } 
+                }
+                else alert("Pass mới không được giống Pass cũ");
+            }
+            else alert("Pass mới phải giống xác nhận mật khẩu mới");
         }
 
     </script>
@@ -518,9 +545,10 @@
                 <tr>
                     <th class="center">STT</th>
                     <th class="center">Danh sách sản phẩm</th>
-                    <th class="center">Tổng tiền hóa đơn</th>
+                    <th class="center" style="max-width : 80px !important">Tổng tiền hóa đơn</th>
                     <th class="center">Thời gian cập nhật cuối</th>
-                    <th class="center">Tình trạng đơn hàng</th>
+                    <th class="center" style="width : 150px !important">Tình trạng đơn hàng</th>
+                    <th class="center">Control</th>
                 </tr>
             </thead>
             <tbody id="data">
@@ -542,15 +570,15 @@
             <form>
                 <div class="form-group">
                     <label for="name">Mật khẩu cũ:</label>
-                    <input type="text" id="old_pass" name="old_pass" placeholder="Nhập mật khẩu cũ của bạn">
+                    <input type="password" id="old_pass" name="old_pass" placeholder="Nhập mật khẩu cũ của bạn">
                 </div>
                 <div class="form-group">
                     <label for="email">Mật khẩu mới:</label>
-                    <input type="email" id="new_pass" name="new_pass" placeholder="Nhập mật khẩu mới của bạn">
+                    <input type="password" id="new_pass" name="new_pass" placeholder="Nhập mật khẩu mới của bạn">
                 </div>
                 <div class="form-group">
                     <label for="phone">Xác nhận mật khẩu mới:</label>
-                    <input type="tel" id="confim_pass" name="confim_pass" placeholder="Xác nhận mật khẩu mới">
+                    <input type="password" id="confim_pass" name="confim_pass" placeholder="Xác nhận mật khẩu mới">
                 </div>
             </form>
         </div>

@@ -135,7 +135,7 @@ namespace BTL_TTCMWeb.Controllers.APIController
             {
                 var httpRequest = System.Web.HttpContext.Current.Request;
                 var user_id = httpRequest.Form["user_id"];
-                var pass_new = httpRequest.Form["pass_new"];
+                var pass_new = httpRequest.Form["new_pass"];
                 dynamic item = db.Database.SqlQuery<dynamic>(@"select 1  from tbl_user where user_id = @user_id", new SqlParameter("@user_id", user_id)).SingleOrDefault();
                 if (item != null)
                 {
