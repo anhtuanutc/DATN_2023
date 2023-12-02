@@ -271,7 +271,11 @@
                         table = table + '<td style="max-width : 80px;text-align: right;">' + reponse[i].order_total_price + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].Date + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].state_name + '</td>';
-                        table = table + '<td style="max-width : 200px">' + '</td>';
+                        if (reponse[i].state_id == 12) {
+                            table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="CancelOrder(\'' + reponse[i].order_id + '\')">Hủy đơn hàng</button></td>'
+                        } else {
+                            table = table + '<td style="max-width : 150px">' + '</td>';
+                        }
                         //Thêm nút hủy đơn nếu đơn đang chuẩn bị
                         table = table + '<tr>'
 
@@ -380,6 +384,30 @@
                     alert('Thay đổi mật khẩu không thành công');
                 }
             })
+        }
+        //Hủy đơn hàng
+        function CancelOrder(order_id) {
+            var confirmation = confirm("Bạn có chắc chắn muốn hủy đơn hàng này không?");
+            if (confirmation) {
+                var formData = new FormData();
+                formData.append('order_id', Number(order_id));
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/upload/state_order',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        alert('Hủy đơn hàng thành công');
+                        var myCookieValue = getCookieValue('hawuser_id');
+                        displayData(1, myCookieValue);
+                    },
+                    error: function (error) {
+                        alert('Hủy đơn hàng không thành công');
+                    }
+                })
+            } 
+            
         }
 
         //Giao diện web
@@ -548,7 +576,7 @@
                     <th class="center" style="max-width : 80px !important">Tổng tiền hóa đơn</th>
                     <th class="center">Thời gian cập nhật cuối</th>
                     <th class="center" style="width : 150px !important">Tình trạng đơn hàng</th>
-                    <th class="center">Control</th>
+                    <th class="center" style="width : 150px !important">Control</th>
                 </tr>
             </thead>
             <tbody id="data">

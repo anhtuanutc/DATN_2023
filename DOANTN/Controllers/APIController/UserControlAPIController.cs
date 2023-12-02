@@ -20,6 +20,10 @@ namespace BTL_TTCMWeb.Controllers.APIController
             public double order_total_price { get; set; }
             public DateTime Date { get; set; }
             public string state_name { get; set; }
+            [NotMapped]
+            public int state_id { get; set; }
+            [NotMapped]
+            public int order_id { get; set; }
         }
         public class Itemprofile
         {
@@ -42,13 +46,13 @@ namespace BTL_TTCMWeb.Controllers.APIController
         [Route("GetDS/{parameterValue}")]
         public List<ResultModel> GetDS(int parameterValue)
         {
-            var result = db.Database.SqlQuery<ResultModel>(@"select STRING_AGG(d.product_name, ', ') AS ProductList, a.order_total_price, a.date, e.state_name 
+            var result = db.Database.SqlQuery<ResultModel>(@"select STRING_AGG(d.product_name, ', ') AS ProductList, a.order_total_price, a.date, e.state_name, a.order_state as state_id, a.order_id 
                             from tbl_Order a left join tbl_orderDetail b on a.order_id = b.oder_id
                             left join tbl_productColor c on b.productColor_id = c.id
                             left join tbl_product d on c.product_id = d.product_id
                             left join tbl_state e on a.order_state = e.state_id
                             where a.user_id = @ParamValue 
-                            group by a.order_id, a.date, e.state_name, a.order_total_price", new SqlParameter("@ParamValue", parameterValue)).ToList();
+                            group by a.order_id, a.date, e.state_name, a.order_total_price, a.order_state,a.order_id", new SqlParameter("@ParamValue", parameterValue)).ToList();
             return result;
         }
         //Lấy ra thông tin cho user đang đăng nhập
@@ -150,6 +154,29 @@ namespace BTL_TTCMWeb.Controllers.APIController
             {
                 return InternalServerError(ex);
             }  
+        }
+        //Khách hủy đơn hàng
+        [HttpPost]
+        [Route("api/upload/state_order")]
+        public IHttpActionResult ChangeStateOrder()
+        {
+            try
+            {
+                var httpRequest = System.Web.HttpContext.Current.Request;
+                var order_id = httpRequest.Form["order_id"];
+                dynamic item = db.Database.SqlQuery<dynamic>(@"select 1  from tbl_Order where order_id = @order_id", new SqlParameter("@order_id", order_id)).SingleOrDefault();
+                if (item != null)
+                {
+                    db.Database.ExecuteSqlCommand("UPDATE tbl_Order SET order_state =6, date = CURRENT_TIMESTAMP WHERE order_id = @order_id", new SqlParameter("@order_id", order_id));
+                    return Ok();
+                }
+                else return BadRequest("không tồn tại đơn hàng");
+
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
         }
         #endregion
     }
