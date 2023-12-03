@@ -261,7 +261,11 @@
                     alert("Lỗi");
                 },
                 success: function (reponse) {
-                    total = reponse.length;;
+                    total = reponse.length;
+                    if (total <= rowsPerPage) {
+                        document.getElementById("next-btn").style.display = 'none';
+                        document.getElementById("prev-btn").style.display = 'none';
+                    }
                     let table = '';
                     for (var i = startIndex; i < endIndex; ++i) {
                         let STT = i + 1;
@@ -431,7 +435,7 @@
                 displayData(currentPage, myCookieValue);
                 document.getElementById("next-btn").style.display = 'inline';
                 document.getElementById("prev-btn").style.display = 'inline';
-            } if (currentPage + 1 >= maxPage) {
+            } if (currentPage + 1 > maxPage) {
                 document.getElementById("next-btn").style.display = 'none';
             }
         }

@@ -5,10 +5,60 @@
 }
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>
+    #Edit,#Add {
+        display: flex;
+    }
+
+    table {
+        flex: 1;
+        padding: 20px;
+    }
+
+    .avatar-container {
+        flex: 1;
+        padding-left: 10%;
+    }
+    input[type="file"] {
+        display: none;
+    }
+
+    .avatar {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        border: 1px dashed #ccc;
+        border-radius: 50%;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+        .avatar img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+        }
+
+    label[for="avatar-upload"] {
+        position: absolute;
+        bottom: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #fff;
+        padding: 5px 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+</style>
 @section scripts{
     <script type="text/javascript">
+        const rowsPerPage = 5;
+        let currentPage = 1;
+        var total = 0;
         $(document).ready(function () {
-            GetAll();
+            displayData(currentPage);
+            document.getElementById("prev-btn").style.display = 'none';
         });
         function LaytheomaTB(admin_id) {
             $.ajax({
@@ -25,7 +75,7 @@
                         $("#txtEmail").val(res.admin_email),
                         $("#txtDienThoai").val(res.admin_phone),
                         $("#txtPass").val(res.admin_password),
-                        $("#value2").val(res.admin_isEmployee)
+                        $('#value2_edit').val(res.admin_isEmployee.toString())
                 },
                 fail: function (response) { }
             })
@@ -50,7 +100,7 @@
                 AddAdmin();
             }
         }
-        function GetAll() {
+        function GetAll(startIndex, endIndex) {
             $.ajax({
                 url: '/LayTaiKhoan/',
                 method: 'GET',
@@ -61,8 +111,13 @@
                 },
                 success: function (reponse) {
                     const len = reponse.length;
+                    total = reponse.length;
+                    if (len <= rowsPerPage) {
+                        document.getElementById("next-btn").style.display = 'none';
+                        document.getElementById("prev-btn").style.display = 'none';
+                    }
                     let table = '';
-                    for (var i = 0; i < len; ++i) {
+                    for (var i = startIndex; i < endIndex; ++i) {
                         let STT = i + 1;
                         table = table + '<tr>'
                         table = table + '<td>' + STT + '</td>';
@@ -75,8 +130,7 @@
                         table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].admin_id + '\')">Sửa</button> <button type="button" class="btn btn-danger" onclick="XoaContact(\'' + reponse[i].admin_id + '\')">Xóa</button></td>';
                         table = table + '<tr>'
 
-                        document.getElementById('data').innerHTML = table;
-                    }
+                        document.getElementById('data').innerHTML = table;                    }
                 },
                 fail: function (response) { }
             })
@@ -157,6 +211,93 @@
                 }
             });
         }
+
+        function saveImageToAPI(formData) {
+            $.ajax({
+                type: 'POST',
+                url: '/api/upload/avatar',
+                data: formData,
+                contentType: false,
+                processData: false,
+                success: function (response) {
+                    alert('Upload ảnh thành công');
+                    //Load lại trang web
+                    location.reload();
+                    window.location.reload(true);
+                    reload(currentPage);
+                },
+                error: function (error) {
+                    alert('Upload ảnh không thành công');
+                }
+            })
+        }
+        function getCookieValue(cookieName) {
+            const name = cookieName + '=';
+            const decodedCookie = decodeURIComponent(document.cookie);
+            const cookieArray = decodedCookie.split(';');
+
+            for (let i = 0; i < cookieArray.length; i++) {
+                let cookie = cookieArray[i];
+                while (cookie.charAt(0) === ' ') {
+                    cookie = cookie.substring(1);
+                }
+                if (cookie.indexOf(name) === 0) {
+                    return cookie.substring(name.length, cookie.length);
+                }
+            }
+            return '';
+        }
+        function Getimage() {
+            document.getElementById('avatar').addEventListener('change', function (e) {
+                const file = e.target.files[0];
+                const preview = document.getElementById('avatar-preview');
+                let formData = new FormData();
+
+                if (file) {
+                    const reader = new FileReader();
+                    reader.onload = function (e) {
+                        var myCookieValue = getCookieValue('Employee');
+                        preview.src = e.target.result;
+                        formData.append('image', file);
+                        formData.append('user_id', Number(myCookieValue));
+                        saveImageToAPI(formData);
+                    }
+                    reader.readAsDataURL(file);
+                } else {
+                    preview.src = "placeholder.png"; // Ảnh mặc định nếu không chọn file
+                }
+            });
+        }
+        function displayData(page) {
+            var startIndex = (page - 1) * rowsPerPage;
+            var pageInfo = document.getElementById('page-info');
+            var endIndex = startIndex + rowsPerPage;
+            if (endIndex > total && total != 0) endIndex = total;
+            GetAll(startIndex, endIndex);
+            pageInfo.textContent = `Page ${currentPage}`;
+        }
+        function prevBtn() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayData(currentPage);
+                document.getElementById("next-btn").style.display = 'inline';
+                document.getElementById("prev-btn").style.display = 'inline';
+            } if (currentPage - 1 <= 0) {
+                //Trang đầu ẩn nút prev
+                document.getElementById("prev-btn").style.display = 'none';
+            }
+        }
+        function nextBtn() {
+            const maxPage = Math.ceil(total / rowsPerPage);
+            if (currentPage < maxPage) {
+                currentPage++;
+                displayData(currentPage);
+                document.getElementById("next-btn").style.display = 'inline';
+                document.getElementById("prev-btn").style.display = 'inline';
+            } if (currentPage + 1 > maxPage) {
+                document.getElementById("next-btn").style.display = 'none';
+            }
+        }
     </script>
 }
 <div id="Tim" class="container">
@@ -181,61 +322,83 @@
             <tbody id="data">
             </tbody>
         </table>
+        <br />
+        <div id="pagination-container">
+            <button id="prev-btn" onclick="prevBtn()">Prev</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-btn" onclick="nextBtn()">Next</button>
+        </div>
     </div>
 </div>
 <div class="container" id="Edit" style="display:none">
-    <table style="border:none">
-        <tbody>
-            <tr>
-                <td>ID: </td>
-                <td>
-                    <input id="txtThietBi" type="text" name="MaThietBi" style="margin-bottom: 10px; border-radius: 2px; width: 280px" readonly />
-                </td>
-            </tr>
-            <tr>
-                <td>Tên: </td>
-                <td>
-                    <input id="txtTen" type="text" name="Ten" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>Email: </td>
-                <td>
-                    <input id="txtEmail" type="text" name="Email" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>Điện thoại: </td>
-                <td>
-                    <input id="txtDienThoai" type="text" name="DienThoai" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>Password: </td>
-                <td>
-                    <input id="txtPass" type="text" name="DiaChi" class="form-control" style="margin-bottom: 10px;">
-                </td>
-            </tr>
-            <tr>
-                <td>isEmployee: </td>
-                <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value2" name="MaLoai">
-                        <option value="true">True</option>
-                        <option value="false">False</option>
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td style="display: inline-flex">
-                    <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
-                    <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
-                            onclick="SuaAdmin();">
-                        Cập nhật
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+    <div style="display: inline-block; vertical-align: top;">
+        <h2 style="text-align: center">Thông tin người dùng</h2>
+        <table style="border: none; ">
+            <tbody>
+                <tr>
+                    <td>ID: </td>
+                    <td>
+                        <input id="txtThietBi" type="text" name="MaThietBi" style="margin-bottom: 10px; border-radius: 2px; width: 280px" readonly />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tên: </td>
+                    <td>
+                        <input id="txtTen" type="text" name="Ten" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Email: </td>
+                    <td>
+                        <input id="txtEmail" type="text" name="Email" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Điện thoại: </td>
+                    <td>
+                        <input id="txtDienThoai" type="text" name="DienThoai" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>Password: </td>
+                    <td>
+                        <input id="txtPass" type="text" name="DiaChi" class="form-control" style="margin-bottom: 10px;">
+                    </td>
+                </tr>
+                <tr>
+                    <td>isEmployee: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value2_edit" name="MaLoai">
+                            <option value="true">True</option>
+                            <option value="false">False</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr style="text-align: center">
+                    <td style="display: inline-flex">
+                        <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
+                        <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
+                                onclick="SuaAdmin();">
+                            Cập nhật
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+   
+    <!--<div class="avatar-container" style="display: inline-block; vertical-align: top; text-align: center">-->
+        <!-- Khung hiển thị ảnh -->
+        <!--<h2>Avatar</h2>
+        <div class="avatar">
+            <img id="avatar-preview" src="" alt="Avatar">
+        </div>
+        <div class="form-group" style="text-align:center; margin-top: 5%">
+            <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="document.getElementById('avatar').click()" id="btn_image">Chọn ảnh</button>
+            <input type="file" id="avatar" accept="image/*" onclick="Getimage()">
+        </div>
+    </div>-->
+
 </div>
 <div class="container" id="Add" style="display:none">
     <table style="border:none">

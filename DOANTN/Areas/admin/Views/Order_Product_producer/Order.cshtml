@@ -5,11 +5,18 @@
 }
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+
 @section scripts{
     <script type="text/javascript">
+        const rowsPerPage = 5;
+        let currentPage = 1;
+        var total = 0;
+        var id_sp = '';
         $(document).ready(function () {
             Laystate();
-            GetAll();
+            displayData(currentPage);
+            document.getElementById("prev-btn").style.display = 'none';
         });
         function LayUser(user_id) {
             $.ajax({
@@ -68,7 +75,7 @@
                 fail: function (response) { }
             })
         }
-        function GetAll() {
+        function GetAll(startIndex, endIndex) {
             $.ajax({
                 url: '/Layorder/',
                 method: 'GET',
@@ -79,9 +86,14 @@
                 },
                 success: function (reponse) {
                     const len = reponse.length;
+                    total = reponse.length;
+                    if (len <= rowsPerPage) {
+                        document.getElementById("next-btn").style.display = 'none';
+                        document.getElementById("prev-btn").style.display = 'none';
+                    }
                     let table = '';
-                    for (var i = 0; i < len; ++i) {
-                        if (reponse[i].order_receiver_note == null) {
+                    for (var i = startIndex; i < endIndex; ++i) {
+                        if (reponse[i].order_receiver_note == null || reponse[i].order_receiver_note == '') {
                             reponse[i].order_receiver_note = "Không có yêu cầu gì";
                         }
                         let STT = i + 1;
@@ -92,11 +104,12 @@
                         table = table + '<td style="max-width : 200px">' + reponse[i].order_receiver_note + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].order_total_price + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].state_name + '</td>';
-                        if (reponse[i].state_name == "Đã hủy") {
+                        var check = reponse[i].state_name.toLowerCase();
+                        if (check.includes("hủy")) {
                             table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="XoaCTHD(\'' + reponse[i].order_id + '\'),abc(\'' + reponse[i].order_detail_id  + '\')">Xóa</button> <button type="button" class="btn btn-danger" onclick="HienThi1(),Laytheoarder(\'' + reponse[i].order_id + '\')">Chi Tiết</button></td>';
                         //        table = table + '<td style="max-width : 200px"><button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].order_id + '\'),LayUser(\'' + reponse[i].user_id + '\')">Sửa</button></td>';
                         }
-                        else if (reponse[i].state_name == "Đã giao hàng") {
+                        else if (check.includes("giao hàng")) {
                             table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThi1(),Laytheoarder(\'' + reponse[i].order_id + '\')">Chi Tiết</button></td>';
                         }
                         else {
@@ -105,6 +118,7 @@
                         table = table + '<tr>'
 
                         document.getElementById('data').innerHTML = table;
+                        document.getElementById('totalItem').innerHTML = 'Tổng số bản ghi: ' + len;
                     }
                 },
                 fail: function (response) { }
@@ -166,6 +180,7 @@
                 success: function (reponse) {
                     const len = reponse.length;
                     let table = '';
+                    id_sp = order_id;
                     for (var i = 0; i < len; ++i) {
                         let STT = i + 1;
                         table = table + '<tr>'
@@ -257,31 +272,85 @@
         function HienThi1() {
             document.getElementById("HienThi").style.display = 'inline';
         }
+
+        function displayData(page) {
+            var startIndex = (page - 1) * rowsPerPage;
+            var pageInfo = document.getElementById('page-info');
+            var endIndex = startIndex + rowsPerPage;
+            if (endIndex > total && total != 0) endIndex = total;
+            GetAll(startIndex, endIndex);
+            pageInfo.textContent = `Page ${currentPage}`;
+        }
+        function prevBtn() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayData(currentPage);
+                document.getElementById("next-btn").style.display = 'inline';
+                document.getElementById("prev-btn").style.display = 'inline';
+            } if (currentPage - 1 <= 0) {
+                //Trang đầu ẩn nút prev
+                document.getElementById("prev-btn").style.display = 'none';
+            }
+        }
+        function nextBtn() {
+            const maxPage = Math.ceil(total / rowsPerPage);
+            if (currentPage < maxPage) {
+                currentPage++;
+                displayData(currentPage);
+                document.getElementById("next-btn").style.display = 'inline';
+                document.getElementById("prev-btn").style.display = 'inline';
+            } if (currentPage + 1 > maxPage) {
+                document.getElementById("next-btn").style.display = 'none';
+            }
+        }
+
+        function printPDF(id_sp) {
+            fetch('/report/getinvoicereport/' + id_sp)
+                .then(response => response.blob())
+                .then(blob => {
+                    // Tạo blob URL từ tệp PDF
+                    const file = new Blob([blob], { type: 'application/pdf' });
+                    const fileURL = URL.createObjectURL(file);
+
+                    // Mở URL trong tab mới
+                    window.open(fileURL, '_blank');
+                });
+
+            console.log(id_sp);
+        }
     </script>
 }
 <div id="Tim" class="container">
     <div class="container" style="width:100%;">
-        <h1 style="text-align:center">Bảng Order</h1>
+        <h1 style="text-align:center">Bảng đơn hàng xuất</h1>
         <br>
+        <h4 id="totalItem" style="float:right"></h4>
         <table class="table table-bordered" style="width:100%;">
             <thead>
                 <tr>
                     <th>STT</th>
-                    <th>Order_ID</th>
-                    <th>User_Name</th>
-                    <th>Order_Receiver_Note</th>
-                    <th>Order_Total_Price</th>
-                    <th>Order_State</th>
-                    <th>Manipulate</th>
+                    <th>Mã đơn hàng</th>
+                    <th>Tên người mua</th>
+                    <th>Ghi chú đơn hàng</th>
+                    <th>Tổng tiền đơn</th>
+                    <th>Trạng thái đơn</th>
+                    <th>Điều khiển</th>
                 </tr>
             </thead>
             <tbody id="data">
             </tbody>
         </table>
+        <br />
+        <div id="pagination-container">
+            <button id="prev-btn" onclick="prevBtn()">Prev</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-btn" onclick="nextBtn()">Next</button>
+        </div>
     </div>
 </div>
 <div id="HienThi" style="display:none">
     <h1 style="text-align:center">Chi tiết hoá đơn</h1>
+    <button id="" onclick="printPDF(id_sp)">Print Invoice Report</button>
     <table class="table table-hover" style="text-align:center">
         <thead>
             <tr>
@@ -302,34 +371,34 @@
 <div class="container" id="Edit" style="display:none">
     <table style="border:none">
         <tbody>
-            <tr>
+            <tr style="display:none">
                 <td>Order_ID:</td>
                 <td>
                     <input id="a" type="text" name="a" style="margin-bottom: 10px; border-radius: 2px; width: 280px" readonly />
                 </td>
             </tr>
-            <tr>
+            <tr style="display:none">
                 <td>User_ID: </td>
                 <td>
-                   
+
                     <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="User" name="User" onchange="">
                     </select>
                 </td>
             </tr>
-            <tr>
+            <tr style="display:none">
                 <td>Order_Receiver_Note: </td>
                 <td>
                     <input id="c" type="text" name="c" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
                 </td>
             </tr>
-            <tr>
+            <tr style="display:none">
                 <td>Order_Total_Price: </td>
                 <td>
                     <input id="d" type="text" name="d" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
                 </td>
             </tr>
             <tr>
-                <td>state: </td>
+                <td>Trạng thái đơn hàng: </td>
                 <td>
                     <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value11" name="stateEdit1" onchange="">
                     </select>

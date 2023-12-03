@@ -7,11 +7,16 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 @section scripts{
     <script type="text/javascript">
+        const rowsPerPage = 5;
+        let currentPage = 1;
+        var total = 0;
         $(document).ready(function () {
             Laystate();
             Layproducer();
             Laycategory();
-            GetAll();
+            displayData(currentPage);
+            document.getElementById("prev-btn").style.display = 'none';
+
         });
         function checkproduct() {
             if ($("input[name='product_id2']").val() == '') {
@@ -108,13 +113,13 @@
                         $("#product_img1").val(res.product_img),
                         $("#product_sub_img1").val(res.product_sub_img),
                         $("#value1").val(res.state),                    
-                            $("#value2").val(res.product_producer),
-                            $("#value3").val(res.category_id)
+                        $("#value2").val(res.product_producer),
+                         $("#value3").val(res.category_id)
                 },
                 fail: function (response) { }
             })
         }
-        function GetAll() {
+        function GetAll(startIndex, endIndex) {
             $.ajax({
                 url: '/Layproduct/',
                 method: 'GET',
@@ -124,9 +129,14 @@
                     alert("Lỗi");
                 },
                 success: function (reponse) {
-                    const len = reponse.length;
                     let table = '';
-                    for (var i = 0; i < len; ++i) {
+                    const len = reponse.length;
+                    total = reponse.length;
+                    if (len <= rowsPerPage) {
+                        document.getElementById("next-btn").style.display = 'none';
+                        document.getElementById("prev-btn").style.display = 'none';
+                    }
+                    for (var i = startIndex; i < endIndex; ++i) {
                         if (reponse[i].product_sub_img == null || reponse[i].product_sub_img == "") {
                             reponse[i].product_sub_img = "Không có";
                         }
@@ -216,31 +226,68 @@
             document.getElementById("Tim").style.display = 'inline';
             document.getElementById("Add").style.display = 'none';
         }
+
+        function displayData(page) {
+            var startIndex = (page - 1) * rowsPerPage;
+            var pageInfo = document.getElementById('page-info');
+            var endIndex = startIndex + rowsPerPage;
+            if (endIndex > total && total != 0) endIndex = total;
+            GetAll(startIndex, endIndex);
+            pageInfo.textContent = `Page ${currentPage}`;
+        }
+        function prevBtn() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayData(currentPage);
+                document.getElementById("next-btn").style.display = 'inline';
+                document.getElementById("prev-btn").style.display = 'inline';
+            } if (currentPage - 1 <= 0) {
+                //Trang đầu ẩn nút prev
+                document.getElementById("prev-btn").style.display = 'none';
+            }
+        }
+        function nextBtn() {
+            const maxPage = Math.ceil(total / rowsPerPage);
+            if (currentPage < maxPage) {
+                currentPage++;
+                displayData(currentPage);
+                document.getElementById("next-btn").style.display = 'inline';
+                document.getElementById("prev-btn").style.display = 'inline';
+            } if (currentPage + 1 > maxPage) {
+                document.getElementById("next-btn").style.display = 'none';
+            }
+        }
     </script>
 }
 <div id="Tim" class="container">
     <div class="container" style="width:100%;">
-        <h1 style="text-align:center">Table Product</h1>
+        <h1 style="text-align:center">Bảng sản phẩm</h1>
         <button class="btn btn-info" style="float: left; margin-bottom: 20px;" onclick="HienThiAdd();">Add Product</button></a>
         <br>
         <table class="table table-bordered" style="width:100%;">
             <thead>
                 <tr>
                     <th>STT</th>
-                    <th>product_id</th>
-                    <th>product_name</th>
-                    <th>product_alias</th>
-                    <th>product_description</th>
-                    <th>product_content</th>
-                    <th>product_img</th>
-                    <th>product_sub_img</th>
-                    <th>Trang thai</th>
-                   
+                    <th>Mã sản phẩm</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Tên thường gọi của sản phẩm</th>
+                    <th>Mô tả sản phẩm</th>
+                    <th>Nội dung sản phẩm</th>
+                    <th>Đường dẫn ảnh</th>
+                    <th>Mô tả đường dẫn ảnh</th>
+                    <th>Trạng thái</th>
+
                 </tr>
             </thead>
             <tbody id="data">
             </tbody>
         </table>
+        <br />
+        <div id="pagination-container">
+            <button id="prev-btn" onclick="prevBtn()">Prev</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-btn" onclick="nextBtn()">Next</button>
+        </div>
     </div>
 </div>
 <div class="container" id="Edit" style="display:none">
@@ -294,21 +341,21 @@
             <tr>
                 <td>state: </td>
                 <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value1" name="a" onchange="GetSP(value);">
+                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value1" name="a" onchange="">
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>producer: </td>
                 <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value2" name="b" onchange="GetSP(value);">
+                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value2" name="b" onchange="">
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>category: </td>
                 <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value3" name="c" onchange="GetSP(value);">
+                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value3" name="c" onchange="">
                     </select>
                 </td>
             </tr>
@@ -375,21 +422,21 @@
             <tr>
                 <td>state: </td>
                 <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value4" name="x" onchange="GetSP(value);">
+                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value4" name="x" onchange="">
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>producer: </td>
                 <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value5" name="y" onchange="GetSP(value);">
+                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value5" name="y" onchange="">
                     </select>
                 </td>
             </tr>
             <tr>
                 <td>category: </td>
                 <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value6" name="z" onchange="GetSP(value);">
+                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value6" name="z" onchange="">
                     </select>
                 </td>
             </tr>

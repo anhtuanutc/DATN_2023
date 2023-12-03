@@ -287,6 +287,8 @@ D:\Check_out dự án\DATN_2023\DOANTN\bin\roslyn\vbc.rsp
 D:\Check_out dự án\DATN_2023\DOANTN\bin\roslyn\VBCSCompiler.exe
 D:\Check_out dự án\DATN_2023\DOANTN\bin\roslyn\VBCSCompiler.exe.config
 D:\Check_out dự án\DATN_2023\DOANTN\bin\Antlr3.Runtime.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.CrystalReports.Engine.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.Shared.dll
 D:\Check_out dự án\DATN_2023\DOANTN\bin\EntityFramework.dll
 D:\Check_out dự án\DATN_2023\DOANTN\bin\EntityFramework.SqlServer.dll
 D:\Check_out dự án\DATN_2023\DOANTN\bin\Microsoft.AspNetCore.Antiforgery.dll
@@ -378,6 +380,18 @@ D:\Check_out dự án\DATN_2023\DOANTN\bin\System.Web.WebPages.Deployment.dll
 D:\Check_out dự án\DATN_2023\DOANTN\bin\System.Web.WebPages.dll
 D:\Check_out dự án\DATN_2023\DOANTN\bin\System.Web.WebPages.Razor.dll
 D:\Check_out dự án\DATN_2023\DOANTN\bin\WebGrease.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.DataDefModel.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.ClientDoc.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.ReportDefModel.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.Controllers.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.DataSetConversion.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.Prompting.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.XmlSerialize.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.CubeDefModel.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.CommonObjectModel.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.ObjectFactory.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\CrystalDecisions.ReportAppServer.CommonControls.dll
+D:\Check_out dự án\DATN_2023\DOANTN\bin\stdole.dll
 D:\Check_out dự án\DATN_2023\DOANTN\bin\EntityFramework.xml
 D:\Check_out dự án\DATN_2023\DOANTN\bin\EntityFramework.SqlServer.xml
 D:\Check_out dự án\DATN_2023\DOANTN\bin\Microsoft.AspNetCore.Antiforgery.xml
@@ -461,8 +475,8 @@ D:\Check_out dự án\DATN_2023\DOANTN\bin\System.Net.Http.Formatting.xml
 D:\Check_out dự án\DATN_2023\DOANTN\bin\System.Web.Http.xml
 D:\Check_out dự án\DATN_2023\DOANTN\bin\System.Web.Http.WebHost.xml
 D:\Check_out dự án\DATN_2023\DOANTN\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\Check_out dự án\DATN_2023\DOANTN\obj\Debug\DOANTN.csproj.AssemblyReference.cache
 D:\Check_out dự án\DATN_2023\DOANTN\obj\Debug\DOANTN.csproj.CoreCompileInputs.cache
 D:\Check_out dự án\DATN_2023\DOANTN\obj\Debug\DOANTN.csproj.CopyComplete
 D:\Check_out dự án\DATN_2023\DOANTN\obj\Debug\BTL_TTCMWeb.dll
 D:\Check_out dự án\DATN_2023\DOANTN\obj\Debug\BTL_TTCMWeb.pdb
+D:\Check_out dự án\DATN_2023\DOANTN\obj\Debug\DOANTN.csproj.AssemblyReference.cache

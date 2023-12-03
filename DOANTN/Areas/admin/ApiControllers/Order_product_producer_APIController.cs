@@ -1,16 +1,40 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using CrystalDecisions.CrystalReports.Engine;
+using CrystalDecisions.Shared;
 using BTL_TTCMWeb.Models;
+using System.Data;
+using static BTL_TTCMWeb.Controllers.APIController.UserControlAPIController;
+using System.Data.SqlClient;
+using System.Data.Entity.Infrastructure;
+using System.Data.Entity.Core.Objects;
+
 namespace BTL_TTCMWeb.Areas.admin.ApiControllers
 {
     public class Order_product_producer_APIController : ApiController
     {
         HAWContextEntities db = new HAWContextEntities();
         DemoDataContext bd = new DemoDataContext();
+
+        public class OrderDetail
+        {
+            public string product_name { get; set; }
+            public double price { get; set; }
+            public double into_money { get; set; }
+            public string product_img { get; set; }
+        }
+        public class Order
+        {
+            public int order_id { get; set; }
+            public string user_name { get; set; }
+            public DateTime date { get; set; }
+            
+        }
         //Phần hóa đơn
         [Route("XoaCTHoaDon/{order_detail_id}")]
         [HttpDelete]
@@ -379,6 +403,69 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
             {
                 return false;
             }
+        }
+
+        public DataTable ReturnDataTableFromSQLQuery<T>(string query)
+        {
+            DataTable dataTable = new DataTable();
+
+            var queryResult = db.Database.SqlQuery<T>(query);
+
+            // Tạo cấu trúc cột cho DataTable dựa trên dữ liệu trả về từ SqlQuery
+            if (queryResult.Any())
+            {
+                var properties = typeof(T).GetProperties();
+                foreach (var property in properties)
+                {
+                    dataTable.Columns.Add(property.Name, Nullable.GetUnderlyingType(property.PropertyType) ?? property.PropertyType);
+                }
+
+                // Đổ dữ liệu từ kết quả truy vấn vào DataTable
+                foreach (var obj in queryResult)
+                {
+                    var dataRow = dataTable.NewRow();
+                    foreach (var property in properties)
+                    {
+                        dataRow[property.Name] = property.GetValue(obj) ?? DBNull.Value;
+                    }
+                    dataTable.Rows.Add(dataRow);
+                }
+            }
+            return dataTable;
+        }
+
+        [HttpGet]
+        [Route("report/getinvoicereport/{order_id}")]
+        public HttpResponseMessage GetInvoiceReport(int order_id)
+        {
+            // Tạo ReportDocument từ file báo cáo Crystal Reports
+            ReportDocument report = new ReportDocument();
+            report.Load(System.Web.Hosting.HostingEnvironment.MapPath("~/Reports/InvoiceReport.rpt")); // Thay đổi đường dẫn tới file báo cáo         
+            // Code để đổ dữ liệu vào báo cáo (nếu cần)
+            DataSet dsPrint = new DataSet("BC");
+            DataTable ct = ReturnDataTableFromSQLQuery<OrderDetail>("SELECT d.product_name, b.price, b.price * b.quantity AS into_money, d.product_img " +
+                                                                    "FROM tbl_Order a " +
+                                                                    "LEFT JOIN tbl_orderDetail b ON a.order_id = b.oder_id " +
+                                                                    "LEFT JOIN tbl_productColor c ON b.productColor_id = c.id " +
+                                                                    "LEFT JOIN tbl_product d ON c.product_id = d.product_id " +
+                                                                    "WHERE a.order_id = " + order_id.ToString());
+            DataTable ph = ReturnDataTableFromSQLQuery<Order>(@"select a.order_id, b.user_name, a.date from tbl_Order a
+                                                         left join tbl_user b on a.user_id = b.user_id 
+                                                         where order_id = " + order_id.ToString());
+            dsPrint.Tables.Add(ct);
+            dsPrint.Tables.Add(ph);
+            dsPrint.WriteXmlSchema(@"D:\Check_out dự án\DATN_2023\DOANTN\Reports\hoadonban.xsd");
+            report.SetDataSource(dsPrint);
+            // Xuất báo cáo thành file PDF
+            Stream stream = report.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
+            HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
+            response.Content = new StreamContent(stream);
+            response.Content.Headers.ContentType = new System.Net.Http.Headers.MediaTypeHeaderValue("application/pdf");
+            response.Content.Headers.ContentDisposition = new System.Net.Http.Headers.ContentDispositionHeaderValue("attachment")
+            {
+                FileName = "InvoiceReport.pdf" // Tên file PDF khi tải về
+            };
+            return response;
         }
     }
 }
