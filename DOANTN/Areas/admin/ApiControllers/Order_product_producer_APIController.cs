@@ -21,9 +21,12 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
         HAWContextEntities db = new HAWContextEntities();
         DemoDataContext bd = new DemoDataContext();
 
+
+        #region Table data entity
         public class OrderDetail
         {
             public string product_name { get; set; }
+            public int quantity { get; set; }
             public double price { get; set; }
             public double into_money { get; set; }
             public string product_img { get; set; }
@@ -35,6 +38,15 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
             public DateTime date { get; set; }
             
         }
+        public class Contact
+        {
+            public string email { get; set; }
+            public string phone { get; set; }
+            public string address { get; set; }
+        }
+        #endregion
+
+        #region Phần thêm xóa sửa, lấy dữ liệu
         //Phần hóa đơn
         [Route("XoaCTHoaDon/{order_detail_id}")]
         [HttpDelete]
@@ -404,7 +416,9 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
                 return false;
             }
         }
+        #endregion
 
+        #region Print
         public DataTable ReturnDataTableFromSQLQuery<T>(string query)
         {
             DataTable dataTable = new DataTable();
@@ -442,20 +456,23 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
             ReportDocument report = new ReportDocument();
             report.Load(System.Web.Hosting.HostingEnvironment.MapPath("~/Reports/InvoiceReport.rpt")); // Thay đổi đường dẫn tới file báo cáo         
             // Code để đổ dữ liệu vào báo cáo (nếu cần)
-            DataSet dsPrint = new DataSet("BC");
-            DataTable ct = ReturnDataTableFromSQLQuery<OrderDetail>("SELECT d.product_name, b.price, b.price * b.quantity AS into_money, d.product_img " +
-                                                                    "FROM tbl_Order a " +
-                                                                    "LEFT JOIN tbl_orderDetail b ON a.order_id = b.oder_id " +
-                                                                    "LEFT JOIN tbl_productColor c ON b.productColor_id = c.id " +
-                                                                    "LEFT JOIN tbl_product d ON c.product_id = d.product_id " +
-                                                                    "WHERE a.order_id = " + order_id.ToString());
+            DataSet dsPrint = new DataSet("BanLan2");
+            DataTable ct = ReturnDataTableFromSQLQuery<OrderDetail>(@"SELECT d.product_name, b.quantity, b.price, b.price * b.quantity AS into_money, d.product_img
+                                                                    FROM tbl_Order a
+                                                                    LEFT JOIN tbl_orderDetail b ON a.order_id = b.oder_id
+                                                                    LEFT JOIN tbl_productColor c ON b.productColor_id = c.id
+                                                                    LEFT JOIN tbl_product d ON c.product_id = d.product_id
+                                                                    WHERE a.order_id = "+ order_id.ToString());
             DataTable ph = ReturnDataTableFromSQLQuery<Order>(@"select a.order_id, b.user_name, a.date from tbl_Order a
                                                          left join tbl_user b on a.user_id = b.user_id 
                                                          where order_id = " + order_id.ToString());
+            DataTable ph_admin = ReturnDataTableFromSQLQuery<Contact>(@"select email, phone, address from tbl_Contact");
             dsPrint.Tables.Add(ct);
             dsPrint.Tables.Add(ph);
-            dsPrint.WriteXmlSchema(@"D:\Check_out dự án\DATN_2023\DOANTN\Reports\hoadonban.xsd");
+            dsPrint.Tables.Add(ph_admin);
+            //dsPrint.WriteXmlSchema(@"D:\Check_out dự án\DATN_2023\DOANTN\Reports\hoadonban.xsd");
             report.SetDataSource(dsPrint);
+
             // Xuất báo cáo thành file PDF
             Stream stream = report.ExportToStream(CrystalDecisions.Shared.ExportFormatType.PortableDocFormat);
             HttpResponseMessage response = new HttpResponseMessage(HttpStatusCode.OK);
@@ -467,5 +484,6 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
             };
             return response;
         }
+        #endregion
     }
 }

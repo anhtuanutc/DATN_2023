@@ -6,11 +6,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 @section scripts{
     <script type="text/javascript">
+        const rowsPerPage = 5;
+        let currentPage = 1;
+        var total = 0;
         $(document).ready(function () {
-            GetAll();
+            displayData(currentPage);
+            document.getElementById("prev-btn").style.display = 'none';
         });
 
-        function GetAll() {
+        function GetAll(startIndex, endIndex) {
             $.ajax({
                 url: '/tttt/',
                 method: 'GET',
@@ -21,8 +25,13 @@
                 },
                 success: function (reponse) {
                     const len = reponse.length;
+                    total = reponse.length;
+                    if (len <= rowsPerPage) {
+                        document.getElementById("next-btn").style.display = 'none';
+                        document.getElementById("prev-btn").style.display = 'none';
+                    }
                     let table = '';
-                    for (var i = 0; i < len; ++i) {
+                    for (var i = startIndex; i < endIndex; ++i) {
                         if (reponse[i].isActive == 1) {
                             reponse[i].isActive = "Đã kích hoạt"
                         }
@@ -58,6 +67,7 @@
                         table = table + '<tr>'
 
                         document.getElementById('data').innerHTML = table;
+                        document.getElementById('totalItem').innerHTML = 'Tổng số bản ghi: ' + len;
                     }
                 },
                 fail: function (response) { }
@@ -164,9 +174,42 @@
         function HienThi() {
             document.getElementById("2").style.display = 'inline';
         }
+
+        function displayData(page) {
+            var startIndex = (page - 1) * rowsPerPage;
+            var pageInfo = document.getElementById('page-info');
+            var endIndex = startIndex + rowsPerPage;
+            if (endIndex > total && total != 0) endIndex = total;
+            GetAll(startIndex, endIndex);
+            pageInfo.textContent = `Page ${currentPage}`;
+        }
+        function prevBtn() {
+            if (currentPage > 1) {
+                currentPage--;
+                displayData(currentPage);
+                document.getElementById("next-btn").style.display = 'inline';
+                document.getElementById("prev-btn").style.display = 'inline';
+            } if (currentPage - 1 <= 0) {
+                //Trang đầu ẩn nút prev
+                document.getElementById("prev-btn").style.display = 'none';
+            }
+        }
+        function nextBtn() {
+            const maxPage = Math.ceil(total / rowsPerPage);
+            if (currentPage < maxPage) {
+                currentPage++;
+                displayData(currentPage);
+                document.getElementById("next-btn").style.display = 'inline';
+                document.getElementById("prev-btn").style.display = 'inline';
+            } if (currentPage + 1 > maxPage) {
+                document.getElementById("next-btn").style.display = 'none';
+            }
+        }
     </script>
 }
 <h1 style="text-align:center;margin-bottom:40px"><b>Bảng Khách Hàng</b></h1>
+<br>
+<h4 id="totalItem" style="float:right"></h4>
 <table class="table table-hover" style="text-align:center" id="0">
     <thead>
         <tr>
@@ -187,13 +230,19 @@
     <tbody id="data">
     </tbody>
 </table>
+<br />
+<div id="pagination-container">
+    <button id="prev-btn" onclick="prevBtn()">Prev</button>
+    <span id="page-info">Page 1</span>
+    <button id="next-btn" onclick="nextBtn()">Next</button>
+</div>
 <div class="content-wrapper content" style="padding-top:0px">
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2 tittelKH">
                 <div id="1" style="display:none">
                     @*Thông tin khách hàng+Hóa đơn khách hàng đó đã mua*@
-                        <h3><b>Thông tin khách hàng</b></h3>
+                    <h3><b>Thông tin khách hàng</b></h3>
                     <br />
                     <div class="row Contact" style="display: flex;float:none">
                         <div class="col-sm-10">
@@ -270,4 +319,4 @@
             </div>
         </div>
     </div>
- </div>
+</div>

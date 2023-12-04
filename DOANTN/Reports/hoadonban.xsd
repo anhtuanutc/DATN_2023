@@ -1,14 +1,35 @@
 <?xml version="1.0" standalone="yes"?>
-<xs:schema id="INCTBLE" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
-  <xs:element name="INCTBLE" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+<xs:schema id="BanLan2" xmlns="" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+  <xs:element name="BanLan2" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="Table1">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="product_name" type="xs:string" minOccurs="0" />
+              <xs:element name="quantity" type="xs:int" minOccurs="0" />
+              <xs:element name="price" type="xs:double" minOccurs="0" />
+              <xs:element name="into_money" type="xs:double" minOccurs="0" />
+              <xs:element name="product_img" type="xs:string" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
         <xs:element name="Table2">
           <xs:complexType>
+            <xs:sequence>
+              <xs:element name="order_id" type="xs:int" minOccurs="0" />
+              <xs:element name="user_name" type="xs:string" minOccurs="0" />
+              <xs:element name="date" type="xs:dateTime" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Table3">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="email" type="xs:string" minOccurs="0" />
+              <xs:element name="phone" type="xs:string" minOccurs="0" />
+              <xs:element name="address" type="xs:string" minOccurs="0" />
+            </xs:sequence>
           </xs:complexType>
         </xs:element>
       </xs:choice>

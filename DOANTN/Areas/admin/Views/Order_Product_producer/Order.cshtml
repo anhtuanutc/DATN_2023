@@ -12,6 +12,7 @@
         const rowsPerPage = 5;
         let currentPage = 1;
         var total = 0;
+        var state_name = '';
         var id_sp = '';
         $(document).ready(function () {
             Laystate();
@@ -183,6 +184,7 @@
                     id_sp = order_id;
                     for (var i = 0; i < len; ++i) {
                         let STT = i + 1;
+                        state_name = reponse[0].state_name;
                         table = table + '<tr>'
                         table = table + '<td>' + reponse[i].order_id + '</td>';
                         table = table + '<td style="max-width : 200px">' + reponse[i].product_name + '</td>';
@@ -305,18 +307,20 @@
         }
 
         function printPDF(id_sp) {
-            fetch('/report/getinvoicereport/' + id_sp)
-                .then(response => response.blob())
-                .then(blob => {
-                    // Tạo blob URL từ tệp PDF
-                    const file = new Blob([blob], { type: 'application/pdf' });
-                    const fileURL = URL.createObjectURL(file);
+            if (state_name == 'Đã giao hàng' || state_name == 'Hủy Đơn hàng' || state_name == 'Đã hủy' || state_name == 'Chờ lấy hàng') {
+                alert("Trạng thái hóa đơn không đúng, vui lòng kiểm tra lại")
+            } else {
+                fetch('/report/getinvoicereport/' + id_sp)
+                    .then(response => response.blob())
+                    .then(blob => {
+                        // Tạo blob URL từ tệp PDF
+                        const file = new Blob([blob], { type: 'application/pdf' });
+                        const fileURL = URL.createObjectURL(file);
 
-                    // Mở URL trong tab mới
-                    window.open(fileURL, '_blank');
-                });
-
-            console.log(id_sp);
+                        // Mở URL trong tab mới
+                        window.open(fileURL, '_blank');
+                    });
+            }
         }
     </script>
 }
