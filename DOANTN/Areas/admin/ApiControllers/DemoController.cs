@@ -1,6 +1,7 @@
 ﻿using BTL_TTCMWeb.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -12,6 +13,42 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
     {
         HAWContextEntities db = new HAWContextEntities();
         DemoDataContext bd = new DemoDataContext();
+
+        #region Table data entity
+        public class ProfileUser
+        {
+            public int user_id;
+
+            public string user_name;
+
+            public string user_email;
+
+            public string user_phone;
+
+            public string user_address;
+
+            public string user_password;
+
+            public System.Nullable<System.DateTime> CreatedAt;
+
+            public bool isActive;
+
+            public System.Nullable<System.DateTime> time;
+
+            public System.Nullable<int> question_id;
+
+            public string answer;
+
+            public string remember_me_identify;
+
+            public string remember_me_token;
+
+            public string avatar_img;
+
+            public System.Nullable<int> SoLanMua;
+        }
+        #endregion
+
         //Employee
         [Route("LayTaiKhoan")]
         [HttpGet]
@@ -158,9 +195,15 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
         }
         [Route("Thongke/{user_id}")]
         [HttpGet]
-        public Demo1 ThongKeByID(int user_id)
+        public ProfileUser ThongKeByID(int user_id)
         {
-            return bd.Demo1s.FirstOrDefault(x => x.user_id == user_id);
+            var item = db.Database.SqlQuery<ProfileUser>(@"select tbl_user.*,SoLanMua from (select user_id,count(order_id) as SoLanMua from tbl_Order group by user_id) as T right join tbl_user on T.user_id=tbl_user.user_id
+                                                        where T.user_id = @user_id", new SqlParameter("@user_id", user_id)).SingleOrDefault();
+            if (item.isActive)
+            {
+                //item.user_status = "Đã được kích hoạt";
+            }
+            return item;
         }
         [Route("LayCTHD/{order_id}")]
         [HttpGet]

@@ -34,7 +34,17 @@ scratch. This page gets rid of all links and provides the needed markup only.
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
     <div class="wrapper">
+        @{ // Lấy giá trị của cookie có tên là "Tên_Cookie"
+                        string cookieValue = Request.Cookies["IsEmployee1"]?.Value;
 
+                        // Khai báo biến bool để lưu giá trị sau khi chuyển đổi
+                        bool isCookieValueTrue = false;
+
+                        // Chuyển đổi giá trị của cookie sang kiểu bool nếu có thể
+                        if (!string.IsNullOrEmpty(cookieValue) && bool.TryParse(cookieValue, out bool result))
+                        {
+                            isCookieValueTrue = result;
+                        } }
         <!-- Main Header -->
         <header class="main-header">
 
@@ -66,8 +76,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
                                 @if (Session["NameEmployee"] != null)
                                 {
-                                    <span class="hidden-xs">@Session["NameEmployee"].ToString()</span>
-                                }
+                    <span class="hidden-xs">@Session["NameEmployee"].ToString()</span>}
                             </a>
                             <ul class="dropdown-menu" style="width:170px;">
                                 <li class="user-footer">
@@ -87,47 +96,45 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <!-- sidebar: style can be found in sidebar.less -->
             <section class="sidebar">
                 <!-- Sidebar Menu -->
-                @if ((bool)Session["IsEmployee"])
+                @if (isCookieValueTrue)
                 {
-                    <ul class="sidebar-menu" data-widget="tree">
-                        <li class="header">MENU</li>
-                        <!-- Optionally, you can add icons to the links -->
-                        <li><a href="@Url.Action("Order","Order_Product_producer")"><i class="fa fa-link"></i> <span>Đơn hàng</span></a></li>
-                        <li><a href="@Url.Action("ThongKe","Dashboard")"><i class="fa fa-link"></i> <span>Thống kê</span></a></li>
-                        <li><a href="@Url.Action("product","Order_Product_producer")"><i class="fa fa-link"></i> <span>Sản phẩm</span></a></li>
-                        @*<li><a href="@Url.Action("productColor","Order_Product_producer")"><i class="fa fa-link"></i> <span>vac</span></a></li>*@
-                        <li><a href="@Url.Action("producer","Order_Product_producer")"><i class="fa fa-link"></i> <span>Nhà sản xuất</span></a></li>
-                    </ul>
-                }
-                else
-                {
-                    <ul class="sidebar-menu" data-widget="tree">
-                        <li class="header">MENU</li>
-                        <!-- Optionally, you can add icons to the links -->
-                        <li><a href="@Url.Action("ThongKe","Dashboard")"><i class="fa fa-link"></i> <span>Thống kê</span></a></li>
-                        <li><a href="@Url.Action("Employess","Employee_Category_User")"><i class="fa fa-link"></i> <span>Nhân viên</span></a></li>
-                        <li><a href="@Url.Action("Order","Order_Product_producer")"><i class="fa fa-link"></i> <span>Đơn hàng</span></a></li>
-                        <li><a href="@Url.Action("product","Order_Product_producer")"><i class="fa fa-link"></i> <span>Sản phẩm</span></a></li>
-                        <li><a href="@Url.Action("User","Employee_Category_User")"><i class="fa fa-link"></i> <span>Người dùng</span></a></li>
-                        @*<li><a href="@Url.Action("productColor","Order_Product_producer")"><i class="fa fa-link"></i> <span>vac</span></a></li>*@
-                        <li><a href="@Url.Action("producer","Order_Product_producer")"><i class="fa fa-link"></i> <span>Nhà sản xuất</span></a></li>
-                        <li><a href="@Url.Action("Category","Employee_Category_User")"><i class="fa fa-link"></i> <span>Danh mục</span></a></li>
-                        <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-link"></i> <span>Cấu hình website</span>
-                                <span class="pull-right-container">
-                                    <i class="fa fa-angle-left pull-right"></i>
-                                </span>
-                            </a>
-                            <ul class="treeview-menu">
-                                <li><a href="@Url.Action("Question","Question_State_Color_Contact")"><i class="fa fa-link"></i> <span>Câu hỏi bảo mật</span></a></li>
-                                <li><a href="@Url.Action("Contact","Question_State_Color_Contact")"><i class="fa fa-link"></i> <span>Liên hệ</span></a></li>
-                                <li><a href="@Url.Action("State","Question_State_Color_Contact")"><i class="fa fa-link"></i> <span>Trạng thái</span></a></li>
-                                <li><a href="@Url.Action("Color","Question_State_Color_Contact")"><i class="fa fa-link"></i> <span>Màu sắc</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                }
+    <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">MENU</li>
+        <!-- Optionally, you can add icons to the links -->
+        <li><a href="@Url.Action("Order","Order_Product_producer")"><i class="fa fa-link"></i> <span>Đơn hàng</span></a></li>
+        <li><a href="@Url.Action("ThongKe","Dashboard")"><i class="fa fa-link"></i> <span>Thống kê</span></a></li>
+        <li><a href="@Url.Action("product","Order_Product_producer")"><i class="fa fa-link"></i> <span>Sản phẩm</span></a></li>
+        @*<li><a href="@Url.Action("productColor","Order_Product_producer")"><i class="fa fa-link"></i> <span>vac</span></a></li>*@
+        <li><a href="@Url.Action("producer","Order_Product_producer")"><i class="fa fa-link"></i> <span>Nhà sản xuất</span></a></li>
+    </ul> }
+else
+{
+<ul class="sidebar-menu" data-widget="tree">
+    <li class="header">MENU</li>
+    <!-- Optionally, you can add icons to the links -->
+    <li><a href="@Url.Action("ThongKe","Dashboard")"><i class="fa fa-link"></i> <span>Thống kê</span></a></li>
+    <li><a href="@Url.Action("Employess","Employee_Category_User")"><i class="fa fa-link"></i> <span>Nhân viên</span></a></li>
+    <li><a href="@Url.Action("Order","Order_Product_producer")"><i class="fa fa-link"></i> <span>Đơn hàng</span></a></li>
+    <li><a href="@Url.Action("product","Order_Product_producer")"><i class="fa fa-link"></i> <span>Sản phẩm</span></a></li>
+    <li><a href="@Url.Action("User","Employee_Category_User")"><i class="fa fa-link"></i> <span>Người dùng</span></a></li>
+    @*<li><a href="@Url.Action("productColor","Order_Product_producer")"><i class="fa fa-link"></i> <span>vac</span></a></li>*@
+    <li><a href="@Url.Action("producer","Order_Product_producer")"><i class="fa fa-link"></i> <span>Nhà sản xuất</span></a></li>
+    <li><a href="@Url.Action("Category","Employee_Category_User")"><i class="fa fa-link"></i> <span>Danh mục</span></a></li>
+    <li class="treeview">
+        <a href="#">
+            <i class="fa fa-link"></i> <span>Cấu hình website</span>
+            <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+            </span>
+        </a>
+        <ul class="treeview-menu">
+            <li><a href="@Url.Action("Question","Question_State_Color_Contact")"><i class="fa fa-link"></i> <span>Câu hỏi bảo mật</span></a></li>
+            <li><a href="@Url.Action("Contact","Question_State_Color_Contact")"><i class="fa fa-link"></i> <span>Liên hệ</span></a></li>
+            <li><a href="@Url.Action("State","Question_State_Color_Contact")"><i class="fa fa-link"></i> <span>Trạng thái</span></a></li>
+            <li><a href="@Url.Action("Color","Question_State_Color_Contact")"><i class="fa fa-link"></i> <span>Màu sắc</span></a></li>
+        </ul>
+    </li>
+</ul>}
                 <!-- /.sidebar-menu -->
             </section>
             <!-- /.sidebar -->

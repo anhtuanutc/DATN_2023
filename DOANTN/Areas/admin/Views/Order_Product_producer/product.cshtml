@@ -3,266 +3,52 @@
     ViewBag.Title = "product";
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
-
+<style>
+    input[type="file"] {
+        display: none;
+    }
+    .avatar > img {
+        max-width: 400px;
+        max-height: 300px;
+        width: 400px;
+        height: 300px;
+        padding-left: 24%;
+        margin-left: 5%;
+    }
+    .table1, .avatar-container {
+        display: inline-block;
+        vertical-align: top; /* Đảm bảo chúng nằm trên cùng một đường đứng */
+        margin-right: 20px; /* Khoảng cách giữa các div */
+        width: 48%;
+    }
+    
+</style>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-@section scripts{
-    <script type="text/javascript">
-        const rowsPerPage = 5;
-        let currentPage = 1;
-        var total = 0;
-        $(document).ready(function () {
-            Laystate();
-            Layproducer();
-            Laycategory();
-            displayData(currentPage);
-            document.getElementById("prev-btn").style.display = 'none';
+<script src="~/Scripts/admin/product.js"></script>
 
-        });
-        function checkproduct() {
-            if ($("input[name='product_id2']").val() == '') {
-                alert("Vui lòng nhập mã sản phẩm");
-            } else if ($("input[name='product_name2']").val() == '') {
-                alert("vui lòng nhập tên Sản Phẩm");
-            } else if ($("input[name='product_img2']").val() == '') {
-                alert("vui lòng nhập link ảnh");
-            } else {
-                addProduct();
-            }
+<script>
+    function saveImageToAPI(formData) {
+    $.ajax({
+        type: 'POST',
+        url: '/api/upload/img_product',
+        data: formData,
+        contentType: false,
+        processData: false,
+        success: function (response) {
+            console.log('Upload ảnh thành công');
+            window.location.href = '@Url.Action("product", "Order_product_producer")';
+        },
+        error: function (error) {
+            console.log('Upload ảnh không thành công');
         }
-        function Laystate() {
-            $.ajax({
-                url: '/laystate',
-                method: 'GET',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-
-                },
-                success: function (reponse) {
-                    const len = reponse.length;
-                    let table = '';
-                    for (var i = 0; i < len; ++i) {
-                        table = table + '<hr>'
-                        table = table + '<option value="' + reponse[i].state_id + '">' + reponse[i].state_name + '</option>'
-                    }
-                    document.getElementById('value1').innerHTML = table;
-                    document.getElementById('value4').innerHTML = table;
-                },
-                fail: function (response) { }
-            });
-        }
-        function Layproducer() {
-            $.ajax({
-                url: '/layproducerr',
-                method: 'GET',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-
-                },
-                success: function (reponse) {
-                    const len = reponse.length;
-                    let table = '';
-                    for (var i = 0; i < len; ++i) {
-                        table = table + '<hr>'
-                        table = table + '<option value="' + reponse[i].producer_id + '">' + reponse[i].producer_name + '</option>'
-                    }
-                    document.getElementById('value2').innerHTML = table;
-                    document.getElementById('value5').innerHTML = table;
-                },
-                fail: function (response) { }
-            });
-        }
-        function Laycategory() {
-            $.ajax({
-                url: '/laycategory',
-                method: 'GET',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-
-                },
-                success: function (reponse) {
-                    const len = reponse.length;
-                    let table = '';
-                    for (var i = 0; i < len; ++i) {
-                        table = table + '<hr>'
-                        table = table + '<option value="' + reponse[i].category_id + '">' + reponse[i].category_name + '</option>'
-                    }
-                    document.getElementById('value3').innerHTML = table;
-                    document.getElementById('value6').innerHTML = table;
-                },
-                fail: function (response) { }
-            });
-        }
-        function LaytheomaTB(product_id) {
-            $.ajax({
-                url: '/Layproduct/' + product_id,
-                method: 'GET',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (res) {
-                    alert("Lỗi mã");
-                },
-                success: function (res) {
-                        $("#product_id1").val(res.product_id),
-                        $("#product_name1").val(res.product_name),
-                        $("#product_alias1").val(res.product_alias),
-                        $("#product_description1").val(res.product_description),
-                        $("#product_content1").val(res.product_content),
-                        $("#product_img1").val(res.product_img),
-                        $("#product_sub_img1").val(res.product_sub_img),
-                        $("#value1").val(res.state),                    
-                        $("#value2").val(res.product_producer),
-                         $("#value3").val(res.category_id)
-                },
-                fail: function (response) { }
-            })
-        }
-        function GetAll(startIndex, endIndex) {
-            $.ajax({
-                url: '/Layproduct/',
-                method: 'GET',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (reponse) {
-                    alert("Lỗi");
-                },
-                success: function (reponse) {
-                    let table = '';
-                    const len = reponse.length;
-                    total = reponse.length;
-                    if (len <= rowsPerPage) {
-                        document.getElementById("next-btn").style.display = 'none';
-                        document.getElementById("prev-btn").style.display = 'none';
-                    }
-                    for (var i = startIndex; i < endIndex; ++i) {
-                        if (reponse[i].product_sub_img == null || reponse[i].product_sub_img == "") {
-                            reponse[i].product_sub_img = "Không có";
-                        }
-                        let STT = i + 1;
-                        table = table + '<tr>'
-                        table = table + '<td>' + STT + '</td>';
-                        table = table + '<td>' + reponse[i].product_id + '</td>';
-                        table = table + '<td style="max-width : 200px">' + reponse[i].product_name + '</td>';
-                        table = table + '<td style="max-width : 200px">' + reponse[i].product_alias + '</td>';
-                        table = table + '<td style="max-width : 200px">' + reponse[i].product_description + '</td>';
-                        table = table + '<td style="max-width : 200px">' + reponse[i].product_content + '</td>';
-                        table = table + '<td> <div ><img src="' + reponse[i].product_img + '" style="width : 38px; height : 38px " /></div> </td>';
-                        table = table + '<td style="max-width : 200px">' + reponse[i].product_sub_img + '</td>';                                   
-                        table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].product_id + '\')">Sửa</button></td>';
-                        table = table + '<tr>'
-
-                        document.getElementById('data').innerHTML = table;
-                    }
-                },
-                fail: function (response) { }
-            })
-        }
-        function addProduct() {
-            var url = '/api/Order_product_producer_API/?product_id=' +
-                $("input[name='product_id2']").val()
-                + '&product_name=' + $("input[name='product_name2']").val()
-                + '&product_alias=' + $("input[name='product_alias2']").val()
-                + '&product_description=' + $("input[name='product_description2']").val()
-                + '&product_content=' + $("input[name='product_content2']").val()
-                + '&product_img=' + $("input[name='product_img2']").val()
-                + '&product_sub_img=' + $("input[name='product_sub_img2']").val()
-                + '&state=' + $("select[name='a']").val()
-                + '&product_producer=' + $("select[name='b']").val()
-                + '&category_id=' + $("select[name='c']").val();
-            $.ajax({
-                url: url,
-                method: 'Post',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Thêm mới không thành công");
-                },
-                success: function (reponse) {
-                    alert("Thêm mới thành công  ");
-                    window.location.href = '@Url.Action("product", "Order_product_producer")';
-                }
-            });
-        }
-        function editProduct() {
-            var url = '/api/Order_product_producer_API/?product_id=' +
-                $("input[name='product_id1']").val()
-                + '&product_name=' + $("input[name='product_name1']").val()
-                + '&product_alias=' + $("input[name='product_alias1']").val()
-                + '&product_description=' + $("input[name='product_description1']").val()
-                + '&product_content=' + $("input[name='product_content1']").val()
-                + '&product_img=' + $("input[name='product_img1']").val()
-                + '&product_sub_img=' + $("input[name='product_sub_img1']").val()
-                + '&state=' + $("select[name='x']").val()
-                + '&product_producer=' + $("select[name='y']").val()
-                + '&category_id=' + $("select[name='z']").val();
-            $.ajax({
-                url: url,
-                method: 'PUT',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Sửa không thành công  ");
-                },
-                success: function (reponse) {
-                    alert("Sửa thành công  ");
-                    window.location.href = '@Url.Action("product", "Order_product_producer")';
-                }
-            });
-        }
-        function HienThiSua() {
-            document.getElementById("Edit").style.display = 'inline';
-            document.getElementById("Tim").style.display = 'none';
-            document.getElementById("Add").style.display = 'none';
-        }
-        function HienThiAdd() {
-            document.getElementById("Edit").style.display = 'none';
-            document.getElementById("Tim").style.display = 'none';
-            document.getElementById("Add").style.display = 'inline';
-        }
-        function HienThi() {
-            document.getElementById("Edit").style.display = 'none';
-            document.getElementById("Tim").style.display = 'inline';
-            document.getElementById("Add").style.display = 'none';
-        }
-
-        function displayData(page) {
-            var startIndex = (page - 1) * rowsPerPage;
-            var pageInfo = document.getElementById('page-info');
-            var endIndex = startIndex + rowsPerPage;
-            if (endIndex > total && total != 0) endIndex = total;
-            GetAll(startIndex, endIndex);
-            pageInfo.textContent = `Page ${currentPage}`;
-        }
-        function prevBtn() {
-            if (currentPage > 1) {
-                currentPage--;
-                displayData(currentPage);
-                document.getElementById("next-btn").style.display = 'inline';
-                document.getElementById("prev-btn").style.display = 'inline';
-            } if (currentPage - 1 <= 0) {
-                //Trang đầu ẩn nút prev
-                document.getElementById("prev-btn").style.display = 'none';
-            }
-        }
-        function nextBtn() {
-            const maxPage = Math.ceil(total / rowsPerPage);
-            if (currentPage < maxPage) {
-                currentPage++;
-                displayData(currentPage);
-                document.getElementById("next-btn").style.display = 'inline';
-                document.getElementById("prev-btn").style.display = 'inline';
-            } if (currentPage + 1 > maxPage) {
-                document.getElementById("next-btn").style.display = 'none';
-            }
-        }
-    </script>
+    })
 }
+</script>
+
 <div id="Tim" class="container">
     <div class="container" style="width:100%;">
         <h1 style="text-align:center">Bảng sản phẩm</h1>
-        <button class="btn btn-info" style="float: left; margin-bottom: 20px;" onclick="HienThiAdd();">Add Product</button></a>
+        <button class="btn btn-info" style="float: left; margin-bottom: 20px;" onclick="HienThiAdd();">Add Product</button>
         <br>
         <table class="table table-bordered" style="width:100%;">
             <thead>
@@ -291,166 +77,201 @@
     </div>
 </div>
 <div class="container" id="Edit" style="display:none">
-    <table style="border:none">
-        <tbody>
-            <tr>
-                <td>product_id: </td>
-                <td>
-                    <input id="product_id1" type="text" name="product_id1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>product_name: </td>
-                <td>
-                    <input id="product_name1" type="text" name="product_name1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
+    <div class="table1">
+        <h2 style="margin-top:0; text-align:center">Thông tin chính</h2>
+        <table style="border:none">
+            <tbody>
+                <tr>
+                    <td>product_id: </td>
+                    <td>
+                        <input id="product_id1" type="text" name="product_id1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>product_name: </td>
+                    <td>
+                        <input id="product_name1" type="text" name="product_name1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
 
-            <tr>
-                <td>product_alias: </td>
-                <td>
-                    <input id="product_alias1" type="text" name="product_alias1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>product_description: </td>
-                <td>
-                    <input id="product_description1" type="text" name="product_description1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
+                <tr>
+                    <td>product_alias: </td>
+                    <td>
+                        <input id="product_alias1" type="text" name="product_alias1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>product_description: </td>
+                    <td>
+                        <input id="product_description1" type="text" name="product_description1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
 
-            <tr>
-                <td>product_content: </td>
-                <td>
-                    <input id="product_content1" type="text" name="product_content1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>product_img: </td>
-                <td>
-                    <input id="product_img1" type="text" name="product_img1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
+                <tr>
+                    <td>product_content: </td>
+                    <td>
+                        <input id="product_content1" type="text" name="product_content1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr style="display: none">
+                    <td>product_img: </td>
+                    <td>
+                        <input id="product_img1" type="text" name="product_img1" style="margin-bottom: 10px; border-radius: 2px; width: 280px; " />
+                    </td>
+                </tr>
 
-            <tr>
-                <td>product_sub_img: </td>
-                <td>
-                    <input id="product_sub_img1" type="text" name="product_sub_img1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>state: </td>
-                <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value1" name="a" onchange="">
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>producer: </td>
-                <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value2" name="b" onchange="">
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>category: </td>
-                <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value3" name="c" onchange="">
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td style="display: inline-flex">
-                    <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
-                    <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
-                            onclick="editProduct();">
-                        Cập nhật
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                <tr>
+                    <td>product_sub_img: </td>
+                    <td>
+                        <input id="product_sub_img1" type="text" name="product_sub_img1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>state: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value1" name="a" onchange="">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>producer: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value2" name="b" onchange="">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>category: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value3" name="c" onchange="">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="display: inline-flex; margin-left: 50%;">
+                        <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
+                        <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
+                                onclick="editProduct();">
+                            Cập nhật
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="avatar-container">
+        <!-- Khung hiển thị ảnh -->
+        <h2 style="margin-top: 0; text-align: center">Ảnh sản phẩm</h2>
+        <div class="avatar">
+            <img id="avatar-preview1" src="" alt="Avatar">
+
+        </div>
+        <div class="form-group" style="text-align:center; margin-top: 0">
+            <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
+                    onclick="document.getElementById('img_product1').click()" id="btn_image">
+                Chọn ảnh
+            </button>
+            <input type="file" id="img_product1" accept="image/*" onclick="Getimage()">
+        </div>
+    </div>
 </div>
 <div class="container" id="Add" style="display:none">
-    <table style="border:none">
-        <tbody>
-            <tr>
-                <td>product_id: </td>
-                <td>
-                    <input id="product_id2" type="text" name="product_id2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>product_name: </td>
-                <td>
-                    <input id="product_name2" type="text" name="product_name2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
+    <div class="table1">
+        <h2 style="margin-top:0; text-align:center">Thông tin chính</h2>
+        <table style="border:none">
+            <tbody>
+                <tr>
+                    <td>product_id: </td>
+                    <td>
+                        <input id="product_id2" type="text" name="product_id2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>product_name: </td>
+                    <td>
+                        <input id="product_name2" type="text" name="product_name2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
 
-            <tr>
-                <td>product_alias: </td>
-                <td>
-                    <input id="product_alias2" type="text" name="product_alias2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>product_description: </td>
-                <td>
-                    <input id="product_description2" type="text" name="product_description2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
+                <tr>
+                    <td>product_alias: </td>
+                    <td>
+                        <input id="product_alias2" type="text" name="product_alias2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>product_description: </td>
+                    <td>
+                        <input id="product_description2" type="text" name="product_description2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
 
-            <tr>
-                <td>product_content: </td>
-                <td>
-                    <input id="product_content2" type="text" name="product_content2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>product_img: </td>
-                <td>
-                    <input id="product_img2" type="text" name="product_img2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
+                <tr>
+                    <td>product_content: </td>
+                    <td>
+                        <input id="product_content2" type="text" name="product_content2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr style="display:none">
+                    <td>product_img: </td>
+                    <td>
+                        <input id="product_img2" type="text" name="product_img2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
 
-            <tr>
-                <td>product_sub_img: </td>
-                <td>
-                    <input id="product_sub_img2" type="text" name="product_sub_img2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
-                </td>
-            </tr>
-            <tr>
-                <td>state: </td>
-                <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value4" name="x" onchange="">
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>producer: </td>
-                <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value5" name="y" onchange="">
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>category: </td>
-                <td>
-                    <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value6" name="z" onchange="">
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
-                    <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
-                            onclick="checkproduct();">
-                        Thêm mới
-                    </button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
+                <tr>
+                    <td>product_sub_img: </td>
+                    <td>
+                        <input id="product_sub_img2" type="text" name="product_sub_img2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>state: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value4" name="x" onchange="">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>producer: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value5" name="y" onchange="">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>category: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value6" name="z" onchange="">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="display: inline-flex; margin-left: 50%;">
+                        <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
+                        <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
+                                onclick="checkproduct();">
+                            Thêm mới
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="avatar-container">
+        <h2 style="margin-top: 0; text-align: center">Ảnh sản phẩm</h2>
+        <div class="avatar">
+            <img id="avatar-preview2" src="product_img2" alt="Avatar">
+
+        </div>
+        <div class="form-group" style="text-align:center; margin-top:0">
+            <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
+                    onclick="document.getElementById('img_product2').click()" id="btn_image">
+                Chọn ảnh
+            </button>
+            <input type="file" id="img_product2" accept="image/*" onclick="Getimage()">
+        </div>
+    </div>
 </div>
 
 

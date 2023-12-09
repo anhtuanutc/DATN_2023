@@ -485,5 +485,45 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
             return response;
         }
         #endregion
+
+        #region Thêm ảnh cho danh mục sản phẩm 
+        [HttpPost]
+        [Route("api/upload/img_product")]
+        public IHttpActionResult UploadImage()
+        {
+            try
+            {
+                var httpRequest = System.Web.HttpContext.Current.Request;
+                string currentDirectory = httpRequest.PhysicalApplicationPath;
+                var file = httpRequest.Files[0];
+                var id_sanpham = httpRequest.Form["id_sanpham"];
+                //Check trường hợp đây là thêm mới
+                if (id_sanpham == "")
+                {
+                    id_sanpham = (db.Database.SqlQuery<int>("select top 1 product_id from tbl_product order by product_id desc").FirstOrDefault()).ToString();
+                }
+                currentDirectory = currentDirectory.Replace('\\', '/');
+                // Lưu ảnh vào thư mục
+                string imagePath = currentDirectory + "images/product_item" + id_sanpham.ToString() + ".jpg";
+                using (var stream = new FileStream(imagePath, FileMode.Create))
+                {
+                    file.InputStream.CopyTo(stream);
+                }
+                string product_img = "/images/product_item" + id_sanpham.ToString() + ".jpg";
+                dynamic item = db.Database.SqlQuery<dynamic>(@"select 1  from tbl_product where product_id = @product_id", new SqlParameter("@product_id", id_sanpham)).SingleOrDefault();
+                if (item != null)
+                {
+                    db.Database.ExecuteSqlCommand("UPDATE tbl_product SET product_img = @product_img WHERE product_id = @product_id", new SqlParameter("@product_id", id_sanpham),
+                            new SqlParameter("@product_img", product_img));
+                }
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return InternalServerError(ex);
+            }
+        }
+        #endregion
     }
 }
