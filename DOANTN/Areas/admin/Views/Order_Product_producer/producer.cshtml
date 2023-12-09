@@ -46,48 +46,54 @@
 }
 <div id="Tim" class="container">
     <div class="container" style="width:100%;">
-        <h1 style="text-align:center">Table Producer</h1>
+        <h1 style="text-align:center">Bảng nguồn gốc xuất xứ</h1>
         <button class="btn btn-info" style="float: left; margin-bottom: 20px;" onclick="HienThiAdd();">Add Producer</button></a>
         <br>
         <table class="table table-bordered" style="width:100%;">
             <thead>
                 <tr>
                     <th>STT</th>
-                    <th>producer_id</th>
-                    <th>producer_name</th>
-                    <th>producer_address</th>
-                    <th>state</th>
+                    <th>Mã nhà sản xuất</th>
+                    <th>Tên nhà sản xuất</th>
+                    <th>Xuất xứ</th>
+                    <th>Trạng thái</th>
                     <th>Thao Tác</th>
                 </tr>
             </thead>
             <tbody id="data">
             </tbody>
         </table>
+        <br />
+        <div id="pagination-container">
+            <button id="prev-btn" onclick="prevBtn()">Prev</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-btn" onclick="nextBtn()">Next</button>
+        </div>
     </div>
 </div>
 <div class="container" id="Edit" style="display:none">
     <table style="border:none">
         <tbody>
             <tr>
-                <td>producer_id: </td>
+                <td>Mã nhà sản xuất: </td>
                 <td>
                     <input id="producer_id1" type="text" name="producer_id" style="margin-bottom: 10px; border-radius: 2px; width: 280px" readonly />
                 </td>
             </tr>
             <tr>
-                <td>producer_name : </td>
+                <td>Tên nhà sản xuất: </td>
                 <td>
                     <input id="producer_name1" type="text" name="producer_name" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
                 </td>
             </tr>
             <tr>
-                <td>producer_address: </td>
+                <td>Xuất xứ: </td>
                 <td>
                     <input id="producer_address1" type="text" name="producer_address" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
                 </td>
             </tr>
             <tr>
-                <td>state: </td>
+                <td>Trạng thái: </td>
                 <td>
                     <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value1" name="stateEdit" onchange="GetSP(value);">
                     </select>
@@ -109,25 +115,25 @@
     <table style="border:none">
         <tbody>
             <tr>
-                <td>producer_id: </td>
+                <td>Mã nhà sản xuất: </td>
                 <td>
                     <input id="producer_id" type="text" name="producer_id1" style="margin-bottom: 10px; border-radius: 2px; width: 280px"  />
                 </td>
             </tr>
             <tr>
-                <td>producer_name : </td>
+                <td>Tên nhà sản xuất: </td>
                 <td>
                     <input id="producer_name" type="text" name="producer_name1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
                 </td>
             </tr>
             <tr>
-                <td>producer_address: </td>
+                <td>Xuất xứ: </td>
                 <td>
                     <input id="producer_address" type="text" name="producer_address1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
                 </td>
             </tr>
             <tr>
-                <td>state: </td>
+                <td>Trạng thái: </td>
                 <td>
                     <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="value2" name="stateAdd"  onchange="GetSP(value);">
                     </select>

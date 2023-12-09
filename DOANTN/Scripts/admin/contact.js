@@ -2,47 +2,12 @@
 let currentPage = 1;
 var total = 0;
 $(document).ready(function () {
-    Laystate();
-    //GetAll();
     displayData(currentPage);
     document.getElementById("prev-btn").style.display = 'none';
 });
-function checkprodcer() {
-    if ($("input[name='producer_id1']").val() == '') {
-        alert("Vui lòng nhập mã nhà sản xuất");
-    } else if ($("input[name='producer_name1']").val() == '') {
-        alert("vui lòng nhập tên nhà sản xuất");
-    } else if ($("input[name='producer_address1']").val() == '') {
-        alert("vui lòng nhập địa chỉ");
-    } else {
-        addproducer();
-    }
-}
-function Laystate() {
+function LaytheomaTB(id) {
     $.ajax({
-        url: '/laystate',
-        method: 'GET',
-        contentType: 'json',
-        dataType: 'json',
-        error: function (response) {
-
-        },
-        success: function (reponse) {
-            const len = reponse.length;
-            let table = '';
-            for (var i = 0; i < len; ++i) {
-                table = table + '<hr>'
-                table = table + '<option value="' + reponse[i].state_id + '">' + reponse[i].state_name + '</option>'
-            }
-            document.getElementById('value1').innerHTML = table;
-            document.getElementById('value2').innerHTML = table;
-        },
-        fail: function (response) { }
-    });
-}
-function LaytheomaTB(producer_id) {
-    $.ajax({
-        url: '/Layproducer/' + producer_id,
+        url: '/LayLienHe/' + id,
         method: 'GET',
         contentType: 'json',
         dataType: 'json',
@@ -50,17 +15,39 @@ function LaytheomaTB(producer_id) {
             alert("Lỗi mã");
         },
         success: function (res) {
-            $("#producer_id1").val(res.producer_id),
-                $("#producer_name1").val(res.producer_name),
-                $("#producer_address1").val(res.producer_address),
-                $('#value1').val(res.state)
+            $("#txtThietBi").val(res.id),
+                $("#txtTen").val(res.name),
+                $("#txtEmail").val(res.email),
+                $("#txtDienThoai").val(res.phone),
+                $("#txtDiaChi").val(res.address),
+                $("#txtCmt").val(res.comment)
         },
         fail: function (response) { }
     })
 }
+function check() {
+    var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
+    var mobile = $('#txtPhone').val();
+
+    if ($("input[name='MaThietBi1']").val() == '') {
+        alert("Vui lòng nhập mã ");
+    } else if ($("input[name='Ten1']").val() == '') {
+        alert("vui lòng nhập tên ");
+    } else if ($("input[name='Email1']").val() == '') {
+        alert("vui lòng nhập email");
+    } else if (mobile == '') {
+        alert("vui lòng nhập sdt");
+    } else if (vnf_regex.test(mobile) == false) {
+        alert('Số điện thoại của bạn không đúng định dạng!');
+    } else if ($("input[name='DiaChi1']").val() == '') {
+        alert("vui lòng nhập Mật Khẩu");
+    } else {
+        AddContact();
+    }
+}
 function GetAll(startIndex, endIndex) {
     $.ajax({
-        url: '/Layproducer/',
+        url: '/LayLienHe/',
         method: 'GET',
         contentType: 'json',
         dataType: 'json',
@@ -79,11 +66,13 @@ function GetAll(startIndex, endIndex) {
                 let STT = i + 1;
                 table = table + '<tr>'
                 table = table + '<td>' + STT + '</td>';
-                table = table + '<td>' + reponse[i].producer_id + '</td>';
-                table = table + '<td style="max-width : 200px">' + reponse[i].producer_name + '</td>';
-                table = table + '<td style="max-width : 200px">' + reponse[i].producer_address + '</td>';
-                table = table + '<td style="max-width : 200px">' + reponse[i].state_name + '</td>';
-                table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].producer_id + '\')">Edit Producer</button></td>';
+                table = table + '<td>' + reponse[i].id + '</td>';
+                table = table + '<td style="max-width : 200px">' + reponse[i].name + '</td>';
+                table = table + '<td style="max-width : 150px">' + reponse[i].email + '</td>';
+                table = table + '<td style="max-width : 150px">' + reponse[i].phone + '</td>';
+                table = table + '<td style="max-width : 150px">' + reponse[i].address + '</td>';
+                table = table + '<td style="max-width : 150px">' + reponse[i].comment + '</td>';
+                table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].id + '\')">Sửa</button> <button type="button" class="btn btn-danger" onclick="XoaContact(\'' + reponse[i].id + '\')">Xóa</button></td>';
                 table = table + '<tr>'
 
                 document.getElementById('data').innerHTML = table;

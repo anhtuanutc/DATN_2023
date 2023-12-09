@@ -2,47 +2,12 @@
 let currentPage = 1;
 var total = 0;
 $(document).ready(function () {
-    Laystate();
-    //GetAll();
     displayData(currentPage);
     document.getElementById("prev-btn").style.display = 'none';
 });
-function checkprodcer() {
-    if ($("input[name='producer_id1']").val() == '') {
-        alert("Vui lòng nhập mã nhà sản xuất");
-    } else if ($("input[name='producer_name1']").val() == '') {
-        alert("vui lòng nhập tên nhà sản xuất");
-    } else if ($("input[name='producer_address1']").val() == '') {
-        alert("vui lòng nhập địa chỉ");
-    } else {
-        addproducer();
-    }
-}
-function Laystate() {
+function LaytheomaTB(question_id) {
     $.ajax({
-        url: '/laystate',
-        method: 'GET',
-        contentType: 'json',
-        dataType: 'json',
-        error: function (response) {
-
-        },
-        success: function (reponse) {
-            const len = reponse.length;
-            let table = '';
-            for (var i = 0; i < len; ++i) {
-                table = table + '<hr>'
-                table = table + '<option value="' + reponse[i].state_id + '">' + reponse[i].state_name + '</option>'
-            }
-            document.getElementById('value1').innerHTML = table;
-            document.getElementById('value2').innerHTML = table;
-        },
-        fail: function (response) { }
-    });
-}
-function LaytheomaTB(producer_id) {
-    $.ajax({
-        url: '/Layproducer/' + producer_id,
+        url: '/getquestion/' + question_id,
         method: 'GET',
         contentType: 'json',
         dataType: 'json',
@@ -50,17 +15,24 @@ function LaytheomaTB(producer_id) {
             alert("Lỗi mã");
         },
         success: function (res) {
-            $("#producer_id1").val(res.producer_id),
-                $("#producer_name1").val(res.producer_name),
-                $("#producer_address1").val(res.producer_address),
-                $('#value1').val(res.state)
+            $("#txtThietBi").val(res.question_id),
+                $("#txtTen").val(res.question)
         },
         fail: function (response) { }
     })
 }
+function checkQuestion() {
+    if ($("input[name='MaThietBi1']").val() == '') {
+        alert("Vui lòng nhập mã câu hỏi");
+    } else if ($("input[name='Ten1']").val() == '') {
+        alert("vui lòng nhập nội dung câu hỏi");
+    } else {
+        AddQuestion();
+    }
+}
 function GetAll(startIndex, endIndex) {
     $.ajax({
-        url: '/Layproducer/',
+        url: '/LayCauHoi/',
         method: 'GET',
         contentType: 'json',
         dataType: 'json',
@@ -79,11 +51,9 @@ function GetAll(startIndex, endIndex) {
                 let STT = i + 1;
                 table = table + '<tr>'
                 table = table + '<td>' + STT + '</td>';
-                table = table + '<td>' + reponse[i].producer_id + '</td>';
-                table = table + '<td style="max-width : 200px">' + reponse[i].producer_name + '</td>';
-                table = table + '<td style="max-width : 200px">' + reponse[i].producer_address + '</td>';
-                table = table + '<td style="max-width : 200px">' + reponse[i].state_name + '</td>';
-                table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].producer_id + '\')">Edit Producer</button></td>';
+                table = table + '<td>' + reponse[i].question_id + '</td>';
+                table = table + '<td style="max-width : 200px">' + reponse[i].question + '</td>';
+                table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].question_id + '\')">Sửa</button></td>';
                 table = table + '<tr>'
 
                 document.getElementById('data').innerHTML = table;

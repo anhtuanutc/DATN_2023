@@ -6,6 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using static BTL_TTCMWeb.Models.admin.Controller_user.Controller_user;
 
 namespace BTL_TTCMWeb.Areas.admin.ApiControllers
 {
@@ -13,42 +14,6 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
     {
         HAWContextEntities db = new HAWContextEntities();
         DemoDataContext bd = new DemoDataContext();
-
-        #region Table data entity
-        public class ProfileUser
-        {
-            public int user_id;
-
-            public string user_name;
-
-            public string user_email;
-
-            public string user_phone;
-
-            public string user_address;
-
-            public string user_password;
-
-            public System.Nullable<System.DateTime> CreatedAt;
-
-            public bool isActive;
-
-            public System.Nullable<System.DateTime> time;
-
-            public System.Nullable<int> question_id;
-
-            public string answer;
-
-            public string remember_me_identify;
-
-            public string remember_me_token;
-
-            public string avatar_img;
-
-            public System.Nullable<int> SoLanMua;
-        }
-        #endregion
-
         //Employee
         [Route("LayTaiKhoan")]
         [HttpGet]
@@ -204,12 +169,6 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
                 //item.user_status = "Đã được kích hoạt";
             }
             return item;
-        }
-        [Route("LayCTHD/{order_id}")]
-        [HttpGet]
-        public List<Demo3> LayCTHDByID(int order_id)
-        {
-            return bd.Demo3s.Where(x => x.oder_id == order_id).ToList();
         }
 
 

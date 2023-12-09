@@ -4,82 +4,9 @@
     Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
 }
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="~/Scripts/admin/contact.js"></script>
 @section scripts{
     <script type="text/javascript">
-        $(document).ready(function () {
-            GetAll();
-        });
-        function LaytheomaTB(id) {
-            $.ajax({
-                url: '/LayLienHe/' + id,
-                method: 'GET',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (res) {
-                    alert("Lỗi mã");
-                },
-                success: function (res) {
-                    $("#txtThietBi").val(res.id),
-                        $("#txtTen").val(res.name),
-                        $("#txtEmail").val(res.email),
-                        $("#txtDienThoai").val(res.phone),
-                        $("#txtDiaChi").val(res.address),
-                        $("#txtCmt").val(res.comment)
-                },
-                fail: function (response) { }
-            })
-        }
-        function check() {
-            var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
-            var mobile = $('#txtPhone').val();
-
-            if ($("input[name='MaThietBi1']").val() == '') {
-                alert("Vui lòng nhập mã ");
-            } else if ($("input[name='Ten1']").val() == '') {
-                alert("vui lòng nhập tên ");
-            } else if ($("input[name='Email1']").val() == '') {
-                alert("vui lòng nhập email");
-            } else if (mobile == '') {
-                alert("vui lòng nhập sdt");
-            } else if (vnf_regex.test(mobile) == false) {
-                alert('Số điện thoại của bạn không đúng định dạng!');
-            } else if ($("input[name='DiaChi1']").val() == '') {
-                alert("vui lòng nhập Mật Khẩu");
-            } else {
-                AddContact();
-            }
-        }
-        function GetAll() {
-            $.ajax({
-                url: '/LayLienHe/',
-                method: 'GET',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (reponse) {
-                    alert("Lỗi");
-                },
-                success: function (reponse) {
-                    const len = reponse.length;
-                    let table = '';
-                    for (var i = 0; i < len; ++i) {
-                        let STT = i + 1;
-                        table = table + '<tr>'
-                        table = table + '<td>' + STT + '</td>';
-                        table = table + '<td>' + reponse[i].id + '</td>';
-                        table = table + '<td style="max-width : 200px">' + reponse[i].name + '</td>';
-                        table = table + '<td style="max-width : 150px">' + reponse[i].email + '</td>';
-                        table = table + '<td style="max-width : 150px">' + reponse[i].phone + '</td>';
-                        table = table + '<td style="max-width : 150px">' + reponse[i].address + '</td>';
-                        table = table + '<td style="max-width : 150px">' + reponse[i].comment + '</td>';
-                        table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].id + '\')">Sửa</button> <button type="button" class="btn btn-danger" onclick="XoaContact(\'' + reponse[i].id + '\')">Xóa</button></td>';
-                        table = table + '<tr>'
-
-                        document.getElementById('data').innerHTML = table;
-                    }
-                },
-                fail: function (response) { }
-            })
-        }
         function AddContact() {
             var url = '/api/Default/?id=' +
                 $("input[name='MaThietBi1']").val() + '&name=' + $("input[name='Ten1']").val() +
@@ -117,21 +44,6 @@
                     window.location.href = '@Url.Action("Contact", "Question_State_Color_Contact")';
                 }
             });
-        }
-        function HienThiSua() {
-            document.getElementById("Edit").style.display = 'inline';
-            document.getElementById("Tim").style.display = 'none';
-            document.getElementById("Add").style.display = 'none';
-        }
-        function HienThiAdd() {
-            document.getElementById("Edit").style.display = 'none';
-            document.getElementById("Tim").style.display = 'none';
-            document.getElementById("Add").style.display = 'inline';
-        }
-        function HienThi() {
-            document.getElementById("Edit").style.display = 'none';
-            document.getElementById("Tim").style.display = 'inline';
-            document.getElementById("Add").style.display = 'none';
         }
         function XoaContact(id) {
             var url = '/XoaLienHe/' + id
@@ -180,6 +92,12 @@
             <tbody id="data">
             </tbody>
         </table>
+        <br />
+        <div id="pagination-container">
+            <button id="prev-btn" onclick="prevBtn()">Prev</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-btn" onclick="nextBtn()">Next</button>
+        </div>
     </div>
 </div>
 <div class="container" id="Edit" style="display:none">

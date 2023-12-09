@@ -2,47 +2,12 @@
 let currentPage = 1;
 var total = 0;
 $(document).ready(function () {
-    Laystate();
-    //GetAll();
     displayData(currentPage);
     document.getElementById("prev-btn").style.display = 'none';
 });
-function checkprodcer() {
-    if ($("input[name='producer_id1']").val() == '') {
-        alert("Vui lòng nhập mã nhà sản xuất");
-    } else if ($("input[name='producer_name1']").val() == '') {
-        alert("vui lòng nhập tên nhà sản xuất");
-    } else if ($("input[name='producer_address1']").val() == '') {
-        alert("vui lòng nhập địa chỉ");
-    } else {
-        addproducer();
-    }
-}
-function Laystate() {
+function LaytheomaTB(color_id) {
     $.ajax({
-        url: '/laystate',
-        method: 'GET',
-        contentType: 'json',
-        dataType: 'json',
-        error: function (response) {
-
-        },
-        success: function (reponse) {
-            const len = reponse.length;
-            let table = '';
-            for (var i = 0; i < len; ++i) {
-                table = table + '<hr>'
-                table = table + '<option value="' + reponse[i].state_id + '">' + reponse[i].state_name + '</option>'
-            }
-            document.getElementById('value1').innerHTML = table;
-            document.getElementById('value2').innerHTML = table;
-        },
-        fail: function (response) { }
-    });
-}
-function LaytheomaTB(producer_id) {
-    $.ajax({
-        url: '/Layproducer/' + producer_id,
+        url: '/LayMau/' + color_id,
         method: 'GET',
         contentType: 'json',
         dataType: 'json',
@@ -50,17 +15,27 @@ function LaytheomaTB(producer_id) {
             alert("Lỗi mã");
         },
         success: function (res) {
-            $("#producer_id1").val(res.producer_id),
-                $("#producer_name1").val(res.producer_name),
-                $("#producer_address1").val(res.producer_address),
-                $('#value1').val(res.state)
+            $("#txtThietBi").val(res.color_id),
+                $("#txtTen").val(res.color_name),
+                $("#txtEmail").val(res.color_img)
         },
         fail: function (response) { }
     })
 }
+function checkcolor() {
+    if ($("input[name='MaThietBi1']").val() == '') {
+        alert("Vui lòng nhập mã màu");
+    } else if ($("input[name='Ten1']").val() == '') {
+        alert("vui lòng nhập tên tên màu");
+    } else if ($("input[name='Email1']").val() == '') {
+        alert("vui lòng nhập link màu ảnh");
+    } else {
+        AddColor();
+    }
+}
 function GetAll(startIndex, endIndex) {
     $.ajax({
-        url: '/Layproducer/',
+        url: '/LayMau/',
         method: 'GET',
         contentType: 'json',
         dataType: 'json',
@@ -79,11 +54,10 @@ function GetAll(startIndex, endIndex) {
                 let STT = i + 1;
                 table = table + '<tr>'
                 table = table + '<td>' + STT + '</td>';
-                table = table + '<td>' + reponse[i].producer_id + '</td>';
-                table = table + '<td style="max-width : 200px">' + reponse[i].producer_name + '</td>';
-                table = table + '<td style="max-width : 200px">' + reponse[i].producer_address + '</td>';
-                table = table + '<td style="max-width : 200px">' + reponse[i].state_name + '</td>';
-                table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].producer_id + '\')">Edit Producer</button></td>';
+                table = table + '<td>' + reponse[i].color_id + '</td>';
+                table = table + '<td style="max-width : 200px">' + reponse[i].color_name + '</td>';
+                table = table + '<td> <div ><img src="' + reponse[i].color_img + '" style="width : 38px; height : 38px " /></div> </td>';
+                table = table + '<td style="max-width : 150px" > <button type="button" class="btn btn-danger" onclick="HienThiSua(),LaytheomaTB(\'' + reponse[i].color_id + '\')">Sửa</button></td>';
                 table = table + '<tr>'
 
                 document.getElementById('data').innerHTML = table;

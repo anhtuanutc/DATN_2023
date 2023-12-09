@@ -191,9 +191,9 @@ function editProduct() {
         + '&product_content=' + $("input[name='product_content1']").val()
         + '&product_img=' + $("input[name='product_img1']").val()
         + '&product_sub_img=' + $("input[name='product_sub_img1']").val()
-        + '&state=' + $("select[name='x']").val()
-        + '&product_producer=' + $("select[name='y']").val()
-        + '&category_id=' + $("select[name='z']").val();
+        + '&state=' + $("select[name='a']").val()
+        + '&product_producer=' + $("select[name='b']").val()
+        + '&category_id=' + $("select[name='c']").val();
     $.ajax({
         url: url,
         method: 'PUT',
