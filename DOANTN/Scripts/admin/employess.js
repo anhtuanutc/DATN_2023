@@ -25,25 +25,47 @@ function LaytheomaTB(admin_id) {
         fail: function (response) { }
     })
 }
-function check() {
+function check(check_add) {
     var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
-    var mobile = $('#txtPhone').val();
-
-    if ($("input[name='MaThietBi1']").val() == '') {
-        alert("Vui lòng nhập mã Nhân Viên");
-    } else if ($("input[name='Ten1']").val() == '') {
-        alert("vui lòng nhập tên Nhân viên");
-    } else if ($("input[name='Email1']").val() == '') {
-        alert("vui lòng nhập email");
-    } else if (mobile == '') {
-        alert("vui lòng nhập sdt");
-    } else if (vnf_regex.test(mobile) == false) {
-        alert('Số điện thoại của bạn không đúng định dạng!');
-    } else if ($("input[name='DiaChi1']").val() == '') {
-        alert("vui lòng nhập Mật Khẩu");
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (check_add == 1) {
+        var mobile = $('#txtPhone').val();
+        var email = $('#txtEmail1').val();
+        if ($("input[name='Ten1']").val() == '') {
+            return alert("vui lòng nhập tên Nhân viên");
+        } else if ($("input[name='Email1']").val() == '') {
+            return alert("vui lòng nhập email");
+        } else if (emailRegex.test(email) == false) {
+            return alert("Email không đúng định dạng!");
+        } else if (mobile == '') {
+            return alert("vui lòng nhập sdt");
+        } else if (vnf_regex.test(mobile) == false) {
+            return alert('Số điện thoại của bạn không đúng định dạng!');
+        } else if ($("input[name='DiaChi1']").val() == '') {
+            return alert("vui lòng nhập Mật Khẩu");
+        } else {
+            return true;
+        }
     } else {
-        AddAdmin();
+        var mobile= $('#txtDienThoai').val();
+        var email = $('#txtEmail').val();
+        if ($("input[name='Ten']").val() == '') {
+            return alert("vui lòng nhập tên Nhân viên");
+        } else if ($("input[name='Email']").val() == '') {
+            return alert("vui lòng nhập email");
+        } else if (emailRegex.test(email) == false) {
+            return alert("Email không đúng định dạng!");
+        } else if (mobile == '') {
+            return alert("vui lòng nhập sdt");
+        } else if (vnf_regex.test(mobile) == false) {
+            return alert('Số điện thoại của bạn không đúng định dạng!');
+        } else if ($("input[name='DiaChi']").val() == '') {
+            return alert("vui lòng nhập Mật Khẩu");
+        } else {
+            return true;
+        }
     }
+    
 }
 function GetAll(startIndex, endIndex) {
     $.ajax({

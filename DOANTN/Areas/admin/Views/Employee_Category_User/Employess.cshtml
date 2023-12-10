@@ -6,6 +6,9 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <style>
+    h2{
+        margin-top:0;
+    }
     #Edit,#Add {
         display: flex;
     }
@@ -55,44 +58,47 @@
 @section scripts{
     <script type="text/javascript">
         function AddAdmin() {
-            var url = '/api/Demo/?admin_id=' +
-                $("input[name='MaThietBi1']").val() + '&admin_name=' + $("input[name='Ten1']").val() +
-                '&admin_email=' + $("input[name='Email1']").val() + '&admin_phone=' + $("input[name='Phone1']").val() + '&admin_password=' + $("input[name='DiaChi1']").val()
+            if (check()) {
+                var url = '/api/Demo/?admin_id=1' + '&admin_name=' + $("input[name='Ten1']").val()
+                + '&admin_email=' + $("input[name='Email1']").val() + '&admin_phone=' + $("input[name='Phone1']").val() + '&admin_password=' + $("input[name='DiaChi1']").val()
                 + '&admin_isEmployee=' + $("select[name='Check']").val();
-            $.ajax({
-                url: url,
-                method: 'Post',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Thêm mới không thành công");
-                },
-                success: function (reponse) {
-                    alert(url);
-                    window.location.href = '@Url.Action("Employess", "Employee_Category_User")';
-                }
-            });
+                $.ajax({
+                    url: url,
+                    method: 'Post',
+                    contentType: 'json',
+                    dataType: 'json',
+                    error: function (response) {
+                        alert("Thêm mới không thành công");
+                    },
+                    success: function (reponse) {
+                        alert("Thêm mới thành công, chuyển về màn hình danh sách");
+                        window.location.href = '@Url.Action("Employess", "Employee_Category_User")';
+                    }
+                });
+            }
+
         }
         function SuaAdmin() {
-            var url = '/api/Demo/?admin_id=' +
+            if (check()) {
+                var url = '/api/Demo/?admin_id=' +
                 $("input[name='MaThietBi']").val() + '&admin_name=' + $("input[name='Ten']").val() +
                 '&admin_email=' + $("input[name='Email']").val() + '&admin_phone=' + $("input[name='DienThoai']").val() + '&admin_password=' + $("input[name='DiaChi']").val()
                 + '&admin_isEmployee=' + $("select[name='MaLoai']").val();
-            $.ajax({
-                url: url,
-                method: 'PUT',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Sửa không thành công  ");
-                },
-                success: function (reponse) {
-                    alert(url);
-                    window.location.href = '@Url.Action("Employess", "Employee_Category_User")';
-                }
-            });
+                $.ajax({
+                    url: url,
+                    method: 'PUT',
+                    contentType: 'json',
+                    dataType: 'json',
+                    error: function (response) {
+                        alert("Sửa không thành công");
+                    },
+                    success: function (reponse) {
+                        alert("Cập nhật thành công, chuyển về màn hình danh sách");
+                        window.location.href = '@Url.Action("Employess", "Employee_Category_User")';
+                    }
+                });
+            }
         }
-        
         function XoaContact(admin_id) {
             var url = '/deleteemployee/' + admin_id
             $.ajax({
@@ -109,31 +115,8 @@
                         alert("Xóa thành công");
                          window.location.href = '@Url.Action("Employess", "Employee_Category_User")';
                     }
-                    else {
-
-                    }
-
                 }
             });
-        }
-        function saveImageToAPI(formData) {
-            $.ajax({
-                type: 'POST',
-                url: '/api/upload/avatar',
-                data: formData,
-                contentType: false,
-                processData: false,
-                success: function (response) {
-                    alert('Upload ảnh thành công');
-                    //Load lại trang web
-                    location.reload();
-                    window.location.reload(true);
-                    reload(currentPage);
-                },
-                error: function (error) {
-                    alert('Upload ảnh không thành công');
-                }
-            })
         }
     </script>
 }
@@ -152,7 +135,7 @@
                     <th>Email</th>
                     <th>Điện thoại</th>
                     <th>Password</th>
-                    <th>isEmployee</th>
+                    <th>Là nhân viên</th>
                     <th>Tùy Chọn</th>
                 </tr>
             </thead>
@@ -215,7 +198,7 @@
                     <td style="display: inline-flex">
                         <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
                         <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
-                                onclick="SuaAdmin();">
+                                onclick="SuaAdmin(0);">
                             Cập nhật
                         </button>
                     </td>
@@ -223,24 +206,11 @@
             </tbody>
         </table>
     </div>
-   
-    <!--<div class="avatar-container" style="display: inline-block; vertical-align: top; text-align: center">-->
-        <!-- Khung hiển thị ảnh -->
-        <!--<h2>Avatar</h2>
-        <div class="avatar">
-            <img id="avatar-preview" src="" alt="Avatar">
-        </div>
-        <div class="form-group" style="text-align:center; margin-top: 5%">
-            <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="document.getElementById('avatar').click()" id="btn_image">Chọn ảnh</button>
-            <input type="file" id="avatar" accept="image/*" onclick="Getimage()">
-        </div>
-    </div>-->
-
 </div>
 <div class="container" id="Add" style="display:none">
     <table style="border:none">
         <tbody>
-            <tr>
+            <tr style="display:none">
                 <td>ID: </td>
                 <td>
                     <input id="txtThietBi" type="text" name="MaThietBi1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
@@ -255,7 +225,7 @@
             <tr>
                 <td>Email: </td>
                 <td>
-                    <input id="txtEmail" type="text" name="Email1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    <input id="txtEmail1" type="text" name="Email1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
                 </td>
             </tr>
             <tr>
@@ -283,7 +253,7 @@
                 <td style="display: inline-flex">
                     <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
                     <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
-                            onclick="check();">
+                            onclick="AddAdmin(1);">
                         Thêm mới
                     </button>
                 </td>
