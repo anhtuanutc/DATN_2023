@@ -10,7 +10,7 @@ $(document).ready(function () {
 
 });
 function checkproduct() {
-    if ($("input[name='product_id2']").val() == '') {
+    if ($("input[name='product_id2']").val() == '') {   
         alert("Vui lòng nhập mã sản phẩm");
     } else if ($("input[name='product_name2']").val() == '') {
         alert("vui lòng nhập tên Sản Phẩm");

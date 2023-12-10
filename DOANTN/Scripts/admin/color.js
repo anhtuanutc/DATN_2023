@@ -22,16 +22,28 @@ function LaytheomaTB(color_id) {
         fail: function (response) { }
     })
 }
-function checkcolor() {
-    if ($("input[name='MaThietBi1']").val() == '') {
-        alert("Vui lòng nhập mã màu");
-    } else if ($("input[name='Ten1']").val() == '') {
-        alert("vui lòng nhập tên tên màu");
-    } else if ($("input[name='Email1']").val() == '') {
-        alert("vui lòng nhập link màu ảnh");
-    } else {
-        AddColor();
+function checkcolor(check_add) {
+    if (check_add == 1) {
+         if ($("input[name='Ten1']").val() == '') {
+            return alert("vui lòng nhập tên tên màu");
+        } else if ($("input[name='Email1']").val() == '') {
+            return alert("vui lòng nhập link màu ảnh");
+        } else {
+            return true;
+        }
     }
+    else {
+        if ($("input[name='MaThietBi']").val() == '') {
+            return alert("Vui lòng nhập mã màu");
+        } else if ($("input[name='Ten']").val() == '') {
+            return alert("vui lòng nhập tên tên màu");
+        } else if ($("input[name='Email']").val() == '') {
+            return alert("vui lòng nhập link màu ảnh");
+        } else {
+            return true;
+        }
+    }
+    
 }
 function GetAll(startIndex, endIndex) {
     $.ajax({

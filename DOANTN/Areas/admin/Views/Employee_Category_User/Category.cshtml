@@ -7,42 +7,45 @@
 <script src="~/Scripts/admin/category.js"></script>
 @section scripts{
     <script type="text/javascript">
-        
+
         function AddCategory() {
-            var url = '/api/Demo/?category_id=' +
-                $("input[name='MaThietBi1']").val() + '&category_name=' + $("input[name='Ten1']").val() + '&category_parent=' + $("input[name='Abc1']").val();
-            $.ajax({
-                url: url,
-                method: 'Post',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Thêm mới không thành công");
-                },
-                success: function (reponse) {
-                    alert("Thêm mới thành công  ");
-                    window.location.href = '@Url.Action("Category", "Employee_Category_User")';
-                }
-            });
+            if (checkCategory(1)) {
+                var url = '/api/Demo/?category_id=1' + '&category_name=' + $("input[name='Ten1']").val() + '&category_parent=' + $("input[name='Abc1']").val();
+                $.ajax({
+                    url: url,
+                    method: 'Post',
+                    contentType: 'json',
+                    dataType: 'json',
+                    error: function (response) {
+                        alert("Thêm mới không thành công");
+                    },
+                    success: function (reponse) {
+                        alert("Thêm mới thành công  ");
+                        window.location.href = '@Url.Action("Category", "Employee_Category_User")';
+                    }
+                });
+            }
         }
         function SuaCategory() {
-            var url = '/api/Demo/?category_id=' +
+            if (checkCategory(0)) {
+                var url = '/api/Demo/?category_id=' +
                 $("input[name='MaThietBi']").val() + '&category_name=' + $("input[name='Ten']").val() + '&category_parent=' + $("input[name='Abc']").val();
-            $.ajax({
-                url: url,
-                method: 'PUT',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Sửa không thành công  ");
-                },
-                success: function (reponse) {
-                    alert("Sửa thành công  ");
-                    window.location.href = '@Url.Action("Category", "Employee_Category_User")';
-                }
-            });
+                $.ajax({
+                    url: url,
+                    method: 'PUT',
+                    contentType: 'json',
+                    dataType: 'json',
+                    error: function (response) {
+                        alert("Sửa không thành công  ");
+                    },
+                    success: function (reponse) {
+                        alert("Sửa thành công  ");
+                        window.location.href = '@Url.Action("Category", "Employee_Category_User")';
+                    }
+                });
+            }
         }
-        
+
     </script>
 }
 <div id="Tim" class="container">
@@ -108,7 +111,7 @@
 <div class="container" id="Add" style="display:none">
     <table style="border:none">
         <tbody>
-            <tr>
+            <tr style="display:none">
                 <td>ID: </td>
                 <td>
                     <input id="txtThietBi" type="text" name="MaThietBi1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
@@ -130,7 +133,7 @@
                 <td style="display: inline-flex">
                     <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
                     <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
-                            onclick="checkCategory();">
+                            onclick="AddCategory();">
                         Thêm mới
                     </button>
                 </td>

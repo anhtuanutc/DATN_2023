@@ -27,22 +27,21 @@ function LaytheomaTB(id) {
 }
 function check() {
     var vnf_regex = /((09|03|07|08|05)+([0-9]{8})\b)/g;
-    var mobile = $('#txtPhone').val();
-
-    if ($("input[name='MaThietBi1']").val() == '') {
-        alert("Vui lòng nhập mã ");
-    } else if ($("input[name='Ten1']").val() == '') {
-        alert("vui lòng nhập tên ");
-    } else if ($("input[name='Email1']").val() == '') {
-        alert("vui lòng nhập email");
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var mobile = $('#txtDienThoai').val();
+    var email = $('#txtEmail').val();
+    if ($("input[name='Ten']").val() == '') {
+        return alert("vui lòng nhập tên Nhân viên");
+    } else if ($("input[name='Email']").val() == '') {
+        return alert("vui lòng nhập email");
+    } else if (emailRegex.test(email) == false) {
+        return alert("Email không đúng định dạng!");
     } else if (mobile == '') {
-        alert("vui lòng nhập sdt");
+        return alert("vui lòng nhập sdt");
     } else if (vnf_regex.test(mobile) == false) {
-        alert('Số điện thoại của bạn không đúng định dạng!');
-    } else if ($("input[name='DiaChi1']").val() == '') {
-        alert("vui lòng nhập Mật Khẩu");
+        return alert('Số điện thoại của bạn không đúng định dạng!');
     } else {
-        AddContact();
+        return true;
     }
 }
 function GetAll(startIndex, endIndex) {
@@ -84,17 +83,17 @@ function GetAll(startIndex, endIndex) {
 function HienThiSua() {
     document.getElementById("Edit").style.display = 'inline';
     document.getElementById("Tim").style.display = 'none';
-    document.getElementById("Add").style.display = 'none';
+//    document.getElementById("Add").style.display = 'none';
 }
 function HienThiAdd() {
     document.getElementById("Edit").style.display = 'none';
     document.getElementById("Tim").style.display = 'none';
-    document.getElementById("Add").style.display = 'inline';
+    //document.getElementById("Add").style.display = 'inline';
 }
 function HienThi() {
     document.getElementById("Edit").style.display = 'none';
     document.getElementById("Tim").style.display = 'inline';
-    document.getElementById("Add").style.display = 'none';
+/*    document.getElementById("Add").style.display = 'none';*/
 }
 function displayData(page) {
     var startIndex = (page - 1) * rowsPerPage;

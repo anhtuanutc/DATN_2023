@@ -10,37 +10,42 @@
 @section scripts{
     <script type="text/javascript">
         function addproducer() {
-            var url = '/api/Order_product_producer_API/?producer_id=' +
+            if (checkprodcer(1)) {
+                var url = '/api/Order_product_producer_API/?producer_id=1' +
                 $("input[name='producer_id1']").val() + '&producer_name=' + $("input[name='producer_name1']").val() + '&producer_address=' + $("input[name='producer_address1']").val() + '&state=' + $("select[name='stateAdd']").val();
-            $.ajax({
-                url: url,
-                method: 'Post',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Thêm mới không thành công");
-                },
-                success: function (reponse) {
-                    alert("Thêm mới thành công  ");
-                    window.location.href = '@Url.Action("producer", "Order_product_producer")';
-                }
-            });
+                $.ajax({
+                    url: url,
+                    method: 'Post',
+                    contentType: 'json',
+                    dataType: 'json',
+                    error: function (response) {
+                        alert("Thêm mới không thành công");
+                    },
+                    success: function (reponse) {
+                        alert("Thêm mới thành công");
+                        window.location.href = '@Url.Action("producer", "Order_product_producer")';
+                    }
+                });
+            }
         }
         function editproducer() {
-            var url = '/api/Order_product_producer_API/?producer_id=' +
+            if (checkprodcer(0)) {
+                var url = '/api/Order_product_producer_API/?producer_id=' +
                 $("input[name='producer_id']").val() + '&producer_name=' + $("input[name='producer_name']").val() + '&producer_address=' + $("input[name='producer_address']").val() + '&state=' + $("select[name='stateEdit']").val();
-            $.ajax({
-                url: url,
-                method: 'PUT',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Sửa không thành công  ");
-                },
-                success: function (reponse) {                
-                    window.location.href = '@Url.Action("producer", "Order_product_producer")';
-                }
-            });
+                $.ajax({
+                    url: url,
+                    method: 'PUT',
+                    contentType: 'json',
+                    dataType: 'json',
+                    error: function (response) {
+                        alert("Sửa không thành công");
+                    },
+                    success: function (reponse) {
+                        alert("Cập nhật thành công");
+                        window.location.href = '@Url.Action("producer", "Order_product_producer")';
+                    }
+                });
+            }
         }
     </script>
 }
@@ -114,7 +119,7 @@
 <div class="container" id="Add" style="display:none">
     <table style="border:none">
         <tbody>
-            <tr>
+            <tr style="display:none">
                 <td>Mã nhà sản xuất: </td>
                 <td>
                     <input id="producer_id" type="text" name="producer_id1" style="margin-bottom: 10px; border-radius: 2px; width: 280px"  />
@@ -143,7 +148,7 @@
                 <td style="display: inline-flex">
                     <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
                     <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
-                            onclick="checkprodcer();">
+                            onclick="addproducer();">
                         Thêm mới
                     </button>
                 </td>

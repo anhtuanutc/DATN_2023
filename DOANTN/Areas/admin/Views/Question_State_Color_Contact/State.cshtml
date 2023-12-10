@@ -9,38 +9,41 @@
 @section scripts{
     <script type="text/javascript">
         function ThemTrangThai() {
-            var url = '/api/Default/?state_id=' +
-                $("input[name='MaThietBi1']").val() + '&state_name=' + $("input[name='Ten1']").val();
-            $.ajax({
-                url: url,
-                method: 'Post',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Thêm mới không thành công");
-                },
-                success: function (reponse) {
-                    alert("Thêm mới thành công  ");
-                    window.location.href = '@Url.Action("State", "Question_State_Color_Contact")';
-                }
-            });
+            if (checkstate(1)) {
+                var url = '/api/Default/?state_id=1' + '&state_name=' + $("input[name='Ten1']").val();
+                $.ajax({
+                    url: url,
+                    method: 'Post',
+                    contentType: 'json',
+                    dataType: 'json',
+                    error: function (response) {
+                        alert("Thêm mới không thành công");
+                    },
+                    success: function (reponse) {
+                        alert("Thêm mới thành công  ");
+                        window.location.href = '@Url.Action("State", "Question_State_Color_Contact")';
+                    }
+                });
+            }
         }
         function SuaTrangThai() {
-            var url = '/api/Default/?state_id=' +
+            if (checkstate(0)) {
+                 var url = '/api/Default/?state_id=' +
                 $("input[name='MaThietBi']").val() + '&state_name=' + $("input[name='Ten']").val();
-            $.ajax({
-                url: url,
-                method: 'PUT',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Sửa không thành công  ");
-                },
-                success: function (reponse) {
-                    alert("Sửa thành công  ");
-                    window.location.href = '@Url.Action("State", "Question_State_Color_Contact")';
-                }
-            });
+                $.ajax({
+                    url: url,
+                    method: 'PUT',
+                    contentType: 'json',
+                    dataType: 'json',
+                    error: function (response) {
+                        alert("Sửa không thành công  ");
+                    },
+                    success: function (reponse) {
+                        alert("Sửa thành công  ");
+                        window.location.href = '@Url.Action("State", "Question_State_Color_Contact")';
+                    }
+                });
+            }
         }
     </script>
 }
@@ -98,7 +101,7 @@
 <div class="container" id="Add" style="display:none">
     <table style="border:none">
         <tbody>
-            <tr>
+            <tr style="display:none">
                 <td>ID: </td>
                 <td>
                     <input id="txtThietBi" type="text" name="MaThietBi1" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
@@ -114,7 +117,7 @@
                 <td style="display: inline-flex">
                     <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
                     <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
-                            onclick="checkstate();">
+                            onclick="ThemTrangThai();">
                         Thêm mới
                     </button>
                 </td>

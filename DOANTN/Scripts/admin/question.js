@@ -22,12 +22,20 @@ function LaytheomaTB(question_id) {
     })
 }
 function checkQuestion() {
-    if ($("input[name='MaThietBi1']").val() == '') {
-        alert("Vui lòng nhập mã câu hỏi");
-    } else if ($("input[name='Ten1']").val() == '') {
-        alert("vui lòng nhập nội dung câu hỏi");
+    if (check_add == 1) {
+        if ($("input[name='Ten1']").val() == '') {
+            return alert("vui lòng nhập tên câu hỏi");
+        } else {
+            return true;
+        }
     } else {
-        AddQuestion();
+        if ($("input[name='MaThietBi']").val() == '') {
+            alert("Vui lòng nhập mã câu hỏi");
+        } else if ($("input[name='Ten']").val() == '') {
+            alert("vui lòng nhập tên câu hỏi");
+        } else {
+            return true;
+        }
     }
 }
 function GetAll(startIndex, endIndex) {

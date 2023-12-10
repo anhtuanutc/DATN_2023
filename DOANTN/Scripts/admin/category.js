@@ -22,14 +22,24 @@ function LaytheomaTB(category_id) {
         fail: function (response) { }
     })
 }
-function checkCategory() {
-    if ($("input[name='MaThietBi1']").val() == '') {
-        alert("Vui lòng nhập mã danh mục");
-    } else if ($("input[name='Ten1']").val() == '') {
-        alert("vui lòng nhập tên danh mục");
-    } else {
-        AddCategory();
+function checkCategory(check_add) {
+    if (check_add == 1) {
+        if ($("input[name='Ten1']").val() == '') {
+            return alert("vui lòng nhập tên danh mục");
+        } else {
+            return true;
+        }
     }
+    else {
+        if ($("input[name='MaThietBi']").val() == '') {
+            return alert("Vui lòng nhập mã danh mục");
+        } else if ($("input[name='Ten']").val() == '') {
+            return alert("vui lòng nhập tên danh mục");
+        } else {
+            return true;
+        }
+    }
+    
 }
 function GetAll(startIndex, endIndex) {
     $.ajax({

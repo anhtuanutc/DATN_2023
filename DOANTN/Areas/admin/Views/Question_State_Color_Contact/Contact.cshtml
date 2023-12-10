@@ -27,26 +27,28 @@
             });
         }
         function SuaContact() {
-            var url = '/api/Default/?id=' +
+            if (check()) {
+                var url = '/api/Default/?id=' +
                 $("input[name='MaThietBi']").val() + '&name=' + $("input[name='Ten']").val() +
                 '&email=' + $("input[name='Email']").val() + '&phone=' + $("input[name='DienThoai']").val() + '&address=' + $("input[name='DiaChi']").val()
                 + '&comment=' + $("input[name='Cmt']").val();
-            $.ajax({
-                url: url,
-                method: 'PUT',
-                contentType: 'json',
-                dataType: 'json',
-                error: function (response) {
-                    alert("Sửa không thành công  ");
-                },
-                success: function (reponse) {
-                    alert("Sửa thành công  ");
-                    window.location.href = '@Url.Action("Contact", "Question_State_Color_Contact")';
-                }
-            });
+                $.ajax({
+                    url: url,
+                    method: 'PUT',
+                    contentType: 'json',
+                    dataType: 'json',
+                    error: function (response) {
+                        alert("Sửa không thành công  ");
+                    },
+                    success: function (reponse) {
+                        alert("Sửa thành công  ");
+                        window.location.href = '@Url.Action("Contact", "Question_State_Color_Contact")';
+                    }
+                });
+            }
         }
         function XoaContact(id) {
-            var url = '/XoaLienHe/' + id
+            @*var url = '/XoaLienHe/' + id
             $.ajax({
                 url: url,
                 method: 'DELETE',
@@ -66,14 +68,15 @@
                     }
 
                 }
-            });
+            });*@
+            alert("Tạm thời chưa thể xóa liên hệ");
         }
     </script>
 }
 <div id="Tim" class="container">
     <div class="container" style="width:100%;">
         <h1 style="text-align:center">Bảng Liên Hệ</h1>
-        <button class="btn btn-info" style="float: left; margin-bottom: 20px;" onclick="HienThiAdd();">Thêm Liên Hệ</button></a>
+        @*<button class="btn btn-info" style="float: left; margin-bottom: 20px;" onclick="HienThiAdd();">Thêm Liên Hệ</button></a>*@
         <br>
         <table class="table table-bordered" style="width:100%;">
 
@@ -151,7 +154,7 @@
         </tbody>
     </table>
 </div>
-<div class="container" id="Add" style="display:none">
+@*<div class="container" id="Add" style="display:none">
     <table style="border:none">
         <tbody>
             <tr>
@@ -201,5 +204,5 @@
             </tr>
         </tbody>
     </table>
-</div>
+</div>*@
 

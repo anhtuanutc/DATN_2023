@@ -21,14 +21,23 @@ function LaytheomaTB(state_id) {
         fail: function (response) { }
     })
 }
-function checkstate() {
-    if ($("input[name='MaThietBi1']").val() == '') {
-        alert("Vui lòng nhập mã trạng thái");
-    } else if ($("input[name='Ten1']").val() == '') {
-        alert("vui lòng nhập tên trạng thái");
+function checkstate(check_add) {
+    if (check_add == 1) {
+        if ($("input[name='Ten1']").val() == '') {
+            return alert("vui lòng nhập tên trạng thái");
+        } else {
+            return true;
+        }
     } else {
-        ThemTrangThai();
+        if ($("input[name='MaThietBi']").val() == '') {
+            alert("Vui lòng nhập mã trạng thái");
+        } else if ($("input[name='Ten']").val() == '') {
+            alert("vui lòng nhập tên trạng thái");
+        } else {
+            return true;
+        }
     }
+    
 }
 function GetAll(startIndex, endIndex) {
     $.ajax({

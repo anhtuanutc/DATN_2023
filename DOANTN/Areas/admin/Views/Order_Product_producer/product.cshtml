@@ -44,8 +44,7 @@
     })
     }
     function addProduct() {
-        var url = '/api/Order_product_producer_API/?product_id=' +
-            $("input[name='product_id2']").val()
+        var url = '/api/Order_product_producer_API/?product_id=1' 
             + '&product_name=' + $("input[name='product_name2']").val()
             + '&product_alias=' + $("input[name='product_alias2']").val()
             + '&product_description=' + $("input[name='product_description2']").val()
@@ -251,7 +250,7 @@
         <h2 style="margin-top:0; text-align:center">Thông tin chính</h2>
         <table style="border:none">
             <tbody>
-                <tr>
+                <tr style="display:none">
                     <td>product_id: </td>
                     <td>
                         <input id="product_id2" type="text" name="product_id2" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />

@@ -3,19 +3,28 @@ let currentPage = 1;
 var total = 0;
 $(document).ready(function () {
     Laystate();
-    //GetAll();
     displayData(currentPage);
     document.getElementById("prev-btn").style.display = 'none';
 });
-function checkprodcer() {
-    if ($("input[name='producer_id1']").val() == '') {
-        alert("Vui lòng nhập mã nhà sản xuất");
-    } else if ($("input[name='producer_name1']").val() == '') {
-        alert("vui lòng nhập tên nhà sản xuất");
-    } else if ($("input[name='producer_address1']").val() == '') {
-        alert("vui lòng nhập địa chỉ");
+function checkprodcer(check_add) {
+    if (check_add == 1) {
+         if ($("input[name='producer_name1']").val() == '') {
+            return alert("vui lòng nhập tên nhà sản xuất");
+        } else if ($("input[name='producer_address1']").val() == '') {
+            return alert("vui lòng nhập địa chỉ");
+        } else {
+            return true;
+        }
     } else {
-        addproducer();
+        if ($("input[name='producer_id']").val() == '') {
+            return alert("Vui lòng nhập mã nhà sản xuất");
+        } else if ($("input[name='producer_name']").val() == '') {
+            return alert("vui lòng nhập tên nhà sản xuất");
+        } else if ($("input[name='producer_address']").val() == '') {
+            return alert("vui lòng nhập địa chỉ");
+        } else {
+            return true;
+        }
     }
 }
 function Laystate() {
