@@ -1768,54 +1768,56 @@
 					, { selector: 'shelfItem .item_add'
 						, event: 'click'
 						, callback: function () {
-							var $button = simpleCart.$(this),
-								fields = {};
+							if ($("#quantityCart").val() <= amountProduct) {
+								var $button = simpleCart.$(this),
+									fields = {};
 
-							$button.closest("." + namespace + "_shelfItem").descendants().each(function (x,item) {
-								var $item = simpleCart.$(item);
+								$button.closest("." + namespace + "_shelfItem").descendants().each(function (x, item) {
+									var $item = simpleCart.$(item);
 
-								// check to see if the class matches the item_[fieldname] pattern
-								if ($item.attr("class") &&
-									$item.attr("class").match(/item_.+/) &&
-									!$item.attr('class').match(/item_add/)) {
+									// check to see if the class matches the item_[fieldname] pattern
+									if ($item.attr("class") &&
+										$item.attr("class").match(/item_.+/) &&
+										!$item.attr('class').match(/item_add/)) {
 
-									// find the class name
-									simpleCart.each($item.attr('class').split(' '), function (klass) {
-										var attr,
-											val,
-											type;
+										// find the class name
+										simpleCart.each($item.attr('class').split(' '), function (klass) {
+											var attr,
+												val,
+												type;
 
-										// get the value or text depending on the tagName
-										if (klass.match(/item_.+/)) {
-											attr = klass.split("_")[1];
-											val = "";
-											switch($item.tag().toLowerCase()) {
-												case "input":
-												case "textarea":
-												case "select":
-													type = $item.attr("type");
-													if (!type || ((type.toLowerCase() === "checkbox" || type.toLowerCase() === "radio") && $item.attr("checked")) || type.toLowerCase() === "text" || type.toLowerCase() === "number") {
-														val = $item.val();
-													}				
-													break;
-												case "img":
-													val = $item.attr('src');
-													break;
-												default:
-													val = $item.text();
-													break;
+											// get the value or text depending on the tagName
+											if (klass.match(/item_.+/)) {
+												attr = klass.split("_")[1];
+												val = "";
+												switch ($item.tag().toLowerCase()) {
+													case "input":
+													case "textarea":
+													case "select":
+														type = $item.attr("type");
+														if (!type || ((type.toLowerCase() === "checkbox" || type.toLowerCase() === "radio") && $item.attr("checked")) || type.toLowerCase() === "text" || type.toLowerCase() === "number") {
+															val = $item.val();
+														}
+														break;
+													case "img":
+														val = $item.attr('src');
+														break;
+													default:
+														val = $item.text();
+														break;
+												}
+
+												if (val !== null && val !== "") {
+													fields[attr.toLowerCase()] = fields[attr.toLowerCase()] ? fields[attr.toLowerCase()] + ", " + val : val;
+												}
 											}
+										});
+									}
+								});
 
-											if (val !== null && val !== "") {
-												fields[attr.toLowerCase()] = fields[attr.toLowerCase()] ? fields[attr.toLowerCase()] + ", " +  val : val;
-											}
-										}
-									});
-								}
-							});
-
-							// add the item
-							simpleCart.add(fields);
+								// add the item
+								simpleCart.add(fields);
+                            }
 						}
 					}
 				]);

@@ -57,7 +57,7 @@ namespace BTL_TTCMWeb.Controllers
         public ActionResult GetDataProductPartial(int? page, string category, string color, string size, int? priceFrom, int? priceTo, string search)
         {
             //Lấy sp theo yêu cầu
-            var listProduct = db.tbl_product.AsQueryable();
+            var listProduct = db.tbl_product.AsQueryable().Where(p => !string.IsNullOrEmpty(p.product_img));
             //Tìm kiếm ở mục tìm kiếm
             if (!string.IsNullOrEmpty(search))
             {
@@ -129,8 +129,7 @@ namespace BTL_TTCMWeb.Controllers
         }
         //Hiện chi tiết sản phẩm
         public ActionResult ProductDetail(int? Id)
-        {
-            
+        {         
             if (Id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
@@ -186,13 +185,6 @@ namespace BTL_TTCMWeb.Controllers
                     db.SaveChanges();
                     model = db.tbl_cart.FirstOrDefault(x => x.session_id == new Guid(cartSession));
                     model.total_price = model.tbl_cartDetail.Sum(x => x.quantity * (x.tbl_productColor.product_sale ?? x.tbl_productColor.product_price));
-                    //kiểm trả cookie userid 
-                    HttpCookie cookieUser = Request.Cookies["hawuser_id"];
-                    if (cookie != null && model.account_id == null)
-                    {
-                        var userid = int.Parse(cookieUser.Value);
-                        model.account_id = userid;
-                    }
                     db.Entry(model).State = EntityState.Modified;
                     db.SaveChanges();
                 }
@@ -209,12 +201,6 @@ namespace BTL_TTCMWeb.Controllers
                     db.tbl_cartDetail.Add(cartDetail);
                     db.SaveChanges();
                     model.total_price = model.tbl_cartDetail.Sum(x => x.quantity * (x.tbl_productColor.product_sale ?? x.tbl_productColor.product_price));
-                    HttpCookie cookieUser = Request.Cookies["hawuser_id"];
-                    if (cookie != null && model.account_id == null)
-                    {
-                        var userid = int.Parse(cookieUser.Value);
-                        model.account_id = userid;
-                    }
                     db.Entry(model).State = EntityState.Modified;
                     db.SaveChanges();
                 }

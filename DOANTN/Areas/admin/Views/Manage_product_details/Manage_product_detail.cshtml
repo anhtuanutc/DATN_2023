@@ -1,0 +1,200 @@
+﻿
+@{
+    ViewBag.Title = "Manage_product_detail";
+    Layout = "~/Areas/admin/Views/Shared/_Layout.cshtml";
+}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="~/Scripts/admin/manage_product_detail.js"></script>
+<style>
+    th{
+        text-align:center !important;
+    }
+</style>
+@section scripts{
+    <script type="text/javascript">
+        function AddManage() {
+            if (checkmanage(1)) {
+                var formData = new FormData();
+                formData.append('color_id', $("select[name='color_id']").val());
+                formData.append('product_id', $("select[name='product_id']").val());
+                formData.append('product_price', $("input[name='product_price']").val());
+                formData.append('amount', $("input[name='amount']").val());
+                formData.append('size', $("select[name='size']").val());
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/insert/inventory_price',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        if (response.Success) {
+                            alert(response.Message);
+                            window.location.href = '@Url.Action("Manage_product_detail", "Manage_product_details")';
+                        } else alert(response.Message);
+                    },
+                    error: function (error) {
+                        //alert("Cập nhật không thành công");
+                    }
+                })
+            }
+        }
+        function EditManage() {
+            if (checkmanage(0)) {
+                var formData = new FormData();
+                formData.append('amount', $("input[name='Ton']").val());
+                formData.append('product_price', $("input[name='Gia']").val());
+                formData.append('id', $("input[name='ID']").val());
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/upload/inventory_price',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        alert("Cập nhật thành công");
+                        window.location.href = '@Url.Action("Manage_product_detail", "Manage_product_details")';
+
+                    },
+                    error: function (error) {
+                        alert("Cập nhật không thành công");
+                    }
+                })
+            }
+        }
+        function Delete_inventory_price(id) {
+            let choice = confirm("Bạn có muốn xóa thông tin này không?");
+            if (choice == true) {
+                var formData = new FormData();
+                formData.append('id', id);
+                $.ajax({
+                    type: 'POST',
+                    url: '/api/delete/inventory_price',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    success: function (response) {
+                        alert("Xóa thành công");
+                        window.location.href = '/admin/Manage_product_details/Manage_product_detail';
+                    },
+                    error: function (error) {
+                        alert("Xóa thất bại");
+                    }
+                })
+            }
+        }
+    </script>
+}
+<div id="Tim" class="container">
+    <div class="container" style="width:100%;">
+        <h1 style="text-align:center">Quản lý tồn kho, giá, size giày</h1>
+        <button class="btn btn-info" style="float: left; margin-bottom: 20px;" onclick="HienThiAdd();">Thêm sản phẩm cần quản lý</button></a>
+        <br>
+        <table class="table table-bordered" style="width:100%;">
+            <thead>
+                <tr>
+                    <th>STT</th>
+                    <th>ID</th>
+                    <th>Tên sản phẩm</th>
+                    <th>Màu chủ đạo</th>
+                    <th>Size</th>
+                    <th>Tồn kho</th>
+                    <th>Giá hiện tại</th>
+                    <th>Tùy Chọn</th>
+                </tr>
+            </thead>
+            <tbody id="data">
+            </tbody>
+        </table>
+        <br />
+        <div id="pagination-container">
+            <button id="prev-btn" onclick="prevBtn()">Prev</button>
+            <span id="page-info">Page 1</span>
+            <button id="next-btn" onclick="nextBtn()">Next</button>
+        </div>
+    </div>
+</div>
+<div class="container" id="Edit" style="display:none">
+    <table style="border:none">
+        <tbody>
+            <tr style="display:none">
+                <td>
+                    <input id="txtID" type="text" name="ID" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                </td>
+            </tr>
+            <tr>
+                <td>Tồn kho của sản phẩm:</td>
+                <td>
+                    <input id="txtTon" type="text" name="Ton" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                </td>
+            </tr>
+            <tr>
+                <td>Giá của sản phẩm</td>
+                <td>
+                    <input id="txtGia" type="text" name="Gia" style="margin-bottom: 10px; border-radius: 2px; width: 280px"/>
+                </td>
+            </tr>
+            <tr>
+                <td style="display: inline-flex">
+                    <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
+                    <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
+                            onclick="EditManage();">
+                        Cập nhật
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<div class="container" id="Add" style="display:none">
+    <div class="table1">
+        <h2 style="margin-top:0; text-align:center">Thông tin chính</h2>
+        <table style="border:none">
+            <tbody>
+                <tr>
+                    <td>Màu chủ đạo: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="color_id" name="color_id" onchange="">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Sản phẩm: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="product_id" name="product_id" onchange="">
+                        </select>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Size giày: </td>
+                    <td>
+                        <select style="margin-bottom: 10px; border-radius: 2px; width: 280px" id="size" name="size" onchange="">
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Tồn kho: </td>
+                    <td>
+                        <input id="amount" type="text" name="amount" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Giá hiện tại: </td>
+                    <td>
+                        <input id="product_price" type="text" name="product_price" style="margin-bottom: 10px; border-radius: 2px; width: 280px" />
+                    </td>
+                </tr>
+                <tr>
+                    <td style="display: inline-flex; margin-left: 50%;">
+                        <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px; margin-right: 10px" onclick="HienThi()">Quay lại</button>
+                        <button class="btn-primary update-button" style="width: 150px; height:40px; border: none; outline: none; border-radius: 20px; margin-top: 20px;"
+                                onclick="AddManage();">
+                            Thêm mới
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -138,26 +138,34 @@
     </div>
 </div>
 <script>
+    var amountProduct = 0;
     function Load() {
-        $("#total").css("color", "red");
-        $.ajax({
-            type: 'GET',
-            url: '@Url.Action("AddToCart", "User")',
-            data: { productColorId: $("#productColor").val(), quantity: $("#quantityCart").val() },
-            success: function (result) {
-                window.location.href = '@Url.Action("checkout", "User")';
-            }
-        });
+        if ($("#quantityCart").val() <= amountProduct) {
+            $("#total").css("color", "red");
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("AddToCart", "User")',
+                data: { productColorId: $("#productColor").val(), quantity: $("#quantityCart").val() },
+                success: function (result) {
+                    window.location.href = '@Url.Action("checkout", "User")';
+                }
+            });
+        } else return alert("Số lượng tồn kho không đủ so với số lượng yêu cầu");
+
     }
 
     //Khi click vào thêm vào giỏ hàng
     function addToCart() {
-        $("#total").css("color", "red");
-        $.ajax({
-            type: 'GET',
-            url: '@Url.Action("AddToCart", "User")',
-            data: { productColorId: $("#productColor").val(), quantity: $("#quantityCart").val() }
-        });
+        if ($("#quantityCart").val() <= amountProduct) {
+            $("#total").css("color", "red");
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("AddToCart", "User")',
+                data: { productColorId: $("#productColor").val(), quantity: $("#quantityCart").val() }
+            });
+        } else {
+            return alert("Số lượng tồn kho không đủ so với số lượng yêu cầu");
+        }
     }
     //Tìm sản phẩm khi thay đổi màu
     function changeColor() {
@@ -187,6 +195,7 @@
                         }
                         $("#priceProduct").text(result.price);
                         $("#amountProduct").text(result.amount);
+                        amountProduct = result.amount;
                         $("#productColor").val(result.productColorId);
                         $("#discount").text(result.discount);
                         $("#priceProductBeforeSale").text(result.priceBefore);
@@ -196,7 +205,7 @@
             }
         });
     }
-    
+
     //Tìm sản phẩm khi thay đổi kích thước
     function changeSize() {
         var id = $("#productId").val();
@@ -217,6 +226,7 @@
                 }
                 $("#priceProduct").text(result.price);
                 $("#amountProduct").text(result.amount);
+                amountProduct = result.amount;
                 $("#productColor").val(result.productColorId);
                 $("#discount").text(result.discount);
                 $("#priceProductBeforeSale").text(result.priceBefore);
@@ -241,11 +251,12 @@
                     result.amount = "Hết hàng"
                     table = table + '<h4 style="margin-top: 50px;padding-left: 15px; color:red">Vui lòng liên hệ 0978594932 để đặt trước</h4>';
                 } else {
-                    table = table + '<a href="#" onclick="addToCart()" class="add-cart item_add" style="margin-top: 50px">THÊM VÀO GIỎ HÀNG</a>'; 
+                    table = table + '<a href="#" onclick="addToCart()" class="add-cart item_add" style="margin-top: 50px">THÊM VÀO GIỎ HÀNG</a>';
                     table = table + '<a href="#" onclick="Load()" class="add-cart item_add" style="margin-top: 50px">MUA NGAY</a> ';
                 }
                 $("#priceProduct").text(result.price);
                 $("#amountProduct").text(result.amount);
+                amountProduct = result.amount;
                 $("#productColor").val(result.productColorId);
                 $("#discount").text(result.discount);
                 $("#priceProductBeforeSale").text(result.priceBefore);

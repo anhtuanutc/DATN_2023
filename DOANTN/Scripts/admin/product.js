@@ -9,14 +9,23 @@ $(document).ready(function () {
     document.getElementById("prev-btn").style.display = 'none';
 
 });
-function checkproduct() {
-    if ($("input[name='product_id2']").val() == '') {   
-        alert("Vui lòng nhập mã sản phẩm");
-    } else if ($("input[name='product_name2']").val() == '') {
-        alert("vui lòng nhập tên Sản Phẩm");
+function checkproduct(check_add) {
+    if (check_add == 1) {
+        if ($("input[name='product_name2']").val() == '') {
+            return alert("vui lòng nhập tên Sản Phẩm");
+        } else {
+            return true;
+        }
     } else {
-        addProduct();
+        if ($("input[name='product_id1']").val() == '') {
+            return alert("Vui lòng nhập mã Sản phẩm");
+        } else if ($("input[name='product_name1']").val() == '') {
+            return alert("vui lòng nhập tên Sản Phẩm");
+        } else {
+            return true;
+        }
     }
+    
 }
 function Laystate() {
     $.ajax({

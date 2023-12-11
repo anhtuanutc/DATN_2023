@@ -44,7 +44,8 @@
     })
     }
     function addProduct() {
-        var url = '/api/Order_product_producer_API/?product_id=1' 
+        if (checkproduct(1)) {
+            var url = '/api/Order_product_producer_API/?product_id=1'
             + '&product_name=' + $("input[name='product_name2']").val()
             + '&product_alias=' + $("input[name='product_alias2']").val()
             + '&product_description=' + $("input[name='product_description2']").val()
@@ -54,33 +55,35 @@
             + '&state=' + $("select[name='a']").val()
             + '&product_producer=' + $("select[name='b']").val()
             + '&category_id=' + $("select[name='c']").val();
-        $.ajax({
-            url: url,
-            method: 'Post',
-            contentType: 'json',
-            dataType: 'json',
-            error: function (response) {
+            $.ajax({
+                url: url,
+                method: 'Post',
+                contentType: 'json',
+                dataType: 'json',
+                error: function (response) {
 
-                alert("Thêm mới không thành công");
-            },
-            success: function (reponse) {
-                var formData = new FormData();
-                var fileInput = $("#img_product2")[0].files[0];
-                if (fileInput) {
-                    formData.append('id_sanpham', '');
-                    formData.append('image', fileInput);
-                    saveImageToAPI(formData);
+                    alert("Thêm mới không thành công");
+                },
+                success: function (reponse) {
+                    var formData = new FormData();
+                    var fileInput = $("#img_product2")[0].files[0];
+                    if (fileInput) {
+                        formData.append('id_sanpham', '');
+                        formData.append('image', fileInput);
+                        saveImageToAPI(formData);
+                    }
+
+                    alert("Thêm mới thành công");
+                    window.location.href = '@Url.Action("product", "Order_product_producer")';
+
+
                 }
-
-                alert("Thêm mới thành công");
-                window.location.href = '@Url.Action("product", "Order_product_producer")';
-
-
-            }
-        });
+            });
+        }
     }
     function editProduct() {
-        var url = '/api/Order_product_producer_API/?product_id=' +
+        if (checkproduct(0)) {
+            var url = '/api/Order_product_producer_API/?product_id=' +
             $("input[name='product_id1']").val()
             + '&product_name=' + $("input[name='product_name1']").val()
             + '&product_alias=' + $("input[name='product_alias1']").val()
@@ -91,27 +94,28 @@
             + '&state=' + $("select[name='a']").val()
             + '&product_producer=' + $("select[name='b']").val()
             + '&category_id=' + $("select[name='c']").val();
-        $.ajax({
-            url: url,
-            method: 'PUT',
-            contentType: 'json',
-            dataType: 'json',
-            error: function (response) {
-                alert("Sửa không thành công ");
-            },
-            success: function (reponse) {
-                var formData = new FormData();
-                var fileInput = $("#img_product1")[0].files[0];
-                if (fileInput) {
-                    formData.append('id_sanpham', $("input[name='product_id1']").val());
-                    formData.append('image', fileInput);
-                    saveImageToAPI(formData);
-                }
-                alert("Sửa thành công");
-                window.location.href = '@Url.Action("product", "Order_product_producer")';
+            $.ajax({
+                url: url,
+                method: 'PUT',
+                contentType: 'json',
+                dataType: 'json',
+                error: function (response) {
+                    alert("Sửa không thành công ");
+                },
+                success: function (reponse) {
+                    var formData = new FormData();
+                    var fileInput = $("#img_product1")[0].files[0];
+                    if (fileInput) {
+                        formData.append('id_sanpham', $("input[name='product_id1']").val());
+                        formData.append('image', fileInput);
+                        saveImageToAPI(formData);
+                    }
+                    alert("Sửa thành công");
+                    window.location.href = '@Url.Action("product", "Order_product_producer")';
 
-            }
-        });
+                }
+            });
+        }
     }
 </script>
 
