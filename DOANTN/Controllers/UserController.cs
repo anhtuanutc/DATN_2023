@@ -1,4 +1,5 @@
 ﻿using BTL_TTCMWeb.Models;
+using BTL_TTCMWeb.Models.user.ProductColor;
 using PagedList;
 using System;
 using System.Collections.Generic;
@@ -57,31 +58,31 @@ namespace BTL_TTCMWeb.Controllers
         public ActionResult GetDataProductPartial(int? page, string category, string color, string size, int? priceFrom, int? priceTo, string search)
         {
             //Lấy sp theo yêu cầu
-            var listProduct = db.tbl_product.AsQueryable().Where(p => !string.IsNullOrEmpty(p.product_img));
+            var listProduct = db.Database.SqlQuery<product_Color>(@"select a.product_id, a.product_name, a.product_img, a.product_code, a.product_sub_info, a.product_isSale, c.category_name, max(b.amount) amount, 
+                                                                    (cast(min(b.product_price) as varchar)+ ' - '+(cast(max(b.product_price) as varchar))) gia, max(product_price) as maxgia, min(product_price) as mingia from  tbl_product a left join 
+                                                                    tbl_productColor b on a.product_id = b.product_id
+                                                                    left join tbl_category c on a.category_id = c.category_id
+                                                                    where a.product_img <> '' and a.product_img is not null
+                                                                    and b.amount is not null
+                                                                    group by a.product_id, a.product_name, a.product_img, a.product_code, a.product_sub_info, a.product_isSale, c.category_name
+                                                                    having max(product_price) is not null and min(product_price) is not null").ToList();
             //Tìm kiếm ở mục tìm kiếm
             if (!string.IsNullOrEmpty(search))
             {
                 search = search.ToLower();
-                listProduct = listProduct.Where(p => p.product_name.ToLower().Contains(search));
+                listProduct = listProduct.Where(p => p.product_name.ToLower().Contains(search)).ToList();
             }
             //Tìm kiếm theo giá
             if (priceFrom != null &&
                 priceTo != null &&
                 priceTo >= priceFrom)
-                listProduct = listProduct.Where(p => p.tbl_productColor.Min(x => x.product_price) >= priceFrom &&
-                                                     p.tbl_productColor.Max(x => x.product_price) <= priceTo);
-            var aaa = listProduct.Select(x => new
-            {
-                name = x.product_name,
-                min = x.tbl_productColor.Min(y => y.product_price),
-                max = x.tbl_productColor.Max(y => y.product_price)
-            }).ToList();
+                listProduct = listProduct.Where(p => p.mingia >= priceFrom && p.maxgia <= priceTo).ToList();
             //Tìm kiếm theo loại danh mục
             if (!string.IsNullOrEmpty(category))
             {
                 var arrCategory = category.Split(',');
 
-                listProduct = listProduct.Where(x => arrCategory.Contains(x.tbl_category.category_name));
+                listProduct = listProduct.Where(x => arrCategory.Contains(x.category_name)).ToList();
             }
             //Tìm kiếm theo màu
             if (!string.IsNullOrEmpty(color))
@@ -89,7 +90,7 @@ namespace BTL_TTCMWeb.Controllers
                 var arrcolor = color.Split(',').Select(x => x.Trim()).ToList();
                 var ProductHasColor = db.tbl_productColor.Where(x => arrcolor.Contains(x.tbl_color.color_name.Trim().ToLower()))
                                                             .Select(x => x.product_id).ToList();
-                listProduct = listProduct.Where(x => ProductHasColor.Contains(x.product_id));
+                listProduct = listProduct.Where(x => ProductHasColor.Contains(x.product_id)).ToList();
             }
             //Tìm kiếm theo kích thước
             if (!string.IsNullOrEmpty(size))
@@ -97,7 +98,7 @@ namespace BTL_TTCMWeb.Controllers
                 var arrcolor = size.Split(',').Select(x => x.Trim()).ToList();
                 var ProductHasSize = db.tbl_productColor.Where(x => arrcolor.Contains(x.size.Trim().ToLower()))
                                                             .Select(x => x.product_id).ToList();
-                listProduct = listProduct.Where(x => ProductHasSize.Contains(x.product_id));
+                listProduct = listProduct.Where(x => ProductHasSize.Contains(x.product_id)).ToList();
             }
             //Trả về sản phẩm theo phân trang ban đầu
             return PartialView("_GetDataProductPartial", listProduct.OrderBy(x => x.product_id).ToPagedList(page ?? 1, 9));

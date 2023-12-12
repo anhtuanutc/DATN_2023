@@ -1,21 +1,52 @@
 ﻿@using PagedList.Mvc
-@model PagedList.IPagedList<BTL_TTCMWeb.Models.tbl_product>
+@model PagedList.IPagedList<BTL_TTCMWeb.Models.user.ProductColor.product_Color>
 
+<style>
+    /* CSS để làm mờ hình ảnh khi product.amount là số âm */
+    .product-image {
+        /* Thêm thuộc tính opacity để làm mờ hình ảnh */
+        opacity: 0.4;
+    }
 
+    /* Hiển thị label "Hết hàng" khi sản phẩm hết hàng */
+    .sold-out-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-60%, -150%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+ 
+
+</style>
 <div class="product-wrap">
     <div class="row">
         @foreach (var product in Model)
         {
 <div class="col-md-4 feature-grid">
     <a href="@Url.Action("ProductDetail","User", new { id=product.product_id })">
-        <img src="@product.product_img" alt="" />
+        @if (product.amount <= 0)
+        {
+            <img class="product-image" src="@product.product_img" alt="" style="width: 325.15px !important; height: 285.15px !important;" />
+            <div class="sold-out-label">Hết hàng</div>
+         }else {
+             <img src="@product.product_img" alt="" style="width: 325.15px !important; height: 285.15px !important;" />
+        }
         <div class="arrival-info">
-            <p>@product.product_code</p>
-            <h4>@product.product_name</h4>
-            <p>@product.product_sub_info</p>
+            <p style="text-align:center">@product.product_code</p>
+            <h4 style="text-align:center">@product.product_name</h4>
+            <p style="text-align:center">@product.product_sub_info</p>
+            @if (product.amount > 0)
+            {
+    <p style="text-align:center">@product.gia</p>}
+
             @if (product.product_isSale == true)
             {
-<h1 style="color:red; font-size:20px; position: absolute; top: 20px; right: 50px; background: cornsilk;">Sale</h1>}
+    <h1 style="color:red; font-size:20px; position: absolute; top: 20px; right: 50px; background: cornsilk;">Sale</h1>}
 
         </div>
         <div class="viw">

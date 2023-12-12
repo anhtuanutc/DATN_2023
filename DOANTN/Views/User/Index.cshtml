@@ -38,12 +38,12 @@
 <!---->
 <link href="~/Content/PagedList.css" rel="stylesheet" />
 <link href="~/Content/product-list.css" rel="stylesheet" />
-<div class="container col-md-11">
+<div class="container col-md-12" style="background-color: #fff">
     <div class="border-wrap clearfix" style="padding-top: 30px">
         <div class="row">
             <div class="col-sm-3">
                 <div class="clearfix">
-                    <h3 style="padding-left:18px; padding-bottom: 18px; font-weight:bold">Lọc Theo Tên</h3>
+                    <h3 style="padding-left:18px; padding-bottom: 18px; font-weight:bold">Tìm kiếm theo tên</h3>
                     <div class="search-form-wrap clearfix col-md-12">
                         <div class="form-inline" style="padding-left:5px">
                             <input id="search-product" class="form-control" type="text" placeholder="Search">
@@ -132,9 +132,9 @@
             </div>
             @*Lấy ra tất cả sản phẩm kết hợp phân trang*@
             <div class="col-sm-9">
-                <h2 style="text-align: center; font-weight:bold">Sản Phẩm</h2>
+                <h2 style="text-align: center; font-weight: bold; margin-bottom: 4%;">Sản Phẩm</h2>
                 <div id="data-result">
-                    <div class="text-center clearfix">
+                    <div class="clearfix">
                         @Html.Action("GetDataProductPartial", "User")
                     </div>
                 </div>

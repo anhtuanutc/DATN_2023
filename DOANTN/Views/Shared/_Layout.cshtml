@@ -23,9 +23,28 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <style>
+        .header-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff; /* Màu nền của header */
+            z-index: 999; /* Đảm bảo header hiển thị trên các phần khác */
+            /* Thêm các thuộc tính khác cho phần header của bạn tại đây */
+        }
+        body {
+            padding-top: 100px; /* Đảm bảo phần nội dung không bị che phủ bởi header */
+        }
+        .footer{
+            margin-top: 2%;
+        }
+    </style>
+
     <script src="~/Scripts/memenu.js"></script>
     <script src="~/Scripts/responsiveslides.min.js"></script>
-    <script>$(document).ready(function () { $(".memenu").memenu(); });
+    <script>
+    $(document).ready(function () { $(".memenu").memenu(); });
         $(function () {
             //Hàm chạy ảnh qua lại ở trang chủ
             $("#slider").responsiveSlides({
@@ -35,7 +54,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 namespace: "callbacks",
                 pager: false,
             });
-        });</script>
+        });
+    </script>
 </head>
 <body>
     <div class="header-top">
@@ -93,18 +113,17 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
     <div class="footer">
         <div class="container">
-            <div class="footer-grids">
-                <div class="col-md-5 about-us">
-                    <h3>Về Chúng Tôi</h3>
-                    <p>
-                        <br />Chào mừng bạn đến cửa hàng giày - nơi bạn tìm thấy phong cách và sự thoải mái đúng với bước chân của bạn.
+            <div class="footer-grids" >
+                <div class="col-md-6 ftr-grid" style="padding-top:5% !important">
+                    <h3 style="text-align:center">Về Chúng Tôi</h3>
+                    <p>Chào mừng bạn đến cửa hàng giày - nơi bạn tìm thấy phong cách và sự thoải mái đúng với bước chân của bạn.
                         <br>Chúng tôi cung cấp đa dạng các loại giày, từ sneakers đến giày công sở, đảm bảo bạn luôn tự tin mỗi bước đi.
-                         <br>PLUS Shop là cửa hàng uy tín ở Việt Nam cung cấp những mẫu giày mới nhất hot nhất với mọi mức giá<br> phù hợp với học sinh, sinh viên, ...!
+                        <br>PLUS Shop là cửa hàng uy tín ở Việt Nam cung cấp những mẫu giày mới nhất hot nhất với mọi mức giá<br> phù hợp với học sinh, sinh viên, ...!
                         <br>
                     </p>
                 </div>
-                <div class="col-md-4 ftr-grid">
-                    <h3>Thêm Thông Tin</h3>
+                <div class="col-md-3 ftr-grid" style="padding-top:5% !important">
+                    <h3 >Thêm Thông Tin</h3>
                     <ul class="nav-bottom">
                         <li><a href="@Url.Action("Login", "Account")">Đăng nhập</a></li>
                         <li><a href="@Url.Action("Register", "User")">Đăng ký</a></li>
@@ -112,7 +131,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         <li><a href="@Url.Action("UserControl", "UserControl")">Quản lý tài khoản</a></li>
                     </ul>
                 </div>
-                <div class="col-md-3 ftr-grid">
+                <div class="col-md-3 ftr-grid" style="padding-top:5% !important">
                     <h3>Danh Mục</h3>
                     @{ var listCategory = Session["listCategory"] as IQueryable<BTL_TTCMWeb.Models.tbl_category>; }
                     <ul class="nav-bottom">

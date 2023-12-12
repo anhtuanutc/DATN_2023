@@ -227,9 +227,9 @@ namespace BTL_TTCMWeb.Areas.admin.ApiControllers
                 }
                 tbl_Product.product_id = product_id;
                 tbl_Product.product_name = product_name;
-                tbl_Product.product_alias = product_alias;
+                tbl_Product.product_code = product_alias;
                 tbl_Product.product_description = product_description;
-                tbl_Product.product_content = product_content;
+                tbl_Product.product_sub_info = product_content;
                 tbl_Product.product_img = product_img;            
                 tbl_Product.product_UpdatedAt = DateTime.Now;           
                 tbl_Product.state = state;            
