@@ -707,11 +707,10 @@
 				}
 
 				// set the item id
-				item_id += 1;
-				_data.id = _data.id || item_id_namespace + item_id;
+				_data.id = _data.id || item_id_namespace + $("#productColor").val();
 				while (!isUndefined(sc_items[_data.id])) {
-					item_id += 1;
-					_data.id = item_id_namespace + item_id;
+					
+					_data.id = item_id_namespace + 0;
 				}
 
 				function checkQuantityAndPrice() {
@@ -1739,7 +1738,8 @@
 						}
 					}
 					/* remove from cart */
-					, {	  selector: 'remove'
+					, {
+						selector: 'remove .itemRow'
 						, event: 'click'
 						, callback: function () {
 							simpleCart.find(simpleCart.$(this).closest('.itemRow').attr('id').split("_")[1]).remove();
@@ -1768,7 +1768,60 @@
 					, { selector: 'shelfItem .item_add'
 						, event: 'click'
 						, callback: function () {
-							if ($("#quantityCart").val() <= amountProduct) {
+
+							if (typeof amountProduct !== 'undefined') {
+								if ($("#quantityCart").val() <= amountProduct) {
+									var $button = simpleCart.$(this),
+										fields = {};
+
+									$button.closest("." + namespace + "_shelfItem").descendants().each(function (x, item) {
+										var $item = simpleCart.$(item);
+
+										// check to see if the class matches the item_[fieldname] pattern
+										if ($item.attr("class") &&
+											$item.attr("class").match(/item_.+/) &&
+											!$item.attr('class').match(/item_add/)) {
+
+											// find the class name
+											simpleCart.each($item.attr('class').split(' '), function (klass) {
+												var attr,
+													val,
+													type;
+
+												// get the value or text depending on the tagName
+												if (klass.match(/item_.+/)) {
+													attr = klass.split("_")[1];
+													val = "";
+													switch ($item.tag().toLowerCase()) {
+														case "input":
+														case "textarea":
+														case "select":
+															type = $item.attr("type");
+															if (!type || ((type.toLowerCase() === "checkbox" || type.toLowerCase() === "radio") && $item.attr("checked")) || type.toLowerCase() === "text" || type.toLowerCase() === "number") {
+																val = $item.val();
+															}
+															break;
+														case "img":
+															val = $item.attr('src');
+															break;
+														default:
+															val = $item.text();
+															break;
+													}
+
+													if (val !== null && val !== "") {
+														fields[attr.toLowerCase()] = fields[attr.toLowerCase()] ? fields[attr.toLowerCase()] + ", " + val : val;
+													}
+												}
+											});
+										}
+									});
+
+									// add the item
+									simpleCart.add(fields);
+								}
+
+							} else {
 								var $button = simpleCart.$(this),
 									fields = {};
 

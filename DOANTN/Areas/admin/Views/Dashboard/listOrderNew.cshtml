@@ -13,7 +13,7 @@
                 {
                     <li>
                         <!-- start notification -->
-                        <a href="@Url.Action("Details", "Order", new {id = item.order_id })">
+                        <a href="#">
                             <i class="fa fa-users text-aqua"></i> @item.tbl_orderDetail.Sum(x=>x.quantity) Sản phẩm: @item.order_total_price VNĐ
                         </a>
                     </li>

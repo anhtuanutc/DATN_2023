@@ -17,7 +17,7 @@ namespace BTL_TTCMWeb.Areas.admin.Controllers
         }
         public ActionResult listOrderNew()
         {
-            var listOrderNew = db.tbl_Order.Where(x => x.tbl_state.state_name == "Mới");
+            var listOrderNew = db.tbl_Order.Where(x => x.tbl_state.state_name == "Chờ lấy hàng");
             return View(listOrderNew);
         }
         public ActionResult ThongKe()

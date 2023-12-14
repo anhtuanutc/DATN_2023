@@ -141,7 +141,7 @@ namespace BTL_TTCMWeb.Controllers.APIController
                 dynamic item = db.Database.SqlQuery<dynamic>(@"select 1  from tbl_Order where order_id = @order_id", new SqlParameter("@order_id", order_id)).SingleOrDefault();
                 if (item != null)
                 {
-                    db.Database.ExecuteSqlCommand("UPDATE tbl_Order SET order_state =6, date = CURRENT_TIMESTAMP WHERE order_id = @order_id", new SqlParameter("@order_id", order_id));
+                    db.Database.ExecuteSqlCommand("UPDATE tbl_Order SET order_state = 6, date = CURRENT_TIMESTAMP WHERE order_id = @order_id", new SqlParameter("@order_id", order_id));
                     return Ok();
                 }
                 else return BadRequest("không tồn tại đơn hàng");

@@ -59,11 +59,9 @@ namespace BTL_TTCMWeb.Controllers
         {
             //Lấy sp theo yêu cầu
             var listProduct = db.Database.SqlQuery<product_Color>(@"select a.product_id, a.product_name, a.product_img, a.product_code, a.product_sub_info, a.product_isSale, c.category_name, max(b.amount) amount, 
-                                                                    (cast(min(b.product_price) as varchar)+ ' - '+(cast(max(b.product_price) as varchar))) gia, max(product_price) as maxgia, min(product_price) as mingia from  tbl_product a left join 
-                                                                    tbl_productColor b on a.product_id = b.product_id
-                                                                    left join tbl_category c on a.category_id = c.category_id
-                                                                    where a.product_img <> '' and a.product_img is not null
-                                                                    and b.amount is not null
+                                                                    (case when min (b.product_price) = max (b.product_price) then '$'+cast(max(b.product_price) as varchar) else ('$'+cast(min(b.product_price) as varchar)+ ' - '+'$'+(cast(max(b.product_price) as varchar))) end  ) as gia, max(product_price) as maxgia, min(product_price) as mingia from  tbl_product a left join 
+                                                                    tbl_productColor b on a.product_id = b.product_id left join tbl_category c on a.category_id = c.category_id
+                                                                    where a.product_img <> '' and a.product_img is not null and b.amount is not null
                                                                     group by a.product_id, a.product_name, a.product_img, a.product_code, a.product_sub_info, a.product_isSale, c.category_name
                                                                     having max(product_price) is not null and min(product_price) is not null").ToList();
             //Tìm kiếm ở mục tìm kiếm
@@ -104,11 +102,16 @@ namespace BTL_TTCMWeb.Controllers
             return PartialView("_GetDataProductPartial", listProduct.OrderBy(x => x.product_id).ToPagedList(page ?? 1, 9));
         }
         //Hiện các sản phẩm ngẫu nhiên
-        public List<tbl_product> getSuggestProduct()
+        public List<product_Color> getSuggestProduct()
         {
             Random randomizer = new Random();
-            var list = db.tbl_product.ToList();
-            List<tbl_product> items = new List<tbl_product>();
+            var list = db.Database.SqlQuery<product_Color>(@"select a.product_id, a.product_name, a.product_img, a.product_code, a.product_sub_info, a.product_isSale, c.category_name, max(b.amount) amount, 
+                                                                    (case when min (b.product_price) = max (b.product_price) then '$'+cast(max(b.product_price) as varchar) else ('$'+cast(min(b.product_price) as varchar)+ ' - '+'$'+(cast(max(b.product_price) as varchar))) end  ) as gia, max(product_price) as maxgia, min(product_price) as mingia from  tbl_product a left join 
+                                                                    tbl_productColor b on a.product_id = b.product_id left join tbl_category c on a.category_id = c.category_id
+                                                                    where a.product_img <> '' and a.product_img is not null and b.amount is not null
+                                                                    group by a.product_id, a.product_name, a.product_img, a.product_code, a.product_sub_info, a.product_isSale, c.category_name
+                                                                    having max(product_price) is not null and min(product_price) is not null").ToList();
+            List<product_Color> items = new List<product_Color>();
             while (items.Count() < 5)
             {
                 var product = list[randomizer.Next(list.Count)];
@@ -168,7 +171,7 @@ namespace BTL_TTCMWeb.Controllers
             }, JsonRequestBehavior.AllowGet);
         }
         //Add sản phẩm vào giỏ hàng
-        public void AddToCart(int productColorId, int quantity)
+        public void AddToCart(int productColorId, int quantity, bool chinh_sua)
         {
             HttpCookie cookie = Request.Cookies["cart"];
             var productColor = db.tbl_productColor.First(x => x.id == productColorId);
@@ -181,7 +184,10 @@ namespace BTL_TTCMWeb.Controllers
                 {
                     //đã tồn tại sản phầm => add thêm số lượng
                     var CartDetail = model.tbl_cartDetail.First(x => x.productColor_id == productColorId);
-                    CartDetail.quantity += quantity;
+                    if (chinh_sua)
+                    {
+                        CartDetail.quantity = quantity;
+                    }else CartDetail.quantity += quantity;
                     db.Entry(CartDetail).State = EntityState.Modified;
                     db.SaveChanges();
                     model = db.tbl_cart.FirstOrDefault(x => x.session_id == new Guid(cartSession));
@@ -327,7 +333,7 @@ namespace BTL_TTCMWeb.Controllers
                     tbl_Order order = new tbl_Order()
                     {
                         order_receiver_note = note,
-                        order_state = db.tbl_state.First(x => x.state_name == "Mới").state_id,
+                        order_state = db.tbl_state.First(x => x.state_name == "Chờ lấy hàng").state_id,
                         order_total_price = cart.total_price,
                         user_id = CurrentUser.user_id,
                         date = DateTime.Now,

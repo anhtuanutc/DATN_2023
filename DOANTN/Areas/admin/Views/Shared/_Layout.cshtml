@@ -57,7 +57,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                         if (!string.IsNullOrEmpty(cookieValue) && bool.TryParse(cookieValue, out bool result))
                         {
                             isCookieValueTrue = result;
-                        } }
+                        } 
+                        string admin_name = Request.Cookies["admin_name"]?.Value;
+                        }
         <!-- Main Header -->
         <header class="main-header">
 
@@ -87,9 +89,9 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <!-- Menu Toggle Button -->
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                @if (Session["NameEmployee"] != null)
+                                @if (admin_name != null )
                                 {
-                    <span class="hidden-xs">@Session["NameEmployee"].ToString()</span>}
+                    <span class="hidden-xs">@admin_name.ToString()</span>}
                             </a>
                             <ul class="dropdown-menu" style="width:170px;">
                                 <li class="user-footer">

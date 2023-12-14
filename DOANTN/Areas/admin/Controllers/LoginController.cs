@@ -16,6 +16,7 @@ namespace BTL_TTCMWeb.Areas.admin.Controllers
             //get data from cookie
             HttpCookie cookie = Request.Cookies["Employee"];
             HttpCookie IsEmployee = Request.Cookies["IsEmployee1"];
+            HttpCookie admin_name = Request.Cookies["admin_name"];
             if (cookie == null)
                 return View();
             var EmployeeId = int.Parse(cookie.Value);
@@ -40,7 +41,11 @@ namespace BTL_TTCMWeb.Areas.admin.Controllers
                 HttpCookie IsEmployee = new HttpCookie("IsEmployee1", model.admin_isEmployee.ToString());
                 IsEmployee.Expires.AddDays(60);
                 HttpContext.Response.SetCookie(userCookie);
+                HttpCookie admin_name = new HttpCookie("admin_name", model.admin_name.ToString());
+                admin_name.Expires.AddDays(60);
+                HttpContext.Response.SetCookie(userCookie);
                 HttpContext.Response.SetCookie(IsEmployee);
+                HttpContext.Response.SetCookie(admin_name);
                 Session["NameEmployee"] = model.admin_name;
                 Session["IsEmployee"] = model.admin_isEmployee;
                 //return to dashboard
@@ -59,9 +64,12 @@ namespace BTL_TTCMWeb.Areas.admin.Controllers
             cookie.Expires = DateTime.Now.AddDays(-1);
             HttpCookie IsEmployee = Request.Cookies["IsEmployee1"];
             IsEmployee.Expires = DateTime.Now.AddDays(-1);
+            HttpCookie admin_name = Request.Cookies["admin_name"];
+            admin_name.Expires = DateTime.Now.AddDays(-1);
             //HttpContext.Response.SetCookie(cookie);
             Response.Cookies.Add(cookie);
             Response.Cookies.Add(IsEmployee);
+            Response.Cookies.Add(admin_name);
             return RedirectToAction("index", "Login");
         }
         

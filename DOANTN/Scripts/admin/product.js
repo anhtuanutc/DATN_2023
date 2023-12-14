@@ -40,8 +40,11 @@ function Laystate() {
             const len = reponse.length;
             let table = '';
             for (var i = 0; i < len; ++i) {
-                table = table + '<hr>'
-                table = table + '<option value="' + reponse[i].state_id + '">' + reponse[i].state_name + '</option>'
+                if (reponse[i].state_id == 1 || reponse[i].state_id == 10) {
+                    table = table + '<hr>'
+                    table = table + '<option value="' + reponse[i].state_id + '">' + reponse[i].state_name + '</option>'
+                }
+                
             }
             document.getElementById('value1').innerHTML = table;
             document.getElementById('value4').innerHTML = table;

@@ -54,6 +54,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 namespace: "callbacks",
                 pager: false,
             });
+            if (!sessionStorage.getItem('pageLoadedOnce')) {
+                // Xóa dữ liệu trong Local Storage ở đây
+                localStorage.clear();
+
+                // Đánh dấu rằng trang đã được tải lần đầu tiên bằng sessionStorage
+                sessionStorage.setItem('pageLoadedOnce', 'true');
+            }
         });
     </script>
 </head>
@@ -171,14 +178,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     function logout() {
         $(".simpleCart_empty").click();
     }
-    //Đưa ra tổng tiền 
+    //Đưa ra tổng tiền
     function ConvertCartTotal() {
         var cartTotal = $(".simpleCart_total").text().substring(1, $(".simpleCart_total").text().length);
         var cartTotalInt = parseInt(cartTotal);
         $(".simpleCart_total").text(cartTotalInt+"VNĐ");
     }
-    //Xóa sản phẩm trong giỏ hàng 
-    function DelteItem(id) {
+    //Xóa sản phẩm trong giỏ hàng
+    @*function DelteItem(id) {
         $.ajax({
             type: 'GET',
             url: '@Url.Action("DeleteToCart", "User")',
@@ -193,13 +200,18 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 });
             }
         });
-    }
+    }*@
 
     $(".simpleCart_empty").on('click', function () {
-        $("#total").css("color", "black");
-        $.ajax({
-            type: 'GET',
-            url: '@Url.Action("ClearAfterDelete", "User")',
-        });
+        let choice = confirm("Bạn chắc chắn muốn xóa giỏ hàng ?");
+         if (choice == true) {
+            $("#total").css("color", "black");
+            $.ajax({
+                type: 'GET',
+                url: '@Url.Action("ClearAfterDelete", "User")',
+            });
+             location.reload();
+         }
+
     });
 </script>

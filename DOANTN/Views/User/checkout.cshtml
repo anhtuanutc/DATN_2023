@@ -1,17 +1,108 @@
 ﻿@model BTL_TTCMWeb.Models.tbl_cart
 @{ ViewBag.Title = "Index";
-                Layout = "~/Views/Shared/_Layout.cshtml"; }
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+<style>
+    .product-image {
+        /* Thêm thuộc tính opacity để làm mờ hình ảnh */
+        opacity: 0.4;
+    }
+
+    /* Hiển thị label "Hết hàng" khi sản phẩm hết hàng */
+    .sold-out-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-60%, -150%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+    }
+    .viw {
+        position: absolute;
+        background: #eee;
+        padding: 0.5em 2em;
+        font-size: .9em;
+        font-weight: 500;
+        top: 35%;
+        left: 20%;
+        display: none;
+    }
+    .feature-grid img{
+        padding: 0
+    }
+</style>
 <!-- check out -->
 @if (Model != null)
 {
+    <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index", "User")">Trang chủ</a></li>
+            <li class="active">Giỏ hàng + thanh toán</li>
+        </ol>
+        <div class="check-sec">
+            <div class="col-md-3 cart-total">
+                <a class="continue" href="@Url.Action("Index", "User")">Tiếp tục mua hàng</a>
+                <ul class="total_price">
+                    <li class="last_price" style="width:100% !important"> <h4 style="display:inline">Tổng tiền: $</h4><h4 style="display:inline" id="Total_price">@Model.total_price</h4></li>
+                </ul>
+                <br />
+                <div class="clearfix"></div>
+                <label>Ghi chú khi giao hàng</label>
+                <textarea id="note" cols="30" rows="5"></textarea>
+                <a class="order" href="javascript:;" onclick="Payment()">Đặt hàng</a>
+            </div>
+            <div class="col-md-9 cart-items">
+                <h1>Chi tiết giỏ hàng</h1>
+
+                @foreach (var item in Model.tbl_cartDetail)
+                {
+                    <div class="cart-header" id="@item.cart_detail_id">
+                        <div class="close1" onclick="DelteItem(@item.cart_detail_id, @item.productColor_id)"> </div>
+                        <div class="cart-sec">
+                            <div class="cart-item cyc">
+                                <img src="@item.tbl_productColor.tbl_product.product_img" class="img-responsive" alt="" />
+                            </div>
+                            <div class="cart-item-info">
+                                <h3><a href="@Url.Action("ProductDetail","User", new { id=item.tbl_productColor.product_id })">@item.tbl_productColor.tbl_product.product_name</a><span>Code: @item.tbl_productColor.tbl_product.product_code</span></h3>
+                                <ul class="qty">
+                                    <li><p>Size : @item.tbl_productColor.size</p></li>
+                                    <li>
+                                        <p>Số lượng : <input data-val="true" class="item_quantity1" data-val-number="The field Int32 must be a number." id="Soluong_@item.cart_detail_id" max="" min="1" name="Soluong" type="number" value="@item.quantity" onchange="Updatemoney(@item.cart_detail_id, @item.productColor_id)"></p>
+                                    </li>
+                                    <li>
+                                        <p>Giá tiền : $@(item.tbl_productColor.product_sale ?? item.tbl_productColor.product_price)</p>
+                                        <input id="giatien_@item.cart_detail_id" value="@(item.tbl_productColor.product_sale ?? item.tbl_productColor.product_price)" style="display:none">
+                                    </li>
+                                </ul>
+                                <div class="delivery">
+                                    <p>Số tiền : $</p><p id="tongtien_@item.cart_detail_id" class="total_money">@(item.quantity * (item.tbl_productColor.product_sale ?? item.tbl_productColor.product_price))</p>
+                                    <span>@item.tbl_productColor.tbl_product.product_delivery</span>
+                                    <div class="clearfix"></div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+
+                        </div>
+                    </div>}
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div> <!-- //check out --> }
+else
+{
+    
 <div class="container">
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "User")">Trang chủ</a></li>
+        <li class="active">Giỏ hàng + thanh toán</li>
+    </ol>
     <div class="check-sec">
         <div class="col-md-3 cart-total">
             <a class="continue" href="@Url.Action("Index", "User")">Tiếp tục mua hàng</a>
             <ul class="total_price">
-                <li class="last_price" style="width:100% !important"> <h4 style="display:inline">Tổng tiền: @Model.total_price</h4></li>
+                <li class="last_price" style="width:100% !important"> <h4 style="display:inline">Tổng tiền:$0</h4></li>
             </ul>
-            <br />
             <div class="clearfix"></div>
             <label>Ghi chú khi giao hàng</label>
             <textarea id="note" cols="30" rows="5"></textarea>
@@ -19,60 +110,10 @@
         </div>
         <div class="col-md-9 cart-items">
             <h1>Chi tiết giỏ hàng</h1>
-
-            @foreach (var item in Model.tbl_cartDetail)
-            {
-<div class="cart-header" id="@item.cart_detail_id">
-    <div class="close1" onclick="DelteItem(@item.cart_detail_id)"> </div>
-    <div class="cart-sec simpleCart_shelfItem">
-        <div class="cart-item cyc">
-            <img src="@item.tbl_productColor.tbl_product.product_img" class="img-responsive" alt="" />
-        </div>
-        <div class="cart-item-info">
-            <h3><a href="@Url.Action("ProductDetail","User", new { id=item.tbl_productColor.product_id })">@item.tbl_productColor.tbl_product.product_name</a><span>Code: @item.tbl_productColor.tbl_product.product_code</span></h3>
-            <ul class="qty">
-                <li><p>Size : @item.tbl_productColor.size</p></li>
-                <li>
-                    <p>Số lượng : @item.quantity</p>
-                    @*<input data-val="true" data-val-number="The field Int32 must be a number." id="Soluong" max="" min="1" name="Soluong" type="number" value="@item.quantity"><button type="submit">Cập nhật</button>*@
-                </li>
-                <li><p>Giá tiền : @(item.tbl_productColor.product_sale ?? item.tbl_productColor.product_price)</p></li>
-            </ul>
-            <div class="delivery">
-                <p>Số tiền : @(item.quantity * (item.tbl_productColor.product_sale ?? item.tbl_productColor.product_price))</p>
-                <span>@item.tbl_productColor.tbl_product.product_delivery</span>
-                <div class="clearfix"></div>
-            </div>
-        </div>
-        <div class="clearfix"></div>
-
-    </div>
-</div>                }
         </div>
         <div class="clearfix"> </div>
     </div>
-</div> <!-- //check out --> }
-                            else
-                            {
-                <div class="container">
-                    <div class="check-sec">
-                        <div class="col-md-3 cart-total">
-                            <a class="continue" href="@Url.Action("Index", "User")">Tiếp tục mua hàng</a>
-                            <ul class="total_price">
-                                <li class="last_price"> <h4>Tổng tiền </h4></li>
-                                <li class="last_price" id="TotalPrice"><span>0</span></li>
-                            </ul>
-                            <div class="clearfix"></div>
-                            <label>Ghi chú khi giao hàng</label>
-                            <textarea id="note" cols="30" rows="5"></textarea>
-                            <a class="order" href="javascript:;" onclick="Payment()">Đặt hàng</a>
-                        </div>
-                        <div class="col-md-9 cart-items">
-                            <h1>Chi tiết giỏ hàng</h1>
-                        </div>
-                        <div class="clearfix"> </div>
-                    </div>
-                </div>}
+</div>}
 <div class="col-md-5 single-top-in simpleCart_shelfItem hidden">
     <div class="single-para ">
         <h5 class="item_price" id="priceProduct"></h5>
@@ -84,30 +125,48 @@
 <div class="container">
     <div class="bottom-prdt product-wrap">
         <div class="btm-grid-sec row">
-            @{ var listSuggestProduct = Session["listSuggestProduct"] as List<BTL_TTCMWeb.Models.tbl_product>;
+            @{ var listSuggestProduct = Session["listSuggestProduct"] as List<BTL_TTCMWeb.Models.user.ProductColor.product_Color>;
 
-                            foreach (var item in listSuggestProduct)
-                            {
-                <div class="col-md-2 btm-grid feature-grid">
-                    <a href="@Url.Action("ProductDetail","User", new { id=item.product_id })">
-                        <img src="@item.product_img" alt="" />
-                        <div class="arrival-info">
-                            <p>@item.product_code</p>
-                            <h4>@item.product_name</h4>
-                            <p>@item.product_sub_info</p>
-                        </div>
-                        <div class="viw">
-                            <a href="@Url.Action("ProductDetail","User", new { id = item.product_id })"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Xem chi tiết</a>
-                        </div>
-                    </a>
-                </div> } }
+                foreach (var item in listSuggestProduct)
+                {
+                    <div class="col-md-2 btm-grid feature-grid">
+                                    <a href="@Url.Action("ProductDetail","User", new { id=item.product_id })">
+                                        @if (item.amount <= 0)
+                                        {
+                                            <img class="product-image" src="@item.product_img" alt="" style="width: 205.15px !important; height: 285.15px !important;" />
+                                            <div class="sold-out-label">Hết hàng</div>
+                                        }
+                                        else
+                                        {
+                                            <img src="@item.product_img" alt="" style="width: 205.15px !important; height: 285.15px !important;" />
+                                        }
+                                        <div class="arrival-info">
+                                            @*<p style="text-align:center">@product.product_code</p>
+            <h4 style="text-align:center">@product.product_name</h4>*@
+                                            <p style="text-align:center">@item.product_sub_info</p>
+                                            @if (item.amount > 0)
+                                            {
+                                                <p style="text-align:center; color:red">@item.gia</p>}
+
+                                            @if (item.product_isSale == true)
+                                            {
+                                                <h1 style="color:red; font-size:20px; position: absolute; top: 20px; right: 50px; background: cornsilk;">Sale</h1>}
+
+                                        </div>
+                                        <div class="viw">
+                                            <a href="@Url.Action("ProductDetail","User", new { id = item.product_id })"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Xem chi tiết</a>
+                                        </div>
+                                    </a>
+                    </div> } }
             <div class="clearfix"></div>
         </div>
     </div>
 </div>
 <script>
     //Khi thanh toán thành công tự xóa sản phẩm đó khỏi giỏ hàng
-    function DelteItem(id) {
+    function DelteItem(id, product_ColorId) {
+        var total_item_money = 0;
+        var total_item_quantity = 0;
         $.ajax({
             type: 'GET',
             url: '@Url.Action("DeleteToCart", "User")',
@@ -116,12 +175,58 @@
                 $("#TotalPrice").text(result.price);
                 $("#priceProduct").text(result.priceRemove);
                 $("#quantityCart").val(result.quantityRemove);
-                $(".add-cart").click();
+                //$(".item_add").click();
                 $("#" + id).fadeOut('slow', function (c) {
                     $("#" + id).remove();
+                    var paragraphs = document.getElementsByClassName("total_money");
+                    var paragraphs1 = document.getElementsByClassName("item_quantity1");
+                    var paragraph = document.querySelector('span.simpleCart_total');
+
+                    if (!paragraphs) {
+                        document.getElementById("Total_price").textContent = 0;
+                        paragraph.textContent = '$ ' + 0;
+                    }
+                    else {
+                        for (var i = 0; i < paragraphs.length; i++) {
+                            total_item_money += parseFloat(paragraphs[i].textContent);
+                        }
+                        document.getElementById("Total_price").textContent = total_item_money;
+                        paragraph.textContent = '$ ' + total_item_money;
+                    }
+                    if (!paragraphs1) document.getElementById("simpleCart_quantity").textContent = 0;
+                    else {
+                        for (var i = 0; i < paragraphs1.length; i++) {
+                            total_item_quantity += parseFloat(paragraphs1[i].value);
+                        }
+                        document.getElementById("simpleCart_quantity").textContent = total_item_quantity;
+                    }
+                    var cartItems = localStorage.getItem('simpleCart_items');
+
+                    // Kiểm tra nếu dữ liệu tồn tại
+                    if (cartItems) {
+                        // Chuyển đổi dữ liệu từ chuỗi JSON sang đối tượng JavaScript
+                        var items = JSON.parse(cartItems);
+
+                        // ID của mục cần xóa
+                        var idToRemove = 'SCI-' + product_ColorId; // Thay thế bằng ID cụ thể bạn muốn xóa
+
+                        // Kiểm tra xem mục với ID cần xóa có tồn tại không
+                        if (items[idToRemove]) {
+                            // Nếu tồn tại, xóa mục đó
+                            delete items[idToRemove];
+
+                            // Cập nhật lại dữ liệu đã chỉnh sửa vào Local Storage
+                            localStorage.setItem('simpleCart_items', JSON.stringify(items));
+
+                        }
+                    }
                 });
+
             }
         });
+
+
+
     }
     //Khi ấn nút thanh toán
     function Payment() {
@@ -153,4 +258,44 @@
             }
         });
     }
+    function Updatemoney(id, id_product) {
+        /*var id_so_luong = */
+        var total_item_money = 0;
+        var total_item_quantity = 0;
+        var quantity = parseInt($("#Soluong_" + id).val());
+        var pricePerItem = parseFloat($("#giatien_" + id).val());;
+        var total = quantity * pricePerItem;
+        document.getElementById("tongtien_" + id).textContent = total;
+        var paragraphs = document.getElementsByClassName("total_money");
+        for (var i = 0; i < paragraphs.length; i++) {
+            total_item_money += parseFloat(paragraphs[i].textContent);
+        }
+        var paragraphs1 = document.getElementsByClassName("item_quantity1");
+        for (var i = 0; i < paragraphs1.length; i++) {
+            total_item_quantity += parseFloat(paragraphs1[i].value);
+        }
+        document.getElementById("Total_price").textContent = total_item_money;
+        document.getElementById("simpleCart_quantity").textContent = total_item_quantity;
+        var paragraph = document.querySelector('span.simpleCart_total');
+        paragraph.textContent = '$ ' + total_item_money;
+        var cartItems = localStorage.getItem('simpleCart_items');
+
+        if (cartItems) {
+            var items = JSON.parse(cartItems);
+
+            items['SCI-'+id_product] = {
+                "quantity": quantity, // Giá trị cần cập nhật
+                "id": "SCI-" + id_product,
+                "price": pricePerItem
+            };
+            localStorage.setItem('simpleCart_items', JSON.stringify(items));
+
+        }
+        $.ajax({
+            type: 'GET',
+            url: '@Url.Action("AddToCart", "User")',
+            data: { productColorId: id_product, quantity: quantity, chinh_sua: true }
+        });
+    }
+
 </script>

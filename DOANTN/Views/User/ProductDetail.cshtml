@@ -3,12 +3,44 @@
 @{ ViewBag.Title = "ProductDetail";
     Layout = "~/Views/Shared/_Layout.cshtml"; }
 
+
 <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/raty/2.9.0/jquery.raty.min.js"></script>
 <style src="https://cdnjs.cloudflare.com/ajax/libs/raty/2.9.0/jquery.raty.min.css"></style>
 <style>
     #star-rating > img {
         width: 25px !important;
+    }
+    .product-image {
+        /* Thêm thuộc tính opacity để làm mờ hình ảnh */
+        opacity: 0.4;
+    }
+
+    /* Hiển thị label "Hết hàng" khi sản phẩm hết hàng */
+    .sold-out-label {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-60%, -150%);
+        background-color: rgba(0, 0, 0, 0.5);
+        color: white;
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    .viw {
+        position: absolute;
+        background: #eee;
+        padding: 0.5em 2em;
+        font-size: .9em;
+        font-weight: 500;
+        top: 35%;
+        left: 20%;
+        display: none;
+    }
+
+    .feature-grid img {
+        padding: 0
     }
 </style>
 
@@ -17,6 +49,10 @@
 <input type="hidden" id="productColor" />
 <div class="product" style="padding-top: 0px">
     <div class="container">
+        <ol class="breadcrumb">
+            <li><a href="@Url.Action("Index", "User")">Trang chủ</a></li>
+            <li class="active">Chi tiết sản phẩm</li>
+        </ol>
         <div class="product-price1">
             <div class="top-sing" style="margin-bottom:50px">
                 <div class="col-md-7 single-top">
@@ -114,22 +150,36 @@
     <div class="bottom-prdt product-wrap">
         <div class="btm-grid-sec row">
 
-            @{ var listSuggestProduct = Session["listSuggestProduct"] as List<BTL_TTCMWeb.Models.tbl_product>;
+            @{ var listSuggestProduct = Session["listSuggestProduct"] as List<BTL_TTCMWeb.Models.user.ProductColor.product_Color>;
 
                 foreach (var item in listSuggestProduct)
                 {
                     <div class="col-md-2 btm-grid feature-grid">
-                        <a href="@Url.Action("ProductDetail","User", new { id=item.product_id })">
-                            <img src="@item.product_img" alt="" />
-                            <div class="arrival-info" style="text-align:center">
-                                <p>@item.product_code</p>
-                                <h4>@item.product_name</h4>
-                                <p>@item.product_sub_info</p>
-                            </div>
-                            <div class="viw" style="left:18% !important">
-                                <a href="@Url.Action("ProductDetail","User", new { id = item.product_id })"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Xem chi tiết</a>
-                            </div>
-                        </a>
+                                    <a href="@Url.Action("ProductDetail","User", new { id=item.product_id })">
+                                        @if (item.amount <= 0)
+                                        {
+                                            <img class="product-image" src="@item.product_img" alt="" style="width: 289.15px !important; height: 285.15px !important;" />
+                                            <div class="sold-out-label">Hết hàng</div>
+                                        }
+                                        else
+                                        {
+                                            <img src="@item.product_img" alt="" style="width: 289.15px !important; height: 285.15px !important;" />
+                                        }
+                                        <div class="arrival-info">
+                                            <p style="text-align:center">@item.product_sub_info</p>
+                                            @if (item.amount > 0)
+                                            {
+                                                <p style="text-align:center; color:red">@item.gia</p>}
+
+                                            @if (item.product_isSale == true)
+                                            {
+                                                <h1 style="color:red; font-size:20px; position: absolute; top: 20px; right: 50px; background: cornsilk;">Sale</h1>}
+
+                                        </div>
+                                        <div class="viw">
+                                            <a href="@Url.Action("ProductDetail","User", new { id = item.product_id })"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Xem chi tiết</a>
+                                        </div>
+                                    </a>
                     </div> } }
             <div class="clearfix"></div>
         </div>
@@ -143,7 +193,7 @@
             $.ajax({
                 type: 'GET',
                 url: '@Url.Action("AddToCart", "User")',
-                data: { productColorId: $("#productColor").val(), quantity: $("#quantityCart").val() },
+                data: { productColorId: $("#productColor").val(), quantity: $("#quantityCart").val(), chinh_sua: false},
                 success: function (result) {
                     window.location.href = '@Url.Action("checkout", "User")';
                 }
@@ -159,7 +209,7 @@
             $.ajax({
                 type: 'GET',
                 url: '@Url.Action("AddToCart", "User")',
-                data: { productColorId: $("#productColor").val(), quantity: $("#quantityCart").val() }
+                data: { productColorId: $("#productColor").val(), quantity: $("#quantityCart").val(), chinh_sua: false}
             });
         } else {
             return alert("Số lượng tồn kho không đủ so với số lượng yêu cầu");
@@ -191,7 +241,7 @@
                             table = table + '<a href="#" onclick="addToCart()" class="add-cart item_add" style="margin-top: 50px">THÊM VÀO GIỎ HÀNG</a>';
                             table = table + '<a href="#" onclick="Load()" class="add-cart item_add" style="margin-top: 50px">BÁN HÀNG</a> ';
                         }
-                        $("#priceProduct").text(result.price);
+                        $("#priceProduct").text('$'+result.price);
                         $("#amountProduct").text(result.amount);
                         amountProduct = result.amount;
                         $("#productColor").val(result.productColorId);
@@ -222,7 +272,7 @@
                             table = table + '<a href="#" onclick="addToCart()" class="add-cart item_add" style="margin-top: 50px">THÊM VÀO GIỎ HÀNG</a>';
                             table = table + '<a href="#" onclick="Load()" class="add-cart item_add" style="margin-top: 50px">BÁN HÀNG</a> ';
                         }
-                        $("#priceProduct").text(result.price);
+                        $("#priceProduct").text('$' + result.price);
                         $("#amountProduct").text(result.amount);
                         amountProduct = result.amount;
                         $("#productColor").val(result.productColorId);
@@ -253,7 +303,7 @@
                     table = table + '<a href="#" onclick="addToCart()" class="add-cart item_add" style="margin-top: 50px">THÊM VÀO GIỎ HÀNG</a>';
                     table = table + '<a href="#" onclick="Load()" class="add-cart item_add" style="margin-top: 50px">MUA NGAY</a> ';
                 }
-                $("#priceProduct").text(result.price);
+                $("#priceProduct").text('$' + result.price);
                 $("#amountProduct").text(result.amount);
                 amountProduct = result.amount;
                 $("#productColor").val(result.productColorId);

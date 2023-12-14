@@ -89,45 +89,49 @@
     </script>
 }
 <div class="container">
-            <div class="form-horizontal">
-                <h2 style="text-align:center; font-weight:bold; padding-top: 20px">Lấy lại mật khẩu</h2>
-                <hr />
-                <div class="form-group">
-                    <label class="control-label col-md-2">Tài khoản : </label>
-                    <div class="col-md-4">
-                        <input type="text" id="TaiKhoan" name="TaiKhoan" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-2">Câu hỏi bảo mật : </label>
-                    <div class="col-md-4">
-                        <select  id="question" name="question" style="width:362px;height:36px"></select>
-                        @*<input type="text" id="question" name="question" class="form-control" />*@
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-2">Câu trả lời : </label>
-                    <div class="col-md-4">
-                        <input type="text" id="Traloi" name="Traloi" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-2">Mật khẩu Mới : </label>
-                    <div class="col-md-4">
-                        <input type="password" id="password_new" name="password_new" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label class="control-label col-md-2">Xác nhận mật khẩu mới : </label>
-                    <div class="col-md-4">
-                        <input type="password" id="confim_password" name="confim_password" class="form-control" />
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Xác nhận" class="btn btn-info" onclick="vaild()" />
-                    </div>
-                </div>
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "User")">Trang chủ</a></li>
+        <li class="active">Lấy mật khẩu</li>
+    </ol>
+    <div class="form-horizontal">
+        <h2 style="text-align:center; font-weight:bold; padding-top: 20px">Lấy lại mật khẩu</h2>
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2">Tài khoản : </label>
+            <div class="col-md-4">
+                <input type="text" id="TaiKhoan" name="TaiKhoan" class="form-control" />
             </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Câu hỏi bảo mật : </label>
+            <div class="col-md-4">
+                <select id="question" name="question" style="width:362px;height:36px"></select>
+                @*<input type="text" id="question" name="question" class="form-control" />*@
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Câu trả lời : </label>
+            <div class="col-md-4">
+                <input type="text" id="Traloi" name="Traloi" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Mật khẩu Mới : </label>
+            <div class="col-md-4">
+                <input type="password" id="password_new" name="password_new" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2">Xác nhận mật khẩu mới : </label>
+            <div class="col-md-4">
+                <input type="password" id="confim_password" name="confim_password" class="form-control" />
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Xác nhận" class="btn btn-info" onclick="vaild()" />
+            </div>
+        </div>
+    </div>
 </div>
 

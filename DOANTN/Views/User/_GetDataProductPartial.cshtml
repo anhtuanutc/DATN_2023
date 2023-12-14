@@ -36,19 +36,19 @@
          }else {
              <img src="@product.product_img" alt="" style="width: 325.15px !important; height: 285.15px !important;" />
         }
-        <div class="arrival-info">
-            <p style="text-align:center">@product.product_code</p>
-            <h4 style="text-align:center">@product.product_name</h4>
-            <p style="text-align:center">@product.product_sub_info</p>
-            @if (product.amount > 0)
-            {
-    <p style="text-align:center">@product.gia</p>}
+    <div class="arrival-info">
+        @*<p style="text-align:center">@product.product_code</p>
+        <h4 style="text-align:center">@product.product_name</h4>*@
+        <p style="text-align:center">@product.product_sub_info</p>
+        @if (product.amount > 0)
+        {
+            <p style="text-align:center; color:red">@product.gia</p>}
 
-            @if (product.product_isSale == true)
-            {
-    <h1 style="color:red; font-size:20px; position: absolute; top: 20px; right: 50px; background: cornsilk;">Sale</h1>}
+        @if (product.product_isSale == true)
+        {
+            <h1 style="color:red; font-size:20px; position: absolute; top: 20px; right: 50px; background: cornsilk;">Sale</h1>}
 
-        </div>
+    </div>
         <div class="viw">
             <a href="@Url.Action("ProductDetail","User", new { id = product.product_id })"><span class="glyphicon glyphicon-eye-open" aria-hidden="true"></span>Xem chi tiết</a>
         </div>
@@ -80,7 +80,7 @@
                     max: parseInt(dataRange[1], 10),
                     values: dataRange,
                     slide: function (event, ui) {
-                        $("#amount").val(ui.values[0] + " vnđ" + " - " + ui.values[1] + " vnđ");
+                        $("#amount").val("$ " + ui.values[0] + " - " + "$ "+ui.values[1]);
                         priceFrom = ui.values[0];
                         priceTo = ui.values[1];
                         checkReset();
@@ -155,15 +155,15 @@
             max: parseInt(maxPrice, 10),
             values: [minPrice, maxPrice],
             slide: function (event, ui) {
-                $("#amount").val(ui.values[0] + " vnđ" + " - " + ui.values[1] + " vnđ");
+                $("#amount").val("$ " + ui.values[0] + " - " + "$ " + ui.values[1]);
             }
         });
         priceFrom = null;
         priceTo = null;
-        $("#amount").val(+
-            minPrice + " vnđ" +
-            " - " +
-            maxPrice + " vnđ");
+        $("#amount").val("$ "+
+            minPrice +
+            " - " + "$ "+
+            maxPrice);
         currentPage = 1;
         getDataPage();
     });

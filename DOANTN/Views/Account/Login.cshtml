@@ -3,7 +3,12 @@
     ViewBag.Title = "Login";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="container" onsubmit="return vaild()">
+    <ol class="breadcrumb">
+        <li><a href="@Url.Action("Index", "User")">Trang chủ</a></li>
+        <li class="active">Đăng nhập</li>
+    </ol>
     @using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
@@ -30,7 +35,7 @@
             <div class="form-group">
                 <div class="col-md-offset-2 col-md-10">
                     <input type="submit" value="Đăng nhập" class="btn btn-info" />
-                   
+
                 </div>
             </div>
         </div> if (ViewBag.message == null && ViewBag.triedOnce == "yes")

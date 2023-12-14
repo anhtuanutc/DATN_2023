@@ -39,8 +39,11 @@ function Laystate() {
             const len = reponse.length;
             let table = '';
             for (var i = 0; i < len; ++i) {
-                table = table + '<hr>'
-                table = table + '<option value="' + reponse[i].state_id + '">' + reponse[i].state_name + '</option>'
+                if (reponse[i].state_id != 10 && reponse[i].state_id != 1 && reponse[i].state_id != 9) {
+                    table = table + '<hr>'
+                    table = table + '<option value="' + reponse[i].state_id + '">' + reponse[i].state_name + '</option>'
+                }
+                
             }
             document.getElementById('value11').innerHTML = table;
         },
